@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
 
   s.name = 'rack-cache'
-  s.version = '0.4'
-  s.date = '2009-03-16'
+  s.version = '0.5.2'
+  s.date = '2009-09-25'
 
   s.description = "HTTP Caching for Rack"
   s.summary     = "HTTP Caching for Rack"
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     example/sinatra/app.rb
     example/sinatra/views/index.erb
     lib/rack/cache.rb
+    lib/rack/cache/appengine.rb
     lib/rack/cache/cachecontrol.rb
     lib/rack/cache/context.rb
     lib/rack/cache/entitystore.rb
@@ -58,7 +59,7 @@ Gem::Specification.new do |s|
   s.test_files = s.files.select {|path| path =~ /^test\/.*_test.rb/}
 
   s.extra_rdoc_files = %w[README COPYING TODO CHANGES]
-  s.add_dependency 'rack', '~> 0.4'
+  s.add_dependency 'rack', '>= 0.4'
 
   s.has_rdoc = true
   s.homepage = "http://tomayko.com/src/rack-cache/"

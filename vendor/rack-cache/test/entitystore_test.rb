@@ -176,10 +176,51 @@ describe 'Rack::Cache::EntityStore' do
   end
 
   need_memcached 'entity store tests' do
+    describe 'MemCached' do
+      it_should_behave_like 'A Rack::Cache::EntityStore Implementation'
+      before do
+        @store = Rack::Cache::EntityStore::MemCached.new($memcached)
+      end
+      after do
+        @store = nil
+      end
+    end
+  end
+
+
+  need_memcache 'entity store tests' do
     describe 'MemCache' do
       it_should_behave_like 'A Rack::Cache::EntityStore Implementation'
       before do
-        @store = Rack::Cache::EntityStore::MemCache.new($memcached)
+        $memcache.flush_all
+        @store = Rack::Cache::EntityStore::MemCache.new($memcache)
+      end
+      after do
+        @store = nil
+      end
+    end
+  end
+  
+  need_java 'entity store testing' do
+    module Rack::Cache::AppEngine
+      module MC
+        class << (Service = {})
+ 
+          def contains(key); include?(key); end
+          def get(key); self[key]; end;
+          def put(key, value, ttl = nil)
+            self[key] = value
+          end  
+        end
+        
+      end
+    end
+    
+    describe 'GAEStore' do
+      it_should_behave_like 'A Rack::Cache::EntityStore Implementation'
+      before do
+        puts Rack::Cache::AppEngine::MC::Service.inspect
+        @store = Rack::Cache::EntityStore::GAEStore.new
       end
       after do
         @store = nil

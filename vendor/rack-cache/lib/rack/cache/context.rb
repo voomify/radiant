@@ -103,8 +103,13 @@ module Rack::Cache
     # Determine if the #response validators (ETag, Last-Modified) matches
     # a conditional value specified in #request.
     def not_modified?(response)
-      response.etag_matches?(@request.env['HTTP_IF_NONE_MATCH']) ||
-        response.last_modified_at?(@request.env['HTTP_IF_MODIFIED_SINCE'])
+      last_modified = @request.env['HTTP_IF_MODIFIED_SINCE']
+      if etags = @request.env['HTTP_IF_NONE_MATCH']
+        etags = etags.split(/\s*,\s*/)
+        (etags.include?(response.etag) || etags.include?('*')) && (!last_modified || response.last_modified == last_modified)
+      elsif last_modified
+        response.last_modified == last_modified
+      end
     end
 
     # Whether the cache entry is "fresh enough" to satisfy the request.
@@ -133,8 +138,12 @@ module Rack::Cache
     # Invalidate POST, PUT, DELETE and all methods not understood by this cache
     # See RFC2616 13.10
     def invalidate
-      record :invalidate
       metastore.invalidate(@request, entitystore)
+    rescue Exception => e
+      log_error(e)
+      pass
+    else
+      record :invalidate
       pass
     end
 
@@ -147,18 +156,26 @@ module Rack::Cache
       if @request.no_cache? && allow_reload?
         record :reload
         fetch
-      elsif entry = metastore.lookup(@request, entitystore)
-        if fresh_enough?(entry)
-          record :fresh
-          entry.headers['Age'] = entry.age.to_s
-          entry
-        else
-          record :stale
-          validate(entry)
-        end
       else
-        record :miss
-        fetch
+        begin
+          entry = metastore.lookup(@request, entitystore)
+        rescue Exception => e
+          log_error(e)
+          return pass
+        end
+        if entry
+          if fresh_enough?(entry)
+            record :fresh
+            entry.headers['Age'] = entry.age.to_s
+            entry
+          else
+            record :stale
+            validate(entry)
+          end
+        else
+          record :miss
+          fetch
+        end
       end
     end
 
@@ -168,26 +185,36 @@ module Rack::Cache
       # send no head requests because we want content
       @env['REQUEST_METHOD'] = 'GET'
 
-      # add our cached validators to the environment
+      # add our cached last-modified validator to the environment
       @env['HTTP_IF_MODIFIED_SINCE'] = entry.last_modified
-      @env['HTTP_IF_NONE_MATCH'] = entry.etag
 
-      backend_response = forward
+      # Add our cached etag validator to the environment.
+      # We keep the etags from the client to handle the case when the client
+      # has a different private valid entry which is not cached here.
+      cached_etags = entry.etag.to_s.split(/\s*,\s*/)
+      request_etags = @request.env['HTTP_IF_NONE_MATCH'].to_s.split(/\s*,\s*/)
+      etags = (cached_etags + request_etags).uniq
+      @env['HTTP_IF_NONE_MATCH'] = etags.empty? ? nil : etags.join(', ')
 
-      response =
-        if backend_response.status == 304
-          record :valid
-          entry = entry.dup
-          entry.headers.delete('Date')
-          %w[Date Expires Cache-Control ETag Last-Modified].each do |name|
-            next unless value = backend_response.headers[name]
-            entry.headers[name] = value
-          end
-          entry
-        else
-          record :invalid
-          backend_response
+      response = forward
+
+      if response.status == 304
+        record :valid
+
+        # Check if the response validated which is not cached here
+        etag = response.headers['ETag']
+        return response if etag && request_etags.include?(etag) && !cached_etags.include?(etag)
+
+        entry = entry.dup
+        entry.headers.delete('Date')
+        %w[Date Expires Cache-Control ETag Last-Modified].each do |name|
+          next unless value = response.headers[name]
+          entry.headers[name] = value
         end
+        response = entry
+      else
+        record :invalid
+      end
 
       store(response) if response.cacheable?
 
@@ -225,9 +252,17 @@ module Rack::Cache
 
     # Write the response to the cache.
     def store(response)
-      record :store
       metastore.store(@request, response, entitystore)
       response.headers['Age'] = response.age.to_s
+    rescue Exception => e
+      log_error(e)
+      nil
+    else
+      record :store
+    end
+
+    def log_error(exception)
+      @env['rack.errors'].write("cache error: #{exception.message}\n#{exception.backtrace.join("\n")}\n")
     end
   end
 end

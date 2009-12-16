@@ -19,7 +19,7 @@ module Rack::Cache
         yield part
       end
       body.close if body.respond_to? :close
-      [ digest.hexdigest, size ]
+      [digest.hexdigest, size]
     end
 
     if ''.respond_to?(:bytesize)
@@ -168,34 +168,141 @@ module Rack::Cache
     DISK = Disk
     FILE = Disk
 
-    # Stores entity bodies in memcached.
-    class MemCache < EntityStore
-
+    # Base class for memcached entity stores.
+    class MemCacheBase < EntityStore
       # The underlying Memcached instance used to communicate with the
-      # memcahced daemon.
+      # memcached daemon.
       attr_reader :cache
 
+      extend Rack::Utils
+
+      def open(key)
+        data = read(key)
+        data && [data]
+      end
+
+      def self.resolve(uri)
+        if uri.respond_to?(:scheme)
+          server = "#{uri.host}:#{uri.port || '11211'}"
+          options = parse_query(uri.query)
+          options.keys.each do |key|
+            value =
+              case value = options.delete(key)
+              when 'true' ; true
+              when 'false' ; false
+              else value.to_sym
+              end
+            options[k.to_sym] = value
+          end
+          options[:namespace] = uri.path.sub(/^\//, '')
+          new server, options
+        else
+          # if the object provided is not a URI, pass it straight through
+          # to the underlying implementation.
+          new uri
+        end
+      end
+    end
+
+    # Uses the memcache-client ruby library. This is the default unless
+    # the memcached library has already been required.
+    class MemCache < MemCacheBase
       def initialize(server="localhost:11211", options={})
         @cache =
           if server.respond_to?(:stats)
             server
           else
+            require 'memcache'
+            ::MemCache.new(server, options)
+          end
+      end
+
+      def exist?(key)
+        !cache.get(key).nil?
+      end
+
+      def read(key)
+        cache.get(key)
+      end
+
+      def write(body)
+        buf = StringIO.new
+        key, size = slurp(body){|part| buf.write(part) }
+        [key, size] if cache.set(key, buf.string)
+      end
+
+      def purge(key)
+        cache.delete(key)
+        nil
+      end
+    end
+
+    # Uses the memcached client library. The ruby based memcache-client is used
+    # in preference to this store unless the memcached library has already been
+    # required.
+    class MemCached < MemCacheBase
+      def initialize(server="localhost:11211", options={})
+        options[:prefix_key] ||= options.delete(:namespace) if options.key?(:namespace)
+        @cache =
+          if server.respond_to?(:stats)
+            server
+          else
             require 'memcached'
-            Memcached.new(server, options)
+            ::Memcached.new(server, options)
           end
       end
 
       def exist?(key)
         cache.append(key, '')
         true
-      rescue Memcached::NotStored
+      rescue ::Memcached::NotStored
         false
       end
 
       def read(key)
         cache.get(key, false)
-      rescue Memcached::NotFound
+      rescue ::Memcached::NotFound
         nil
+      end
+
+      def write(body)
+        buf = StringIO.new
+        key, size = slurp(body){|part| buf.write(part) }
+        cache.set(key, buf.string, 0, false)
+        [key, size]
+      end
+
+      def purge(key)
+        cache.delete(key)
+        nil
+      rescue ::Memcached::NotFound
+        nil
+      end
+    end
+
+    MEMCACHE =
+      if defined?(::Memcached)
+        MemCached
+      else
+        MemCache
+      end
+
+    MEMCACHED = MEMCACHE
+
+    class GAEStore < EntityStore
+      attr_reader :cache
+
+      def initialize(options = {})
+        require 'rack/cache/appengine'
+        @cache = Rack::Cache::AppEngine::MemCache.new(options)
+      end
+
+      def exist?(key)
+        cache.contains?(key)
+      end
+
+      def read(key)
+        cache.get(key)
       end
 
       def open(key)
@@ -209,45 +316,24 @@ module Rack::Cache
       def write(body)
         buf = StringIO.new
         key, size = slurp(body){|part| buf.write(part) }
-        cache.set(key, buf.string, 0, false)
+        cache.put(key, buf.string)
         [key, size]
       end
 
       def purge(key)
         cache.delete(key)
         nil
-      rescue Memcached::NotFound
-        nil
       end
 
-      extend Rack::Utils
-
-      # Create MemCache store for the given URI. The URI must specify
-      # a host and may specify a port, namespace, and options:
-      #
-      # memcached://example.com:11211/namespace?opt1=val1&opt2=val2
-      #
-      # Query parameter names and values are documented with the memcached
-      # library: http://tinyurl.com/4upqnd
       def self.resolve(uri)
-        server = "#{uri.host}:#{uri.port || '11211'}"
-        options = parse_query(uri.query)
-        options.keys.each do |key|
-          value =
-            case value = options.delete(key)
-            when 'true' ; true
-            when 'false' ; false
-            else value.to_sym
-            end
-          options[k.to_sym] = value
-        end
-        options[:namespace] = uri.path.sub(/^\//, '')
-        new server, options
+        self.new(:namespace => uri.host)
       end
+
     end
 
-    MEMCACHE = MemCache
-    MEMCACHED = MemCache
+    GAECACHE = GAEStore
+    GAE = GAEStore
+
   end
 
 end

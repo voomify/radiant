@@ -115,6 +115,97 @@ describe 'Rack::Cache::Context' do
     cache.trace.should.include :store
   end
 
+  it 'responds with 304 only if If-None-Match and If-Modified-Since both match' do
+    timestamp = Time.now
+
+    respond_with do |req,res|
+      res.status = 200
+      res['ETag'] = '12345'
+      res['Last-Modified'] = timestamp.httpdate
+      res['Content-Type'] = 'text/plain'
+      res.body = ['Hello World']
+    end
+
+    # Only etag matches
+    get '/',
+      'HTTP_IF_NONE_MATCH' => '12345', 'HTTP_IF_MODIFIED_SINCE' => (timestamp - 1).httpdate
+    app.should.be.called
+    response.status.should.equal 200
+
+    # Only last-modified matches
+    get '/',
+      'HTTP_IF_NONE_MATCH' => '1234', 'HTTP_IF_MODIFIED_SINCE' => timestamp.httpdate
+    app.should.be.called
+    response.status.should.equal 200
+
+    # Both matches
+    get '/',
+      'HTTP_IF_NONE_MATCH' => '12345', 'HTTP_IF_MODIFIED_SINCE' => timestamp.httpdate
+    app.should.be.called
+    response.status.should.equal 304
+  end
+
+  it 'validates private responses cached on the client' do
+    respond_with do |req,res|
+      etags = req.env['HTTP_IF_NONE_MATCH'].to_s.split(/\s*,\s*/)
+      if req.env['HTTP_COOKIE'] == 'authenticated'
+        res['Cache-Control'] = 'private, no-store'
+        res['ETag'] = '"private tag"'
+        if etags.include?('"private tag"')
+          res.status = 304
+        else
+          res.status = 200
+          res['Content-Type'] = 'text/plain'
+          res.body = ['private data']
+        end
+      else
+        res['ETag'] = '"public tag"'
+        if etags.include?('"public tag"')
+          res.status = 304
+        else
+          res.status = 200
+          res['Content-Type'] = 'text/plain'
+          res.body = ['public data']
+        end
+      end
+    end
+
+    get '/'
+    app.should.be.called
+    response.status.should.equal 200
+    response.headers['ETag'].should == '"public tag"'
+    response.body.should == 'public data'
+    cache.trace.should.include :miss
+    cache.trace.should.include :store
+
+    get '/', 'HTTP_COOKIE' => 'authenticated'
+    app.should.be.called
+    response.status.should.equal 200
+    response.headers['ETag'].should == '"private tag"'
+    response.body.should == 'private data'
+    cache.trace.should.include :stale
+    cache.trace.should.include :invalid
+    cache.trace.should.not.include :store
+
+    get '/',
+      'HTTP_IF_NONE_MATCH' => '"public tag"'
+    app.should.be.called
+    response.status.should.equal 304
+    response.headers['ETag'].should == '"public tag"'
+    cache.trace.should.include :stale
+    cache.trace.should.include :valid
+    cache.trace.should.include :store
+
+    get '/',
+      'HTTP_IF_NONE_MATCH' => '"private tag"',
+      'HTTP_COOKIE' => 'authenticated'
+    app.should.be.called
+    response.status.should.equal 304
+    response.headers['ETag'].should == '"private tag"'
+    cache.trace.should.include :valid
+    cache.trace.should.not.include :store
+  end
+
   it 'stores responses when no-cache request directive present' do
     respond_with 200, 'Expires' => (Time.now + 5).httpdate
 
@@ -124,7 +215,8 @@ describe 'Rack::Cache::Context' do
     response.headers.should.include 'Age'
   end
 
-  it 'reloads responses when cache hits but no-cache request directive present' do
+  it 'reloads responses when cache hits but no-cache request directive present ' +
+     'when allow_reload is set true' do
     count = 0
     respond_with 200, 'Cache-Control' => 'max-age=10000' do |req,res|
       count+= 1
@@ -141,14 +233,16 @@ describe 'Rack::Cache::Context' do
     response.body.should.equal 'Hello World'
     cache.trace.should.include :fresh
 
-    get '/', 'HTTP_CACHE_CONTROL' => 'no-cache'
+    get '/',
+      'rack-cache.allow_reload' => true,
+      'HTTP_CACHE_CONTROL' => 'no-cache'
     response.should.be.ok
     response.body.should.equal 'Goodbye World'
     cache.trace.should.include :reload
     cache.trace.should.include :store
   end
 
-  it 'does not reload responses when allow_reload is set false' do
+  it 'does not reload responses when allow_reload is set false (default)' do
     count = 0
     respond_with 200, 'Cache-Control' => 'max-age=10000' do |req,res|
       count+= 1
@@ -171,9 +265,17 @@ describe 'Rack::Cache::Context' do
     response.should.be.ok
     response.body.should.equal 'Hello World'
     cache.trace.should.not.include :reload
+
+    # test again without explicitly setting the allow_reload option to false
+    get '/',
+      'HTTP_CACHE_CONTROL' => 'no-cache'
+    response.should.be.ok
+    response.body.should.equal 'Hello World'
+    cache.trace.should.not.include :reload
   end
 
-  it 'revalidates fresh cache entry when max-age request directive is exceeded' do
+  it 'revalidates fresh cache entry when max-age request directive is exceeded ' +
+     'when allow_revalidate option is set true' do
     count = 0
     respond_with do |req,res|
       count+= 1
@@ -192,7 +294,9 @@ describe 'Rack::Cache::Context' do
     response.body.should.equal 'Hello World'
     cache.trace.should.include :fresh
 
-    get '/', 'HTTP_CACHE_CONTROL' => 'max-age=0'
+    get '/',
+      'rack-cache.allow_revalidate' => true,
+      'HTTP_CACHE_CONTROL' => 'max-age=0'
     response.should.be.ok
     response.body.should.equal 'Goodbye World'
     cache.trace.should.include :stale
@@ -200,7 +304,7 @@ describe 'Rack::Cache::Context' do
     cache.trace.should.include :store
   end
 
-  it 'does not revalidate fresh cache entry when enable_revalidate option is set false' do
+  it 'does not revalidate fresh cache entry when enable_revalidate option is set false (default)' do
     count = 0
     respond_with do |req,res|
       count+= 1
@@ -221,6 +325,15 @@ describe 'Rack::Cache::Context' do
 
     get '/',
       'rack-cache.allow_revalidate' => false,
+      'HTTP_CACHE_CONTROL' => 'max-age=0'
+    response.should.be.ok
+    response.body.should.equal 'Hello World'
+    cache.trace.should.not.include :stale
+    cache.trace.should.not.include :invalid
+    cache.trace.should.include :fresh
+
+    # test again without explicitly setting the allow_revalidate option to false
+    get '/',
       'HTTP_CACHE_CONTROL' => 'max-age=0'
     response.should.be.ok
     response.body.should.equal 'Hello World'
@@ -723,5 +836,30 @@ describe 'Rack::Cache::Context' do
       response.body.should.equal 'Bob/2.0'
       response['X-Response-Count'].should.equal '3'
     end
+  end
+
+  it 'passes if there was a metastore exception' do
+    respond_with 200, 'Cache-Control' => 'max-age=10000' do |req,res|
+      res.body = ['Hello World']
+    end
+
+    get '/'
+    response.should.be.ok
+    response.body.should.equal 'Hello World'
+    cache.trace.should.include :store
+
+    get '/' do |cache|
+      cache.meta_def(:metastore) { raise Timeout::Error }
+    end
+    response.should.be.ok
+    response.body.should.equal 'Hello World'
+    cache.trace.should.include :pass
+
+    post '/' do |cache|
+      cache.meta_def(:metastore) { raise Timeout::Error }
+    end
+    response.should.be.ok
+    response.body.should.equal 'Hello World'
+    cache.trace.should.include :pass
   end
 end
