@@ -3,6 +3,7 @@ source :gemcutter
 gem "RedCloth"
 gem "pg"
 gem "rack", "1.1.0"
+gem "will_paginate"
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
