@@ -25,3 +25,4 @@
 [submodule "vendor/extensions/reorder"]
 	path = vendor/extensions/reorder
 	url = git://github.com/radiant/radiant-reorder-extension.git
+
