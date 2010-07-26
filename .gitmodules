@@ -26,3 +26,6 @@
 	path = vendor/extensions/reorder
 	url = git://github.com/radiant/radiant-reorder-extension.git
 
+[submodule "vendor/extensions/import_export"]
+	path = vendor/extensions/import_export
+	url = git://github.com/voomify/radiant-import-export-extension.git
