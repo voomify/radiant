@@ -2,6 +2,7 @@ source :gemcutter
 
 gem "RedCloth"
 gem "pg"
+gem "rack", "1.1.0"
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
