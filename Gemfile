@@ -5,6 +5,7 @@ gem "pg"
 gem "rack", "1.1.0"
 gem "will_paginate"
 gem "unicorn"
+gem "tricycle-rack-contrib"
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
