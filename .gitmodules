@@ -28,4 +28,4 @@
 
 [submodule "vendor/extensions/import_export"]
 	path = vendor/extensions/import_export
-	url = git://github.com/voomify/radiant-import-export-extension.git
+	url = git://github.com/radiant/radiant-import-export-extension.git
