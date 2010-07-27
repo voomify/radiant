@@ -5,13 +5,16 @@ gem "pg"
 gem "rack", "1.1.0"
 gem "will_paginate"
 gem "unicorn"
+gem "schneider"
+gem "httparty"
+gem "utility_drawer"
 
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
 # gem "geokit"
 
-group :development do
+group :development do  
   # bundler requires these gems in development
   # gem "rails-footnotes"
 end

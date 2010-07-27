@@ -87,4 +87,5 @@ Radiant::Initializer.run do |config|
   end
   
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
+  config.gem 'schneider', :source => 'http://gemcutter.org'
 end
