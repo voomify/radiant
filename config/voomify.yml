@@ -1,0 +1,14 @@
+development:
+  toolbelt:
+    base_uri: 127.0.0.1:3001
+  domain: voomify.loc
+
+test:
+  toolbelt:
+    base_uri: 127.0.0.1:3001
+  domain: voomify.loc
+
+production:
+  toolbelt:
+    base_uri: 127.0.0.1:3001
+  domain: voomify.net
