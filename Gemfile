@@ -1,5 +1,6 @@
 source :gemcutter
 
+gem "rake"
 gem "RedCloth"
 gem "pg"
 gem "rack", "1.1.0"
