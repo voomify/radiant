@@ -1,0 +1,3142 @@
+--- 
+name: Last export
+records: 
+  Snippets: 
+    "6": 
+      updated_by_id: 
+      name: keyboard-options
+      created_at: 2010-06-04 16:33:08.909031 Z
+      filter_id: ""
+      updated_at: 2010-06-04 16:33:08.909031 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 6
+      content: "<p>All of what you can do with OptiShot can be done with the mouse, keyboard, or swing pad. This topic lists the keyboard shortcuts that can be used. </p> \r\n \r\n \r\n\
+        <table class=\"wikistyle\"  width=\"100%\"> \r\n  <tr> \r\n     <td><b>Action</b></td> \r\n     <td><b>Keyboard Shortcut</b></td> \r\n\
+        \t \r\n  </tr> \r\n  <tr> \r\n  <td>Clear All Tracers</td> \r\n     <td>C</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n  <td>Show/Hide data from last shot</td> \r\n     <td>D</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n  <td>Edit the last clubset</td> \r\n     <td>E</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Perform a Flyby</td> \r\n     <td>F</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Show/Hide the putting grid</td> \r\n     <td>G</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Change between left and right handed players</td> \r\n     <td>H</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Show/Hide flag marker</td> \r\n     <td>L</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Take a mulligan if mulligans are enabled</td> \r\n     <td>M</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Show/Hide Overhead Map</td> \r\n     <td>O</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Pick up ball and concede hole</td> \r\n     <td>P</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Quit playing (and save game if desired)</td> \r\n     <td>Q</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Replay last shot</td> \r\n     <td>R</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Show/Hide the scorecard</td> \r\n     <td>S</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Show/Hide all tracers</td> \r\n     <td>T</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Aim left or right</td> \r\n     <td>Right click mouse and hold</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Aim further to the right</td> \r\n     <td>Right arrow key</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Aim further to the left</td> \r\n     <td>Left arrow key</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Select a longer club</td> \r\n     <td>Up arrow</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Select a shorter club</td> \r\n     <td>Down arrow</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td><a name=\"holes\"></a>Relocate to holes 1 through 10</td> \r\n     <td>1 through 9 and 0</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Relocate to holes 11 to 18</td> \r\n     <td>CTRL+1 to CTRL+8</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Cancel Flyby, close scorecard display</td> \r\n     <td>ESC</td> \r\n\
+        \t   </tr> \r\n\
+        \t   \r\n\
+        \t   \r\n\
+        </table> "
+    "11": 
+      updated_by_id: 1
+      name: change-options
+      created_at: 2010-06-04 17:16:52.800569 Z
+      filter_id: ""
+      updated_at: 2010-06-04 17:41:16.362458 Z
+      created_by_id: 1
+      lock_version: 7
+      id: 11
+      content: "<p> \r\n\
+        There are three main areas within <b>Options</b> that you can change within OptiShot 2010 to control sound, screen layout, views, camera angles, and statistics. </p> \r\n \r\n\
+        <ul><li><a href=\"#general\">Change General Options</a></li> \r\n\
+        <li><a href=\"#stats\">Change Swing Stats Display</a></li> \r\n\
+        <li><a href=\"#camera\">Change Camera View</a></li></ul> \r\n\
+        \r\n\
+        <h4 id=\"general\">To change General Options</h4> \r\n\
+        <ol> \r\n\
+        <li>From <b>Menu</b>, click <b>Options</b>.</li> \r\n\
+        <li>Make the desired changes to the <b>General Options</b> section.</li> \r\n \r\n\
+        <table class=\"wikistyle\" width=\"100%\"> \r\n  <tr> \r\n     <td><b>Field</b></td> \r\n     <td><b>Description</b></td> \r\n\
+        \t \r\n  </tr> \r\n  <tr> \r\n  <td>Overhead Map</td> \r\n     <td>Deselect to remove the Overhead Map from constant view on the screen. The Overhead Map, located on the right side of the screen, displays a bird's eye view of the hole. During a practice session, the Overhead Map also allows you to place the ball anywhere you want within that fairway. This is not allowed during Play mode. The overhead map is displayed by default.</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n  <td>Show Shot Tracer</td> \r\n     <td>When you take a shot, the shot's path is traced with a ribbon-like display showing you how the ball traveled, bounced, arced, and so on. To remove this tracer from always appearing, deselect this option. Selected by default. To clear tracers manually, see <a href=\"#clear-tracers\">Clear Tracers</a>.</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n  <td>Metric Distance</td> \r\n     <td>Select if you want any distances in OptiShot to be displayed in metrics.</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Metric Swing Speed</td> \r\n     <td>Select if you want any speeds in OptiShot to be displayed in metrics.</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Ambient Sound</td> \r\n     <td>By default, OptiShot is set up to sound like a real golf course -- fresh air, winds, birds, and so on. These sounds, however, can be turned off. Deselect this option to silent these sounds.</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Show Putting Grid</td> \r\n     <td>When you reach the green, a grid appears over the putting area to help guide you in your putts. To remove this grid, deselect this option.</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n\
+        \t   <td>Show Flag Marker</td> \r\n     <td>The flag marker is the black-and-white line that bobs up and down to mark where the hole is. Deselect to remove this marker. A hole flag will still appear to indicate the location of the hole.</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n\
+        \t   <td>Automatic Flyby</td> \r\n     <td>A flyby takes you on a bird's eye tour from tee to the hole that you are about to shoot and then returns you to the tee. This allows you to see the path in which the ball needs to travel to the hole. OptiShot automatically takes you on this tour before each hole. Deselect to <b>not</b> perform a flyby before each hole. To perform a flyby manually, see <a href=\"#view-a-flyby\">View a Flyby</a>.</td> \r\n\
+        \t   </tr> \r\n\
+        \t   \r\n\
+        </table> \r\n \r\n \r\n\
+        </ol> \r\n\
+        \r\n\
+        <h4 id=\"stats\">To change Swing Stats</h4> \r\n\
+        <ol> \r\n\
+        <li>From <b>Menu</b>, click <b>Options</b>.</li> \r\n\
+        <li>Make the desired changes to the <b>Swing Stats Display</b> section.</li> \r\n \r\n\
+        <table class=\"wikistyle\"  width=\"100%\"> \r\n  <tr> \r\n     <td><b>Field</b></td> \r\n     <td><b>Description</b></td> \r\n\
+        \t \r\n  </tr> \r\n  <tr> \r\n  <td>Show Briefly After Each Shot</td> \r\n     <td>Select if you want to display the swing statistics after each shot only  briefly after a shot. To display the statistics again, see <a href=\"#view-shotdata\">View Shot Data</a>.</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n  <td>Always Show</td> \r\n     <td>Select if you want this display to remain on screen while you take your shot, before, and after.</td> \r\n\
+        \t   </tr> \r\n\
+        \t    <tr> \r\n  <td>Never Show</td> \r\n     <td>Select if you want to never display the swing statistics on screen. To display the statistics again, see <a href=\"#view-shotdata\">View Shot Data</a>. </td> \r\n\
+        \t   </tr> \r\n\
+        \t \r\n\
+        \t   \r\n\
+        </table> \r\n \r\n \r\n\
+        </ol> \r\n\
+        \r\n\
+        <h4 id=\"camera\">To change Camera View</h4> \r\n\
+        <ol> \r\n\
+        <li>From <b>Menu</b>, click <b>Options</b>.</li> \r\n\
+        <li>Make the desired changes to the <b>Camera View</b> section.</li> \r\n \r\n\
+        <table class=\"wikistyle\" width=\"100%\"> \r\n  <tr> \r\n     <td><b>Field</b></td> \r\n     <td><b>Description</b></td> \r\n\
+        \t \r\n  </tr> \r\n  <tr> \r\n  <td>Players View of Ball Flight</td> \r\n     <td>Select if you want to view the ball's motion at the player's eye level.</td> \r\n\
+        \t   </tr> \r\n\
+        \t   <tr> \r\n  <td>Ball's View of Ball Flight</td> \r\n     <td>Select if you want to view the ball's motion at the ball's eye level.</td> \r\n\
+        \t   </tr> \r\n\
+        </table> \r\n\
+        </ol> "
+    "7": 
+      updated_by_id: 1
+      name: view-shot-data
+      created_at: 2010-06-04 17:08:10.759000 Z
+      filter_id: ""
+      updated_at: 2010-06-04 18:03:31.043298 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 7
+      content: "<p>Shot data is displayed in a box that appears on the left side of the screen when a shot is made. <br><b>Note:</b> However, you can also change when you view shot data by changing the <a href=\"#change-options\">Swing Stats</a> options.\r\n\
+        <p>Shot data includes the following:\r\n\
+        <ol> \r\n\
+        <li><b>Club Speed:</b> The speed of the club head in miles per hour. (Meters will be displayed if metrics is set.)</li> \r\n\
+        <li><b>Face Angle:</b> Angle of the club in degrees and open or closed.</li> \r\n\
+        <li><b>Path:</b> The path of the ball, such as straight, outside in, or inside out.</li> \r\n\
+        <li><b>Distance:</b> How far in yards did the ball travel. (Meters will be displayed if metrics is set.)</li> \r\n\
+        <li><b>Tempo:</b> The time it takes for the club to return to strike the ball from the take\r\n\
+        away.</li> \r\n\
+        <li><b>Face Contact:</b> Indicates approximately where on the face of the club the ball was\r\n\
+        struck. Shots hit off-center towards the heel or toe of the club will not travel as far\r\n\
+        as shots struck on the center of the face.</li> \r\n \r\n\
+        </ol></p> \r\n \r\n\
+        <h4>To view a shot data</h4> \r\n\
+        <ul> \r\n\
+        <li>From <b>Menu</b>, click <b>Shotdata</b>. <br><b>Note:</b> To remove the shot data information, repeat this procedure.\r\n\
+        </li> \r\n\
+        </ul> "
+    "12": 
+      updated_by_id: 1
+      name: clear-tracers
+      created_at: 2010-06-04 17:35:33.283359 Z
+      filter_id: ""
+      updated_at: 2010-06-04 18:01:43.636967 Z
+      created_by_id: 1
+      lock_version: 2
+      id: 12
+      content: "<p>When you take a shot, the shot's path is traced with a ribbon-like display showing you how the ball traveled, bounced, arced, and so on. This is called a tracer. You can clear this tracer by using this procedure, or you can never show tracers by changing a <a href=\"#change-options\">General Option</a> option.\r\n\
+        <BR><b>Note:</b> If you have <a href=\"/practice-mode-content#follow-ball\"><b>Always Follow</b></a> the ball option selected, then you may not see the tracers.</p> \r\n \r\n\
+        <h4>To clear a tracer</h4> \r\n\
+        <ul> \r\n\
+        <li>From <b>Menu</b>, click <b>Clear Tracers</b>.</li><br> \r\n\
+        <b>Note:</b> You can also use the <a href=\"#keyboard-options\">keyboard shortcuts</a> to clear tracers.\r\n \r\n \r\n\
+        </ul> "
+    "8": 
+      updated_by_id: 1
+      name: view-flyby
+      created_at: 2010-06-04 17:11:19.796164 Z
+      filter_id: ""
+      updated_at: 2010-06-04 17:31:54.769778 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 8
+      content: "<p>A flyby takes you on a bird's eye tour from the tee to the hole that you are about to shoot and then returns you to the tee. This allows you to see the path in which the ball needs to travel to the hole. OptiShot automatically takes you on this tour before each hole.</p> \r\n\
+        <p>You can change the option of showing a flyby before each hole using the <a href=\"#change-options\">Options</a>.</p> \r\n\
+        <h4>To view a flyby</h4> \r\n\
+        <ul> \r\n\
+        <li>From <b>Menu</b>, click <b>Flyby</b>.</li> \r\n \r\n\
+        </ul> "
+    "13": 
+      updated_by_id: 
+      name: ball-type
+      created_at: 2010-06-04 17:52:35.970160 Z
+      filter_id: ""
+      updated_at: 2010-06-04 17:52:35.970160 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 13
+      content: "<p>There are two types of balls that can be used when using OptiShot 2010 with the swing pad: the foam ball or a real ball. Depending on which option you choose to use, you should change the ball type in OptiShot to match the ball you are using.</p> \r\n \r\n\
+        <h4>To change your ball type</h4> \r\n\
+        <ul> \r\n\
+        <li>From the OptiShot taskbar, <b>Ball Type</b> field, select  <b>Foam Ball</b> or <b>Real Ball</b>.</li> \r\n \r\n\
+        </ul> "
+    "14": 
+      updated_by_id: 11
+      name: setup-shot
+      created_at: 2010-06-04 17:55:51.680402 Z
+      filter_id: ""
+      updated_at: 2010-07-20 17:55:39.837438 Z
+      created_by_id: 1
+      lock_version: 3
+      id: 14
+      content: "<p>Once you have entered OptiShot, you are now looking at your first shot. There are four main information views:</p> \r\n\
+        <ol> \r\n\
+        <li>The <b>Player View</b> onto the fairway along with a black and white marker bobbing up and down. This marker indicates where the hole is.</li> \r\n\
+        <li>An <b>Overhead Map</b> (bird's eye view) of the hole located in the upper right corner. You can click anywhere on the overhead map and your next shot will be set up in that specific location. This box appears in both play and practice modes, but you cannot change the ball position in play mode.</li> \r\n\
+        <li>The upper left corner of the screen will always display the <b>OptiShot Information Bar</b> which includes: the course name, current mode, hole's par and distance to hole, name of player, handedness, and club set.</li>\r\n\
+        <li>On the bottom of the screen you will see the <b>OptiShot Taskbar</b> which includes: the menu, club selection, shot type, ball type, current lie, camera view, the distance left to the hole, distance above or below the hole, and wind speed and direction.</li> \r\n\
+        </ol> \r\n \r\n\
+        <p>Once you understand what you are shooting at, you can set up your shot in several ways:</p> \r\n\
+        <ul> \r\n\
+        <li><a href=\"#change-ball-type\">Selecting the appropriate ball.</a> Foam ball is the default. Click the arrow beside the ball icon on the OptiShot taskbar. </li> \r\n\
+        <li><a href = \"#changing-clubs\">Selecting a different club.</a> Beside the club image, click the left or right arrow to select the appropriate club. 3DD Golf selects the appropriate club dependent on the distance to hole, but you have the ability to choose a different club. The club you have in your hand should match the club defined in this field.</li> \r\n\
+        <li>Adjust your aim. Use left and right arrow keys above the \"current lie\" description or on the keyboard to adjust the direction that the ball will go.</li> \r\n \r\n\
+        <li><a href=\"#change-shot-type\">Change the <b>Shot Type</b>.</a> You selected the shot type when you set up the game or practice session. You can change it by clicking the up arrow above the \"club selection\".</li> \r\n\
+        </ul> \r\n\
+        <p> Now you are ready to step up to the optical swing pad, place your ball on the tee, and take your first swing.</p> \r\n\
+        <h3>Tips</h3> \r\n  Below are some tips and tricks for getting the most out of your 3DD Practice.\r\n  <ul> \r\n    <li>Use the overhead map to quickly and easily change your practice \r\n    position on a hole. Simply click anywhere on the overhead map and your \r\n    position will instantly change.</li> \r\n    <li>To fine tune your practice position hold the CONTROL key down and click anywhere \r\n    on the golf course in front of you. Your location will instantly adjust\r\n    to the new position.</li> \r\n    <li>When practicing with a right and left handed player, use the <b>H</b> \r\n    keyboard shortcut to quickly switch between a right and left handed player. The\r\n    top left of the screen will then display what your current setting is.</li> \r\n  </ul> \r\n </ol> "
+    "9": 
+      updated_by_id: 1
+      name: change-shottype
+      created_at: 2010-06-04 17:13:28.072184 Z
+      filter_id: ""
+      updated_at: 2010-06-04 18:17:37.928174 Z
+      created_by_id: 1
+      lock_version: 4
+      id: 9
+      content: "<p>As defined in the <a href=\"/practice-mode-content#select-course\">set up</a> of the player and course in practice mode or in <a href=\"/play-mode-content#setup-a-game\">game setup</a> in play mode, you selected your shot type. This setting defines the average shot you hit with your clubs. A low shot type will result in longer distances than a high shot type. The shot type can be altered.</p> \r\n \r\n\
+        <h4>To change your shot type</h4> \r\n\
+        <ol> \r\n\
+        <li>From <b>Menu</b>, click <b>Shot Type</b>.</li> \r\n\
+        <li>Select the desired option.</li> \r\n \r\n\
+        </ol> "
+    "15": 
+      updated_by_id: 
+      name: changing-clubs
+      created_at: 2010-06-04 18:13:46.309398 Z
+      filter_id: ""
+      updated_at: 2010-06-04 18:13:46.309398 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 15
+      content: "<p>3DD Golf selects the appropriate club dependent on the distance to hole, but you can choose a different club. The club that you are using however should match the club in the <b>Club</b> field.</p> \r\n\
+        <h4>To change clubs</h4> \r\n\
+        <ul> \r\n\
+        <li>From the OptiShot taskbar, click the arrow keys beside the <b>Club</b> field  to select the appropriate club. The <b>Club</b> field displays a picture of each club type. </li>  \r\n\
+        </ul> "
+    "2": 
+      updated_by_id: 1
+      name: header
+      created_at: 2010-05-26 00:07:48.108879 Z
+      filter_id: ""
+      updated_at: 2010-05-26 19:50:08.058738 Z
+      created_by_id: 1
+      lock_version: 2
+      id: 2
+      content: |
+        <div id="header">
+        <img src="http://ddg-images.s3.amazonaws.com/Website/help/help-banner.png" width="900px" alt="Dancin' Dogg Golf" />
+        </div>
+
+    "3": 
+      updated_by_id: 
+      name: footer
+      created_at: 2010-05-26 00:08:06.973015 Z
+      filter_id: ""
+      updated_at: 2010-05-26 00:08:06.973015 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 3
+      content: Copyright &copy; <r:date format="%Y" /> your company. All rights reserved | <a href="mailto:info@yourcompany.com">Contact</a> | <a href="/sitemap">Site Map</a> | Powered by <a href="http://radiantcms.org/">Radiant</a>
+    "10": 
+      updated_by_id: 
+      name: view-replay
+      created_at: 2010-06-04 17:15:00.715651 Z
+      filter_id: ""
+      updated_at: 2010-06-04 17:15:00.715651 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 10
+      content: |-
+        <p>Once you take a shot, you can view it immediately. You can only view the last shot taken.</p> 
+        <ul> 
+        <li>From <b>Menu</b>, click <b>Replay</b>.</li> 
+        
+        </ul>
+    "4": 
+      updated_by_id: 1
+      name: navigation
+      created_at: 2010-05-26 00:08:55.423691 Z
+      filter_id: ""
+      updated_at: 2010-06-16 17:21:21.325845 Z
+      created_by_id: 1
+      lock_version: 4
+      id: 4
+      content: "<ul>\r\n  <r:navigation urls=\"Home: /\">\r\n      <r:normal><li><a href=\"<r:url />\"><r:title /></a></li></r:normal>\r\n      <r:here><li class=\"selected\"><a href=\"<r:url />\"><r:title /></a></li></r:here>\r\n      <r:selected><li><a href=\"<r:url />\"><r:title /></a></li></r:selected>\r\n  </r:navigation>\r\n  <r:navigation urls=\"FAQ: /faq-content\">\r\n    <r:normal><li><a href=\"<r:url />\"><r:title /></a></li></r:normal>\r\n    <r:here><li class=\"selected\"><a href=\"<r:url />\"><r:title /></a></li></r:here>\r\n    <r:selected><li class=\"selected\"><a href=\"<r:url />\"><r:title /></a></li></r:selected>\r\n  </r:navigation>\r\n\
+        </ul>    "
+    "5": 
+      updated_by_id: 1
+      name: clubset-config
+      created_at: 2010-06-04 16:29:27.069130 Z
+      filter_id: ""
+      updated_at: 2010-06-04 16:31:46.436560 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 5
+      content: |-
+        <p>A clubset is a collection of 14 club definitions that define the clubs that you use when
+        practicing with OptiShot. Think of them as the 14 clubs you regularly carry in your bag.</p> 
+        <p>OptiShot 2010 is provided with four default types of clubset configurations:
+        <ul><li> <b>Players: </b>Used by a large number of players, these clubs have a small offset
+        and usually a cavity or progressive cavity back.</li> 
+        <li><b>Muscle Back:</b> Used by better players, these clubs are often referred to as
+        blades and have a slight or no offset at all.</li> 
+        <li><b> Hybrid Irons:</b> An increasingly popular club set, these clubs offer an average
+        offset and replace the longer irons (usually 5-3) with hybrid irons.</li> 
+        <li><b>Game Improvement:</b> Also a very common club favored by less experienced
+        players, these clubs feature a larger offset and cavity back.</li> 
+        </ul> 
+        <p>We have worked hard to provide defaults that should work very well for most players. If you
+        like to have everything tweaked-out just right then you should consider fine tuning your
+        clubs and creating a new clubset configuration. You cannot edit any of the 4 default clubsets.</p> 
+        
+        <h4>Configure new clubsets</h4> 
+        <ol> 
+        <li>From <b>Menu</b>, click <b>Clubsets</b>. The <b>Clubset Configuration</b> dialog box appears.</li> 
+        <li>Click <b>New</b>. The <b>New Clubset</b> field appears.</li> 
+        <li>In the <b>Clubset Name</b> field, enter a unique, appropriate name for your clubsets.</li> 
+        <li>In the <b>Copy of</b> field, select the clubs that the new clubs most resemble, and then click <b>OK</b>. The name now appears in the Clubset list.</li> 
+        <li>Select the new clubset, and then click <b>Edit</b>. The <b>Edit Club</b> page appears.</li> 
+        <li>In the <b>Type</b> field, select the type of club, and complete all fields related to that club. 
+        <table class="wikistyle"> 
+          <tr> 
+             <th>Field</th> 
+             <th>Description</th> 
+        	 
+          </tr> 
+          <tr> 
+          <td>Type</td> 
+             <td>Select the first club in your clubset. Once you click <b>Next</b>, you will continue with the same information for each club in your clubset.</td> 
+        	   </tr> 
+        	   <tr> 
+          <td>Shaft Length</td> 
+             <td>Length of the club shaft (such as, 39 inches).</td> 
+        	   </tr> 
+        	    <tr> 
+          <td>Avg. Distance</td> 
+             <td>The distance at which you want this club to be used automatically by Auto Caddie within OptiShot. It will appear automatically in the <b>Club</b> field when this distance to hole is reached.</td> 
+        	   </tr> 
+        	    <tr> 
+        	   <td>Loft</td> 
+             <td>Loft of the club in degrees (such as, 27 degrees).</td> 
+        	   </tr> 
+        	    <tr> 
+        	   <td>Offset</td> 
+             <td>The amount that the hosel is offset from the face of the club. You may find that your club manufacturer provides club
+        specifications on their website. This is the most accurate source of this
+        information. If not you can contact them and they can usually provide a
+        specification sheet for your clubs.</td> 
+        	   </tr> 
+        	    <tr> 
+        	   <td>Speed Adj.</td> 
+             <td>Changing this percentage affects clubhead speed and distance hit.</td> 
+        	   </tr> 
+        	    <tr> 
+        	   <td>Distance Adj.</td> 
+             <td>This can be used to adjust the distance
+        calculation. This also can be used as a handicap, for example, if you are playing with a novice, you can change this to 200% and their shots will go twice as far, thus making things even.</td> 
+        	   </tr> 
+        	   
+        </table> 
+        
+        
+        </li> 
+        <li>Click <b>Next</b>.</li> 
+        <li>Repeat the previous two steps for all clubs in the clubset, and then click <b>OK</b>. You are returned to the fairway.</li> 
+        </ol> 
+        
+        <p> <b>Note:</b> You can also use the <a href="#keyboard-options">keyboard shortcuts</a> to edit the current club in a custom configuration.
+  Pages: 
+    "55": 
+      updated_by_id: 1
+      slug: faq3
+      position: 2
+      class_name: ""
+      created_at: 2010-06-04 20:51:43.530695 Z
+      virtual: false
+      title: How do I update my OptiShot software without an Internet connection?
+      updated_at: 2010-06-04 20:51:53.715216 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 55
+      breadcrumb: How do I update my OptiShot software without an Internet connection?
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:51:53.707652 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "44": 
+      updated_by_id: 
+      slug: view-a-replay
+      position: 12
+      class_name: ""
+      created_at: 2010-06-04 17:15:29.321240 Z
+      virtual: false
+      title: View a Replay
+      updated_at: 2010-06-04 17:15:29.321240 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 44
+      breadcrumb: View a Replay
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 10:15:29.312423 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "22": 
+      updated_by_id: 1
+      slug: pick-up-ball
+      position: 6
+      class_name: ""
+      created_at: 2010-06-03 23:30:22.800278 Z
+      virtual: false
+      title: Pick Up Ball
+      updated_at: 2010-06-04 01:21:19.585057 Z
+      created_by_id: 1
+      lock_version: 12
+      id: 22
+      breadcrumb: Pick Up Ball
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:32:16.307227 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "11": 
+      updated_by_id: 
+      slug: reset
+      position: 3
+      class_name: ""
+      created_at: 2010-05-27 00:17:21.237350 Z
+      virtual: false
+      title: Reset
+      updated_at: 2010-06-04 01:19:08.072952 Z
+      created_by_id: 1
+      lock_version: 3
+      id: 11
+      breadcrumb: Reset
+      parent_id: 1
+      status_id: 100
+      published_at: 2010-05-26 17:17:21.230217 Z
+      description: ""
+      layout_id: 2
+      keywords: ""
+    "6": 
+      updated_by_id: 
+      slug: installation
+      position: 3
+      class_name: ""
+      created_at: 2010-05-26 22:57:00.192294 Z
+      virtual: false
+      title: Installation
+      updated_at: 2010-06-04 01:19:08.110738 Z
+      created_by_id: 1
+      lock_version: 13
+      id: 6
+      breadcrumb: Installation
+      parent_id: 3
+      status_id: 100
+      published_at: 2010-05-26 15:57:00.183387 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "33": 
+      updated_by_id: 11
+      slug: select-course
+      position: 2
+      class_name: ""
+      created_at: 2010-06-04 16:17:10.509370 Z
+      virtual: false
+      title: Select a Course
+      updated_at: 2010-07-20 15:38:47.379133 Z
+      created_by_id: 1
+      lock_version: 4
+      id: 33
+      breadcrumb: Select a Course
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 00:00:00 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "56": 
+      updated_by_id: 
+      slug: faq4
+      position: 3
+      class_name: ""
+      created_at: 2010-06-04 20:52:51.843715 Z
+      virtual: false
+      title: If I already own a Dancin' Dogg how can I upgrade to 3DD?
+      updated_at: 2010-06-04 20:52:51.843715 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 56
+      breadcrumb: If I already own a Dancin' Dogg how can I upgrade to 3DD?
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:52:51.830823 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "45": 
+      updated_by_id: 
+      slug: change-options
+      position: 13
+      class_name: ""
+      created_at: 2010-06-04 17:16:31.346856 Z
+      virtual: false
+      title: Change Options
+      updated_at: 2010-06-04 17:16:31.346856 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 45
+      breadcrumb: Change Options
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 10:16:31.333310 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "34": 
+      updated_by_id: 1
+      slug: set-up-your-shot
+      position: 3
+      class_name: ""
+      created_at: 2010-06-04 16:18:55.693206 Z
+      virtual: false
+      title: Set Up Your Shot
+      updated_at: 2010-06-04 18:15:05.690257 Z
+      created_by_id: 1
+      lock_version: 2
+      id: 34
+      breadcrumb: Set Up Your Shot
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 09:18:55.678445 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "23": 
+      updated_by_id: 1
+      slug: take-a-mulligan
+      position: 7
+      class_name: ""
+      created_at: 2010-06-03 23:31:11.246782 Z
+      virtual: false
+      title: Take a Mulligan
+      updated_at: 2010-06-04 01:21:38.688731 Z
+      created_by_id: 1
+      lock_version: 14
+      id: 23
+      breadcrumb: Take a Mulligan
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:32:25.708971 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "7": 
+      updated_by_id: 
+      slug: practicezoneoverview
+      position: 4
+      class_name: ""
+      created_at: 2010-05-26 22:57:48.787011 Z
+      virtual: false
+      title: Practice Zone Overview
+      updated_at: 2010-06-04 01:19:08.275727 Z
+      created_by_id: 1
+      lock_version: 22
+      id: 7
+      breadcrumb: Practice Zone Overview
+      parent_id: 3
+      status_id: 100
+      published_at: 2010-05-26 15:57:48.773848 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "57": 
+      updated_by_id: 
+      slug: faq5
+      position: 4
+      class_name: ""
+      created_at: 2010-06-04 20:53:37.849139 Z
+      virtual: false
+      title: Can I use the OptiShot outside?
+      updated_at: 2010-06-04 20:53:37.849139 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 57
+      breadcrumb: Can I use the OptiShot outside?
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:53:37.838942 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "35": 
+      updated_by_id: 
+      slug: clubset-configuration
+      position: 4
+      class_name: ""
+      created_at: 2010-06-04 16:30:41.032185 Z
+      virtual: false
+      title: Clubset Configuration
+      updated_at: 2010-06-04 16:30:41.032185 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 35
+      breadcrumb: Clubset Configuration
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 09:30:41.023229 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "24": 
+      updated_by_id: 1
+      slug: clear-tracers
+      position: 8
+      class_name: ""
+      created_at: 2010-06-03 23:31:32.810820 Z
+      virtual: false
+      title: Clear Tracers
+      updated_at: 2010-06-04 01:21:49.199100 Z
+      created_by_id: 1
+      lock_version: 17
+      id: 24
+      breadcrumb: Clear Tracers
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:32:09.491964 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "8": 
+      updated_by_id: 
+      slug: savingagame
+      position: 5
+      class_name: ""
+      created_at: 2010-05-26 22:59:08.282013 Z
+      virtual: false
+      title: Saving a Game
+      updated_at: 2010-06-04 01:19:08.285600 Z
+      created_by_id: 1
+      lock_version: 24
+      id: 8
+      breadcrumb: Saving a Game
+      parent_id: 3
+      status_id: 100
+      published_at: 2010-05-26 15:59:08.270196 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "13": 
+      updated_by_id: 11
+      slug: accessing-the-play-mode-in-optishot-2010
+      position: 1
+      class_name: ""
+      created_at: 2010-06-03 22:34:53.869868 Z
+      virtual: false
+      title: Accessing the Play Mode in OptiShot 2010
+      updated_at: 2010-07-20 15:59:58.050087 Z
+      created_by_id: 1
+      lock_version: 36
+      id: 13
+      breadcrumb: Accessing the Play Mode in OptiShot 2010
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 00:00:00 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "14": 
+      updated_by_id: 11
+      slug: setup-a-game
+      position: 2
+      class_name: ""
+      created_at: 2010-06-03 22:36:16.009751 Z
+      virtual: false
+      title: Setup a Game
+      updated_at: 2010-06-18 20:48:14.135077 Z
+      created_by_id: 1
+      lock_version: 37
+      id: 14
+      breadcrumb: Setup a Game
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 00:00:00 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "58": 
+      updated_by_id: 
+      slug: faq6
+      position: 5
+      class_name: ""
+      created_at: 2010-06-04 20:55:29.616068 Z
+      virtual: false
+      title: Can the program calculate in Kilometers?
+      updated_at: 2010-06-04 20:55:29.616068 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 58
+      breadcrumb: Can the program calculate in Kilometers?
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:55:29.607616 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "47": 
+      updated_by_id: 1
+      slug: view-scorecard
+      position: 15
+      class_name: ""
+      created_at: 2010-06-04 17:45:28.165042 Z
+      virtual: false
+      title: View Scorecard
+      updated_at: 2010-06-04 17:47:37.916209 Z
+      created_by_id: 1
+      lock_version: 2
+      id: 47
+      breadcrumb: View Scorecard
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-04 10:45:28.155184 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "36": 
+      updated_by_id: 1
+      slug: clear-tracers
+      position: 5
+      class_name: ""
+      created_at: 2010-06-04 16:34:26.906256 Z
+      virtual: false
+      title: Clear Tracers
+      updated_at: 2010-06-04 17:33:04.611151 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 36
+      breadcrumb: Clear Tracers
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 09:34:26.897002 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "25": 
+      updated_by_id: 1
+      slug: keyboard-options
+      position: 9
+      class_name: ""
+      created_at: 2010-06-03 23:32:00.860799 Z
+      virtual: false
+      title: Keyboard Options
+      updated_at: 2010-06-04 01:21:59.830913 Z
+      created_by_id: 1
+      lock_version: 17
+      id: 25
+      breadcrumb: Keyboard Options
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:32:00.852174 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "9": 
+      updated_by_id: 1
+      slug: trouble-shooting
+      position: 6
+      class_name: ""
+      created_at: 2010-05-26 23:00:24.857893 Z
+      virtual: false
+      title: Trouble Shooting
+      updated_at: 2010-06-15 22:06:49.237823 Z
+      created_by_id: 1
+      lock_version: 12
+      id: 9
+      breadcrumb: Trouble Shooting
+      parent_id: 3
+      status_id: 100
+      published_at: 2010-05-26 16:00:37.811664 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "60": 
+      updated_by_id: 
+      slug: faq8
+      position: 7
+      class_name: ""
+      created_at: 2010-06-04 20:58:16.585619 Z
+      virtual: false
+      title: I own more than one OptiShot Simulator how do I add a Premium Course to all my   systems?
+      updated_at: 2010-06-04 20:58:16.585619 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 60
+      breadcrumb: I own more than one OptiShot Simulator how do I add a Premium Course to all my   systems?
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:58:16.576606 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "59": 
+      updated_by_id: 
+      slug: faq7
+      position: 6
+      class_name: ""
+      created_at: 2010-06-04 20:57:24.374679 Z
+      virtual: false
+      title: Where can I locate my OptiShot product key?
+      updated_at: 2010-06-04 20:57:24.374679 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 59
+      breadcrumb: Where can I locate my OptiShot product key?
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:57:24.366055 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "48": 
+      updated_by_id: 1
+      slug: change-ball-type
+      position: 16
+      class_name: ""
+      created_at: 2010-06-04 17:49:32.245841 Z
+      virtual: false
+      title: Selecting Ball Type
+      updated_at: 2010-06-04 17:58:03.170845 Z
+      created_by_id: 1
+      lock_version: 7
+      id: 48
+      breadcrumb: Selecting Ball Type
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-04 10:50:18.404390 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "37": 
+      updated_by_id: 1
+      slug: follow-ball
+      position: 6
+      class_name: ""
+      created_at: 2010-06-04 16:34:54.448733 Z
+      virtual: false
+      title: Follow Ball
+      updated_at: 2010-06-04 17:36:56.721077 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 37
+      breadcrumb: Follow Ball
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 09:34:54.434735 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "15": 
+      updated_by_id: 1
+      slug: set-up-your-shot
+      position: 3
+      class_name: ""
+      created_at: 2010-06-03 22:37:19.055062 Z
+      virtual: false
+      title: Set Up Your Shot
+      updated_at: 2010-06-04 17:51:28.329759 Z
+      created_by_id: 1
+      lock_version: 37
+      id: 15
+      breadcrumb: Set Up Your Shot
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 15:37:19.046073 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "61": 
+      updated_by_id: 
+      slug: faq9
+      position: 8
+      class_name: ""
+      created_at: 2010-06-04 20:58:52.454456 Z
+      virtual: false
+      title: "I have a Dancin\xE2\x80\x99Dogg Shot Making Simulator, how can I play my Premium Course?"
+      updated_at: 2010-06-04 20:58:52.454456 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 61
+      breadcrumb: "I have a Dancin\xE2\x80\x99Dogg Shot Making Simulator, how can I play my Premium Course?"
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:58:52.444915 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "50": 
+      updated_by_id: 1
+      slug: changing-clubs
+      position: 15
+      class_name: ""
+      created_at: 2010-06-04 18:14:19.394929 Z
+      virtual: false
+      title: Changing Clubs
+      updated_at: 2010-06-04 18:15:05.707810 Z
+      created_by_id: 1
+      lock_version: 6
+      id: 50
+      breadcrumb: Changing Clubs
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 11:14:33.180984 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "49": 
+      updated_by_id: 1
+      slug: change-ball-type
+      position: 14
+      class_name: ""
+      created_at: 2010-06-04 17:50:50.569103 Z
+      virtual: false
+      title: Selecting Ball Type
+      updated_at: 2010-06-04 18:14:58.234853 Z
+      created_by_id: 1
+      lock_version: 5
+      id: 49
+      breadcrumb: Selecting Ball Type
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 10:50:50.557282 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "38": 
+      updated_by_id: 1
+      slug: keyboard-options
+      position: 7
+      class_name: ""
+      created_at: 2010-06-04 16:53:44.339316 Z
+      virtual: false
+      title: Keyboard Options
+      updated_at: 2010-06-04 17:00:56.105661 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 38
+      breadcrumb: Keyboard Options
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 09:53:44.330573 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "27": 
+      updated_by_id: 1
+      slug: view-shotdata
+      position: 10
+      class_name: ""
+      created_at: 2010-06-03 23:33:58.936296 Z
+      virtual: false
+      title: View Shot Data
+      updated_at: 2010-06-04 18:08:08.834268 Z
+      created_by_id: 1
+      lock_version: 21
+      id: 27
+      breadcrumb: View Shot Data
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:34:49.997001 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "16": 
+      updated_by_id: 1
+      slug: clubset-configuration
+      position: 4
+      class_name: ""
+      created_at: 2010-06-03 22:38:13.359291 Z
+      virtual: false
+      title: Clubset Configuration
+      updated_at: 2010-06-04 01:20:51.758130 Z
+      created_by_id: 1
+      lock_version: 34
+      id: 16
+      breadcrumb: Clubset Configuration
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 15:38:13.348373 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "62": 
+      updated_by_id: 1
+      slug: my-simulator-is-reporting-inaccurate-or-nonsensical-swing-results
+      position: 1
+      class_name: ""
+      created_at: 2010-06-15 22:59:46.412088 Z
+      virtual: false
+      title: "My simulator is reporting inaccurate or nonsensical swing results "
+      updated_at: 2010-06-15 23:02:29.111645 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 62
+      breadcrumb: "My simulator is reporting inaccurate or nonsensical swing results "
+      parent_id: 9
+      status_id: 100
+      published_at: 2010-06-15 15:59:46.398953 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "51": 
+      updated_by_id: 1
+      slug: faq-content
+      position: 6
+      class_name: ""
+      created_at: 2010-06-04 18:32:18.426373 Z
+      virtual: false
+      title: FAQ Content
+      updated_at: 2010-06-04 18:32:38.659117 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 51
+      breadcrumb: FAQ Content
+      parent_id: 1
+      status_id: 100
+      published_at: 2010-06-04 11:32:18.412987 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "40": 
+      updated_by_id: 1
+      slug: view-shotdata
+      position: 8
+      class_name: ""
+      created_at: 2010-06-04 17:09:08.473349 Z
+      virtual: false
+      title: View Shot Data
+      updated_at: 2010-06-04 18:18:53.105030 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 40
+      breadcrumb: View Shot Data
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 10:09:08.463606 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "39": 
+      updated_by_id: 1
+      slug: practice-mode-content
+      position: 5
+      class_name: ""
+      created_at: 2010-06-04 16:58:59.694338 Z
+      virtual: false
+      title: Practice Mode Content
+      updated_at: 2010-06-04 17:05:46.032224 Z
+      created_by_id: 1
+      lock_version: 2
+      id: 39
+      breadcrumb: Practice Mode Content
+      parent_id: 1
+      status_id: 100
+      published_at: 2010-06-04 10:05:46.023651 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "1": 
+      updated_by_id: 11
+      slug: /
+      position: 1
+      class_name: ""
+      created_at: 2010-05-14 01:10:34.513457 Z
+      virtual: false
+      title: Home
+      updated_at: 2010-07-20 14:44:32.908423 Z
+      created_by_id: 1
+      lock_version: 7
+      id: 1
+      breadcrumb: Home
+      parent_id: 
+      status_id: 100
+      published_at: 2010-05-13 00:00:00 Z
+      description: ""
+      layout_id: 1
+      keywords: ""
+    "28": 
+      updated_by_id: 1
+      slug: view-a-flyby
+      position: 11
+      class_name: ""
+      created_at: 2010-06-03 23:34:42.019290 Z
+      virtual: false
+      title: View a Flyby
+      updated_at: 2010-06-04 01:23:50.148838 Z
+      created_by_id: 1
+      lock_version: 23
+      id: 28
+      breadcrumb: View a Flyby
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:34:59.124930 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "63": 
+      updated_by_id: 1
+      slug: my-system-wont-run-at-all-or-goes-blank-when-i-try-to-run-it
+      position: 2
+      class_name: ""
+      created_at: 2010-06-15 23:00:19.805552 Z
+      virtual: false
+      title: My system won't run at all or goes blank when I try to run it
+      updated_at: 2010-06-15 23:03:16.015149 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 63
+      breadcrumb: My system won't run at all or goes blank when I try to run it
+      parent_id: 9
+      status_id: 100
+      published_at: 2010-06-15 16:00:19.795294 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "41": 
+      updated_by_id: 
+      slug: change-holes
+      position: 9
+      class_name: ""
+      created_at: 2010-06-04 17:10:26.643059 Z
+      virtual: false
+      title: Change Holes
+      updated_at: 2010-06-04 17:10:26.643059 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 41
+      breadcrumb: Change Holes
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 10:10:26.632613 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "30": 
+      updated_by_id: 1
+      slug: view-a-replay
+      position: 13
+      class_name: ""
+      created_at: 2010-06-03 23:36:11.804478 Z
+      virtual: false
+      title: View a Replay
+      updated_at: 2010-06-04 01:24:02.083363 Z
+      created_by_id: 1
+      lock_version: 27
+      id: 30
+      breadcrumb: View a Replay
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:36:11.796166 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "29": 
+      updated_by_id: 1
+      slug: change-shot-type
+      position: 12
+      class_name: ""
+      created_at: 2010-06-03 23:35:40.596791 Z
+      virtual: false
+      title: Change Your Shot Type
+      updated_at: 2010-06-04 17:59:19.911325 Z
+      created_by_id: 1
+      lock_version: 31
+      id: 29
+      breadcrumb: Change Your Shot Type
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:35:40.589929 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "2": 
+      updated_by_id: 1
+      slug: styles.css
+      position: 1
+      class_name: ""
+      created_at: 2010-05-14 02:13:55.082546 Z
+      virtual: false
+      title: Styles
+      updated_at: 2010-06-16 18:09:37.076473 Z
+      created_by_id: 1
+      lock_version: 13
+      id: 2
+      breadcrumb: Styles
+      parent_id: 1
+      status_id: 100
+      published_at: 2010-05-15 08:48:54.280790 Z
+      description: ""
+      layout_id: 2
+      keywords: ""
+    "42": 
+      updated_by_id: 
+      slug: view-a-flyby
+      position: 10
+      class_name: ""
+      created_at: 2010-06-04 17:11:57.763156 Z
+      virtual: false
+      title: View a Flyby
+      updated_at: 2010-06-04 17:11:57.763156 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 42
+      breadcrumb: View a Flyby
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 10:11:57.754958 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "31": 
+      updated_by_id: 1
+      slug: change-options
+      position: 14
+      class_name: ""
+      created_at: 2010-06-03 23:37:00.796573 Z
+      virtual: false
+      title: Change Options
+      updated_at: 2010-06-04 17:47:37.906522 Z
+      created_by_id: 1
+      lock_version: 34
+      id: 31
+      breadcrumb: Change Options
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:37:00.789732 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "20": 
+      updated_by_id: 1
+      slug: changing-clubs
+      position: 5
+      class_name: ""
+      created_at: 2010-06-03 23:28:49.013568 Z
+      virtual: false
+      title: Changing Clubs
+      updated_at: 2010-06-04 01:21:02.708632 Z
+      created_by_id: 1
+      lock_version: 9
+      id: 20
+      breadcrumb: Changing Clubs
+      parent_id: 5
+      status_id: 100
+      published_at: 2010-06-03 16:28:49.002801 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "19": 
+      updated_by_id: 1
+      slug: play-mode-content
+      position: 4
+      class_name: ""
+      created_at: 2010-06-03 22:58:30.377174 Z
+      virtual: false
+      title: Play Mode Content
+      updated_at: 2010-06-04 17:01:56.397348 Z
+      created_by_id: 1
+      lock_version: 5
+      id: 19
+      breadcrumb: Play Mode Content
+      parent_id: 1
+      status_id: 100
+      published_at: 2010-06-03 15:58:30.369840 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "3": 
+      updated_by_id: 1
+      slug: topics
+      position: 2
+      class_name: ""
+      created_at: 2010-05-25 23:46:55.158546 Z
+      virtual: false
+      title: Topics
+      updated_at: 2010-06-15 23:13:23.749368 Z
+      created_by_id: 1
+      lock_version: 13
+      id: 3
+      breadcrumb: FAQ
+      parent_id: 1
+      status_id: 100
+      published_at: 2010-05-25 18:39:05.177744 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "54": 
+      updated_by_id: 1
+      slug: faq2
+      position: 1
+      class_name: ""
+      created_at: 2010-06-04 20:32:14.624335 Z
+      virtual: false
+      title: How do I update my OpitShot software?
+      updated_at: 2010-06-04 20:49:51.078042 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 54
+      breadcrumb: How do I update my OpitShot software?
+      parent_id: 10
+      status_id: 100
+      published_at: 2010-06-04 13:32:14.613695 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "43": 
+      updated_by_id: 1
+      slug: change-shot-type
+      position: 11
+      class_name: ""
+      created_at: 2010-06-04 17:14:04.593163 Z
+      virtual: false
+      title: Change Your Shot Type
+      updated_at: 2010-06-04 17:59:38.428827 Z
+      created_by_id: 1
+      lock_version: 1
+      id: 43
+      breadcrumb: Change Your Shot Type
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 10:14:04.583910 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "32": 
+      updated_by_id: 11
+      slug: accessing-the-practice-mode-in-optishot-2010
+      position: 1
+      class_name: ""
+      created_at: 2010-06-04 16:15:44.330235 Z
+      virtual: false
+      title: Accessing the Practice Mode in OptiShot 2010
+      updated_at: 2010-06-30 20:14:37.705646 Z
+      created_by_id: 1
+      lock_version: 3
+      id: 32
+      breadcrumb: Accessing the Practice Mode in OptiShot 2010
+      parent_id: 4
+      status_id: 100
+      published_at: 2010-06-04 00:00:00 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "10": 
+      updated_by_id: 1
+      slug: faq
+      position: 7
+      class_name: ""
+      created_at: 2010-05-26 23:01:07.377877 Z
+      virtual: false
+      title: Frequently Asked Questions
+      updated_at: 2010-06-04 18:37:38.259448 Z
+      created_by_id: 1
+      lock_version: 21
+      id: 10
+      breadcrumb: Frequently Asked Questions
+      parent_id: 3
+      status_id: 100
+      published_at: 2010-05-26 16:01:07.364724 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "4": 
+      updated_by_id: 11
+      slug: practicemode
+      position: 1
+      class_name: ""
+      created_at: 2010-05-26 22:06:14.141757 Z
+      virtual: false
+      title: Practice Mode
+      updated_at: 2010-07-20 14:55:31.121969 Z
+      created_by_id: 1
+      lock_version: 16
+      id: 4
+      breadcrumb: Practice Mode
+      parent_id: 3
+      status_id: 100
+      published_at: 2010-05-26 00:00:00 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+    "5": 
+      updated_by_id: 11
+      slug: playmode
+      position: 2
+      class_name: ""
+      created_at: 2010-05-26 22:08:08.092876 Z
+      virtual: false
+      title: Play Mode
+      updated_at: 2010-07-20 15:57:40.146301 Z
+      created_by_id: 1
+      lock_version: 21
+      id: 5
+      breadcrumb: Play Mode
+      parent_id: 3
+      status_id: 100
+      published_at: 2010-05-26 00:00:00 Z
+      description: ""
+      layout_id: 
+      keywords: ""
+  Layouts: 
+    "1": 
+      updated_by_id: 1
+      name: Default
+      created_at: 2010-05-14 02:09:07.612765 Z
+      content_type: ""
+      updated_at: 2010-06-16 17:09:16.096827 Z
+      created_by_id: 1
+      lock_version: 8
+      id: 1
+      content: |
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+        <html>
+          <head>
+            <title><r:title /></title>
+        <!--
+            <link href="/rss/" rel="alternate" title="RSS" type="application/rss+xml" />
+        -->
+            <link rel="stylesheet" type="text/css" href="/reset.css" />
+            <link rel="stylesheet" type="text/css" href="/styles.css" />
+            <script type="text/javascript" src="http://dd-web.s3.amazonaws.com/swfobject.js"></script>
+            <script type="text/javascript" src="http://dd-web.s3.amazonaws.com/prototype.js"></script>
+            <script type="text/javascript" src="http://dd-web.s3.amazonaws.com/scriptaculous.js?load=effects,builder"></script>
+            <script type="text/javascript" src="http://dd-web.s3.amazonaws.com/lightbox.js"></script>
+        
+            <!--[if IE 6]>
+              <style type="text/css" media="screen">
+                @import url("/stylesheets/ie6.css");
+              </style>
+            <![endif]-->
+        
+            <!--[if IE 7]>
+              <style type="text/css" media="screen">
+                @import url("/stylesheets/ie7.css");
+              </style>
+            <![endif]-->
+        
+          </head>
+          <body>
+            <div id="page">
+              <r:snippet name="header" />
+              <div id="nav">
+                <r:snippet name="navigation" />
+              </div>
+              <div id="main">
+                <div id="content-wrapper">
+                  <div id="content">
+                    <r:content />
+                    <r:if_content part="extended">
+                    <div id="extended">
+                      <r:content part="extended" />
+                    </div>
+                    </r:if_content>
+                  </div>
+                </div>
+                <div id="sidebar-wrapper">
+                  <div id="sidebar">
+                    <r:content part="sidebar" inherit="true" />
+                  </div>
+                </div>
+              </div>
+            <div style="clear:both"></div>
+            </div>
+          </body>
+          <div id="footer-wrapper">
+            <div id="footer">
+              <r:snippet name="footer" />
+            </div>
+          </div>
+        </html>
+
+    "2": 
+      updated_by_id: 
+      name: Stylesheet
+      created_at: 2010-05-14 02:14:56.805416 Z
+      content_type: text/css
+      updated_at: 2010-05-14 02:14:56.805416 Z
+      created_by_id: 1
+      lock_version: 0
+      id: 2
+      content: <r:content/>
+  PageParts: 
+    "57": 
+      name: extended
+      filter_id: ""
+      page_id: 28
+      id: 57
+      content: ""
+    "123": 
+      name: extended
+      filter_id: ""
+      page_id: 61
+      id: 123
+      content: ""
+    "102": 
+      name: body
+      filter_id: ""
+      page_id: 51
+      id: 102
+      content: |
+        <div class="box">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="wikistyle"> 
+        <!-- List topic content -->
+        <r:find url="/topics/faq">
+          <r:children:each>
+                <h2 id="<r:slug/>"><r:title/></h2>
+                <p><r:content/></p>
+          </r:children:each>
+        </r:find>
+        </div>
+
+    "15": 
+      name: extended
+      filter_id: ""
+      page_id: 7
+      id: 15
+      content: ""
+    "8": 
+      name: body
+      filter_id: ""
+      page_id: 4
+      id: 8
+      content: |
+        <p> 
+        OptiShot 2010 allows you to practice golf shots on a realistic Driving Range or on replications of several famous golf courses. The Driving Range features several target greens and 'Birdie Rings' around each flag. In practice mode you can drop the ball anywhere on any course allowing you to practice all your different shots. Practice mode on each course features a "Never Follow" and "Always Follow" option where you can either set up the same shot over and over again or follow the ball to the hole. You can view the actual ball flight, your swing statistics after each shot, a bird's eye view of that ball, and even watch a replay.</p> 
+        <p>The following topics are available to help you work in the practice mode:</p> 
+        
+        <!-- List a table of contents -->
+        <ol> 
+        <r:find url="/topics/practicemode">
+          <r:children:each>
+                <li><a href="/practice-mode-content#<r:slug/>"><r:title /></a></li>
+          </r:children:each>
+        </r:find>
+        </ol>
+
+    "80": 
+      name: body
+      filter_id: ""
+      page_id: 40
+      id: 80
+      content: <r:snippet name="view-shot-data" />
+    "78": 
+      name: body
+      filter_id: ""
+      page_id: 39
+      id: 78
+      content: |
+        <div class="wikistyle"> 
+        <!-- List topic content -->
+        <r:find url="/topics/practicemode">
+          <r:children:each>
+                <h2 id="<r:slug/>"><r:title/></h2>
+                <p><r:content/></p>
+          </r:children:each>
+        </r:find>
+        </div>
+
+    "99": 
+      name: extended
+      filter_id: ""
+      page_id: 49
+      id: 99
+      content: ""
+    "81": 
+      name: extended
+      filter_id: ""
+      page_id: 40
+      id: 81
+      content: ""
+    "103": 
+      name: extended
+      filter_id: ""
+      page_id: 51
+      id: 103
+      content: ""
+    "79": 
+      name: extended
+      filter_id: ""
+      page_id: 39
+      id: 79
+      content: ""
+    "124": 
+      name: body
+      filter_id: ""
+      page_id: 62
+      id: 124
+      content: "<div class=\"wikistyle\"> \r\n\
+        <h3>Troubleshooting Checklist</h3>\r\n\
+        \r\n\
+        <p>If you are experiencing trouble with the OptiShot Infrared Golf Simulator follow the steps bellow to ensure that the OptiShot is properly setup on your PC.</p>\r\n\
+        \r\n\
+        <h2>Installation Check</h2>\r\n\
+        \r\n\
+        <p>The first step is to make sure you have downloaded and are running the latest version of your software. If you are an OptiShot 2.1 or 2010 user you can download the latest version here:&nbsp;\r\n\
+        <a href=\"http://www.dancindogg.com/golf_simulator/downloads\">OptiShot 2010 Download</a>\r\n\
+        </p>\r\n\
+        <p>\r\n\
+        If you have not upgraded to the OptiShot 2.0 software then you should be running version 1.25 of the software which can be downloaded here:<br/>\r\n\
+        <a href=\"http://www.dancindogg.com/golf_simulator/download_legacy\">1.25 Download</a>\r\n\
+        </p>\r\n\
+        \r\n\
+        <h2>Optimizing your Lighting Environment</h2>\r\n\
+        <ul>\r\n\
+        <li>Fluorescent lighting is best.</li>\r\n\
+        <li>Warehouse lighting such as Sodium Vapor or Metal Halide also works very well.</li>\r\n\
+        <li>Eliminate incandescent, halogen, and any outside day light from the area you are using the device. Even small amounts of indirect light from these sources may affect performance.</li>\r\n\
+        <li>Overhead light is generally better than light from the side of the room.</li>\r\n\
+        <li>Eliminate any object that may cause shadows from crossing the sensors. This includes the shadow of the club shaft and silhouette of the golfer.</li>\r\n\
+        </ul>\r\n\
+        \r\n\
+        <h2>Check the Turf on your Swing Pad</h2>\r\n\
+        \r\n\
+        <p>After repeated use the turf may shift forward and obscure the sensors. To correct remove the turf, insert a tall tee, and reseat the turf. Loose edges of the synthetic turf can obscure and interfere with the sensors of the pad. When this occurs you should trim any overhanging turf pile.</p>\r\n\
+        \r\n\
+        <h2>Check for Proper USB Power</h2>\r\n\
+        \r\n\
+        <p>Extending the cable longer than 15ft can reduce the power to the unit and thus affect its performance. When using a USB extension we recommend using a powered USB hub. Having multiple USB powered peripherals connected to a computer can also sometimes cause problems. In this case try disconnecting the unneeded peripherals when using your simulator. Some computers are known to not provide enough voltage from the USB ports to power some USB devices. In this case we recommend using a powered USB hub to provide the Swing Pad with enough power to operate correctly.</p>\r\n\
+        \r\n\
+        <h2>How reflective are the irons you are using?</h2>\r\n\
+        \r\n\
+        <p>The more reflective the bottom of your clubs is, the better they will work with the swing pad.</p>\r\n\
+        \r\n\
+        <h2>Are you using a ball when you swing?</h2>\r\n\
+        \r\n\
+        <p>You should be using a ball and you should make sure that you select the proper ball type in the software to match the balls you are practicing with.</p>\r\n\
+        \r\n\
+        <h2>Where are you placing the ball?</h2>\r\n\
+        \r\n\
+        <p>If you are hitting off the tee then your ball placement is good. If you tee the ball too high this can sometime result in slower swing speeds due to the distance of the club from the sensors. When hitting the ball off the turf, you should place the ball in the same place the tee would normally go. Moving ball forward of this position can affect the accuracy of the results.</p>\r\n\
+        \r\n\
+        <h2>Do you take a divot?</h2>\r\n\
+        \r\n\
+        <p>Taking a divot when hitting off the turf can dramatically affect the calculated club head speed resulting is shots that do not go as far as expected. This is due to the nature of hitting off a synthetic turf surface and the effect it has in slowing down the club.</p>\r\n\
+        \r\n\
+        <h2>Are you getting consistent results, just more open or closed than expected?</h2>\r\n\
+        \r\n\
+        <p>If you are consistently getting the same readings but the results are not true than you may need to adjustment your clubset. If you\xE2\x80\x99re using game improvement type clubs with an offset hosel, try changing your club set selection to \xE2\x80\x98Game Improvement\xE2\x80\x99 clubs. You can read more about tuning your clubs in the following help document.\r\n\
+        <br/>\r\n\
+        <a href=\"/practice-mode-content#clubset-configuration\">Clubset Configuration</a>\r\n\
+        </p>\r\n\
+        \r\n\
+        <h2>With the proper setup and operating conditions your OptiShot simulator will provide you with accurate and consistent results.</h2>\r\n\
+        \r\n\
+        <p>If your issue has not been resolved, please select the option that best describes your situation:</p>\r\n\
+        \r\n\
+        <!--\r\n\
+        <p>\r\n\
+        <%=  link_to \"My simulator is reporting inaccurate swing results with my woods only\", { :action => \"driver_offer\" } %>\r\n\
+        <br/>\r\n\
+        <%=  link_to \"My system won't run at all or goes blank when I try to run it\", { :action => \"video_driver_help\" } %>\r\n\
+        <br/>\r\n\
+        <%=  link_to \"I am still having difficulty; I need to report an issue\", { :action => \"report_an_issue\" } %>\r\n\
+        </p>\r\n\
+        -->\r\n\
+        </div>"
+    "16": 
+      name: body
+      filter_id: ""
+      page_id: 8
+      id: 16
+      content: |
+        <p>During play mode, you can save a game at any point. If you exit before you save the game you are asked if you want to save the game. You can not save a practice mode session.<p> 
+        <b>To Save a Game:</b><br/>
+        <ol> 
+        <li>Click <b>Menu</b>, and then click <b>Save Game</b>. The <b>Save Game</b> box appears.<br> 
+        <b>Note:</b> You must complete at least one hole to have <b>Save Game</b> available.</li> 
+        <li>Complete the <b>File Name</b> field, and then click <b>Save</b>.</li> 
+        </ol> 
+        
+        <a href="Delete_a_saved_game.html">Delete a Saved Game</a><br> 
+        <a href="Play_a_saved_game.html">Play or Resume a Saved Game</a> 
+
+    "60": 
+      name: body
+      filter_id: ""
+      page_id: 30
+      id: 60
+      content: "<r:snippet name=\"view-replay\" /> "
+    "58": 
+      name: body
+      filter_id: ""
+      page_id: 29
+      id: 58
+      content: <r:snippet name="change-shottype" />
+    "9": 
+      name: extended
+      filter_id: ""
+      page_id: 4
+      id: 9
+      content: ""
+    "61": 
+      name: extended
+      filter_id: ""
+      page_id: 30
+      id: 61
+      content: ""
+    "59": 
+      name: extended
+      filter_id: ""
+      page_id: 29
+      id: 59
+      content: ""
+    "17": 
+      name: extended
+      filter_id: ""
+      page_id: 8
+      id: 17
+      content: ""
+    "125": 
+      name: extended
+      filter_id: ""
+      page_id: 62
+      id: 125
+      content: ""
+    "40": 
+      name: body
+      filter_id: ""
+      page_id: 20
+      id: 40
+      content: <r:snippet name="changing-clubs" />
+    "38": 
+      name: body
+      filter_id: ""
+      page_id: 19
+      id: 38
+      content: |
+        <div class="wikistyle"> 
+        <!-- List topic content -->
+        <r:find url="/topics/playmode">
+          <r:children:each>
+                <h2 id="<r:slug/>"><r:title/></h2>
+                <p><r:content/></p>
+          </r:children:each>
+        </r:find>
+        </div>
+
+    "82": 
+      name: body
+      filter_id: ""
+      page_id: 41
+      id: 82
+      content: "<p>Practice mode allows you to change holes at any point during your practice time.</p> \r\n \r\n\
+        <h2>To change holes</h2> \r\n\
+        <ol> \r\n\
+        <li>From <b>Menu</b>, click <b>Holes</b>.\r\n\
+        <br><b>Note:</b> The current hole is designated with a green check mark. Each hole shows the par information in parentheses.</li> \r\n\
+        <li>Select a desired hole. It may take a moment to find the new hole. A <b>Relocating</b> message appears.</li><br> \r\n\
+        <b>Note:</b> You can also use the <a href=\"Keyboard_options.html#holes\">keyboard shortcuts</a> to change holes.\r\n\
+        </ol> "
+    "41": 
+      name: extended
+      filter_id: ""
+      page_id: 20
+      id: 41
+      content: ""
+    "39": 
+      name: extended
+      filter_id: ""
+      page_id: 19
+      id: 39
+      content: ""
+    "83": 
+      name: extended
+      filter_id: ""
+      page_id: 41
+      id: 83
+      content: ""
+    "126": 
+      name: body
+      filter_id: ""
+      page_id: 63
+      id: 126
+      content: |-
+        <div class="wikistyle">
+        <h1>Video Drivers</h1>
+        <div id="extra" class="box">
+          <strong>The 3DD Golf program is designed to run with the latest video card drivers. If you have older drivers installed on your computer the program may not run well, or even run at all.</strong>
+        </div>
+        <p>
+        The video driver is software that is used to send on screen instructions from 3DD Golf
+        to your video graphics card.  It is critical that is the very latest driver.
+        </p>
+        
+        <p>
+        You should get the video driver from the same manufacturer that makes your video card.  
+        The one exception to this rule is with laptops. If you have a laptop you should 
+        get the latest driver from your laptop manufacturer.
+        </p>
+        
+        <h2>How to update your video card drivers in Windows</h2> 
+        
+        <h4>Step 1: Find the manufacturer and type of your video card</h4> 
+        <p>Normally you can find this information in the manual of your computer (look for technical specifications) or in Windows itself:</p> 
+        <ul> 
+        <li>Right-click on the desktop and select "Properties"</li> 
+        <li>In the Display Properties window, click on the "Settings" tab</li> 
+        <li>Your video card manufacturer and chipset type is mentioned on the "Display:" line</li> 
+        <li>Look for the names NVIDIA, ATI, Intel, Matrox, SiS or S3 (see picture below)</li> 
+        </ul> 
+        <div align="center"><img class="framed" src="http://dd-web.s3.amazonaws.com/images/video_driver_properties.jpg"  width="404" height="455" alt="Windows Display Properties" /><br />How to locate your video card Manufacturer</div> 
+        <p></p> 
+        <h4>Step 2: Get the latest drivers for your video card</h4> 
+        <p>Download and install the latest drivers for your type of video card:</p>
+        <h4>Laptop computers</h4> 
+        <p>If your computer is a laptop, we highly recommend that you visit the manufacturer's 
+        support/driver download page as they often provide specialized drivers for your system. 
+        Also, it is not uncommon that the official drivers from the video card manufacturer  
+        do not support your graphics chipset.</p>
+        <h4>Dell computers</h4> 
+        <p>If you are using a Dell system, you need to download the latest video card drivers for your computer from the <a href="http://support.dell.com/support/">Dell support site</a> instead of the video card manufacturer's website.</p>
+        <h4>HP or Compaq computers</h4> 
+        <p>If you are using an HP or Compaq system, you need to download the latest video card drivers for your computer from the <a href="http://welcome.hp.com/country/us/en/support.html">HP Support &amp; Drivers</a> page instead of the video card manufacturer's website. Enter your computer name or product number, select the "Software &amp; Driver downloads" section and locate the video drivers.</p>
+        <h4>NVIDIA cards</h4> 
+        <p>&raquo;&nbsp;<a href="http://www.nvidia.com/content/drivers/drivers.asp">NVIDIA driver download page</a><br /> 
+        Select your type of video card, your version of Windows and press <strong>Search</strong>. Download and install the latest driver.</p> 
+        <h4>ATI cards</h4> 
+        <p>&raquo;&nbsp;<a href="http://ati.amd.com/support/driver.html">ATI driver download page</a><br /> 
+        Select your version of Windows, your type of ATI video card (normally this would be <strong>RADEON</strong> or <strong>ALL-IN-WONDER</strong>) and download and install the latest <strong>Catalyst</strong> driver.</p> 
+        <h4>Intel cards</h4> 
+        <p>&raquo;&nbsp;<a href="http://www.intel.com/support/graphics/">Intel driver download page</a><br /> 
+        Select your Intel video card chipset from the <strong>Graphics</strong> entry in the <strong>Download Center</strong> menu, select your version of Windows and download and install the latest driver.</p> 
+        <h4>Matrox cards</h4> 
+        <p>&raquo;&nbsp;<a href="http://www.matrox.com/mga/support/drivers/certified/home.cfm">Matrox driver download page</a><br /> 
+        Download and install the driver corresponding to your video card chipset and Windows version.</p> 
+        <h4>VIA cards</h4> 
+        <p>&raquo;&nbsp;<a href="http://www.viaarena.com/default.aspx?PageID=2">VIA Arena driver download page</a><br /> 
+        Select your operating system and integrated graphics adapter and download and install the latest driver according to the instructions.<br /></p> 
+        <h4>SiS cards</h4> 
+        <p>&raquo;&nbsp;<a href="http://www.sis.com/download/">SiS driver download page</a><br /> 
+        Select your version of Windows, then <strong>IGP Graphics drivers</strong> if you have an onboard graphics card (part of the motherboard) or 
+        <strong>GPU Graphics drivers</strong> if you have a stand alone graphics card (in an expansion slot), choose your chipset and press the <strong>GO</strong> button. Download and install the latest driver.<br /></p> 
+        <h4>S3 cards</h4> 
+        <p>&raquo;&nbsp;<a href="http://www.s3graphics.com/en/resources/drivers/index.jsp">S3 driver download page</a><br /> 
+        Follow the instructions on the Driver Download page to find out what chipset your video card has and then download and install the corresponding driver.<br /></p> 
+        
+        
+        <h2>What if my driver does not work?</h2>
+        <p>
+          In some cases you may have a video card that is capable of running 3DD, but the video driver is not working.  
+          You should first make sure you have tried the 
+          latest video driver from the video card manufacturer, or in the case of a 
+          laptop from the laptop manufacturer.  
+          If that still does not work then you should try one of the 
+        <%= link_to 'Omega drivers', "http://www.omegadrivers.net/omega_drivers.php", :popup => ['3dd_external_window'] %>.<br/>    
+        <strong>Note: use of a video driver not made by the manufacturer may invalidate the warranty of the video card.</strong>
+        </p>
+        </div>
+    "20": 
+      name: body
+      filter_id: ""
+      page_id: 10
+      id: 20
+      content: |
+        <!-- List a table of contents -->
+        <ol> 
+        <r:find url="/topics/faq">
+          <r:children:each>
+                <li><a href="/faq-content#<r:slug/>"><r:title /></a></li>
+          </r:children:each>
+        </r:find>
+        </ol>
+
+    "18": 
+      name: body
+      filter_id: ""
+      page_id: 9
+      id: 18
+      content: |
+        <h4>Select the sympton you are experiencing to begin troubleshooting:</h4>
+        
+        <!-- List a table of contents -->
+        <ol> 
+        <r:find url="/topics/trouble-shooting">
+          <r:children:each>
+                <li><a href="/topics/trouble-shooting/<r:slug/>"><r:title /></a></li>
+          </r:children:each>
+        </r:find>
+        </ol>
+
+    "62": 
+      name: body
+      filter_id: ""
+      page_id: 31
+      id: 62
+      content: <r:snippet name="change-options" />
+    "63": 
+      name: extended
+      filter_id: ""
+      page_id: 31
+      id: 63
+      content: ""
+    "127": 
+      name: extended
+      filter_id: ""
+      page_id: 63
+      id: 127
+      content: ""
+    "21": 
+      name: extended
+      filter_id: ""
+      page_id: 10
+      id: 21
+      content: ""
+    "19": 
+      name: extended
+      filter_id: ""
+      page_id: 9
+      id: 19
+      content: ""
+    "84": 
+      name: body
+      filter_id: ""
+      page_id: 42
+      id: 84
+      content: <r:snippet name="view-flyby" />
+    "85": 
+      name: extended
+      filter_id: ""
+      page_id: 42
+      id: 85
+      content: ""
+    "64": 
+      name: body
+      filter_id: ""
+      page_id: 32
+      id: 64
+      content: "<ol> \r\n\
+        <li>From <b>Start</b>, click <b>All Programs</b>.</li> \r\n\
+        <li>Click <b>Dancin' Dogg Golf</b>.</li> \r\n\
+        <li>Click <b>OptiShot 2010</b>.</li>\r\n\
+        <li>Click the <b>OptiShot 2010 icon</b> to launch. An important message regarding your lighting and environment will appear. <br> \r\n\
+        <b>Note:</b> If this isn't your first time opening, you may have selected the option to have this page not appear upon startup. If this is the case, then the <b>Main Menu</b> will appear.</li> \r\n\
+        <li>Click <b>OK</b> on the lighting page after you have read all of the important information. <b>Note: </b>If you do not want to see this page again, select the <b>Do not show me this again</b> check box. </li> \r\n\
+        <li>The <b>Main Menu</b> appears. <br>Click <b>Practice</b>. The <a href=\"#select-course\">Practice Setup</a> page appears.</li> \r\n\
+        </ol> "
+    "65": 
+      name: extended
+      filter_id: ""
+      page_id: 32
+      id: 65
+      content: ""
+    "86": 
+      name: body
+      filter_id: ""
+      page_id: 43
+      id: 86
+      content: <r:snippet name="change-shottype" />
+    "108": 
+      name: body
+      filter_id: ""
+      page_id: 54
+      id: 108
+      content: |
+        <p><strong><a name="faq2"></a>How do I update my OpitShot software?</strong></p> 
+        <blockquote> 
+          <p> 
+            OptiShot updates are automatic as long as you are connected to the Internet. Simply launch the software and if
+            prompted, click yes to begin update.
+          </p> 
+        
+          <p> 
+            You can also find the latest OptiShot update here: <a href="http://www.dancindogg.com/golf_simulator/downloads" title="Home Golf Simulators-http://www.dancindogg.com/golf_simulator/downloads">http://www.dancindogg.com/golf_simulator/downloads</a><br/> 
+            <strong>Note: The update requires an Internet connection.</strong> 
+          </p> 
+        </blockquote> 
+        <p><strong><a name="how_to_i_update_no_internet"></a>How do I update my OptiShot software without an Internet connection?</strong></p> 
+        <blockquote> 
+          <p> 
+            You can either connect the machine to the Internet just for the update, or purchase a replacement disk.
+            To purchase a replacement disk visit our online store here:
+            <a href='http://store.dancindogg.com/ddstore/merchant.mvc?Screen=PROD&Product_Code=DD-REPLACECD&Category_Code=REPL&Store_Code=DG&Offset='>http://store.dancindogg.com</a> 
+          </p> 
+        </blockquote> 
+
+    "22": 
+      name: body
+      filter_id: ""
+      page_id: 11
+      id: 22
+      content: |
+        /* -------------------------------------------------------------- 
+        
+           reset.css
+           * Resets default browser CSS.
+        
+           Based on work by Eric Meyer:
+           * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+        
+           Icons are available for purchase at:
+           * http://www.istockphoto.com/file_closeup/arts-and-entertainment/arts-symbols/4575877-satin-icons-set-9.php?id=4575877
+        
+        -------------------------------------------------------------- */
+        
+        html, body, div, span, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, code,
+        del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td {
+        	margin: 0;
+        	padding: 0;
+        	border: 0;
+        	font-weight: inherit;
+        	font-style: inherit;
+        	font-size: 100%;
+        	font-family: inherit;
+        	vertical-align: baseline;
+        }
+        
+        
+        body { line-height: 1.5; background: #fff; margin:1.5em 0; }
+        
+        /* Tables still need 'cellspacing="0"' in the markup. */
+        table { border-collapse: separate; border-spacing: 0; }
+        caption, th, td { text-align: left; font-weight:400; }
+        
+        /* Remove possible quote marks (") from <q>, <blockquote>. */
+        blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+        blockquote, q { quotes: "" ""; }
+        
+        a img { border: none; }
+
+    "87": 
+      name: extended
+      filter_id: ""
+      page_id: 43
+      id: 87
+      content: ""
+    "109": 
+      name: extended
+      filter_id: ""
+      page_id: 54
+      id: 109
+      content: ""
+    "23": 
+      name: extended
+      filter_id: ""
+      page_id: 11
+      id: 23
+      content: ""
+    "110": 
+      name: body
+      filter_id: ""
+      page_id: 55
+      id: 110
+      content: "<p><strong><a name=\"faq3\"></a>How do I update my OptiShot software without an Internet connection?</strong></p> \r\n\
+        <blockquote> \r\n  <p> \r\n    You can either connect the machine to the Internet just for the update, or purchase a replacement disk.\r\n    To purchase a replacement disk visit our online store here:\r\n    <a href='http://store.dancindogg.com/ddstore/merchant.mvc?Screen=PROD&Product_Code=DD-REPLACECD&Category_Code=REPL&Store_Code=DG&Offset='>http://store.dancindogg.com</a> \r\n  </p> \r\n\
+        </blockquote> "
+    "44": 
+      name: body
+      filter_id: ""
+      page_id: 22
+      id: 44
+      content: "<p>In Play mode, when you want to move to the next player, you can simply pick up the ball and move on to the next player. If the last player has already shot, then you can move on to the next hole. </p> \r\n \r\n\
+        <h4>To pick up a ball</h4> \r\n\
+        <ol> \r\n\
+        <li>From <b>Menu</b>, click <b>Pick up Ball</b>. </li> \r\n\
+        <li>A confirmation dialog box appears. Click <b>OK</b> if you want to pick up the ball and move to the next player and the next hole for this player. The next player's turn begins and is displayed on screen. If both players have completed this hole, then the scorecard is displayed and the next hole begins.</li> \r\n\
+        <br><b>Note:</b> You can also use the <a href=\"#keyboard-options\">keyboard shortcuts</a> to pick up a ball and concede the hole.\r\n \r\n\
+        </ol> "
+    "111": 
+      name: extended
+      filter_id: ""
+      page_id: 55
+      id: 111
+      content: ""
+    "45": 
+      name: extended
+      filter_id: ""
+      page_id: 22
+      id: 45
+      content: ""
+    "66": 
+      name: body
+      filter_id: ""
+      page_id: 33
+      id: 66
+      content: "<ol> \r\n\
+        <li><a href=\"#accessing-the-practice-mode-in-optishot-2010\">Access Practice mode.</a> The <b>Practice Setup</b> page appears.<br> \r\n\
+        <b>Note:</b> The Practice mode is set up for one person. More than one person can practice together but the set up will be the same for every person that practices. </li> \r\n\
+        <li>Under <b>Course Name</b>, select the course on which you would like to play. A brief course description is described under <b>Course Descriptions</b>.</li> \r\n\
+        <li>Under <b>Player Setup</b>, select the way you normally play or how you want to practice.</li> \r\n\
+        <ul><li>In the <b>Tee Box</b> field, select the appropriate placement of the tee. </li> \r\n\
+        <li>In the <b>Shot Type</b> field, select your normal shot. <br> \r\n\
+        <b>NOTE:</b> This setting defines the average shot you hit with your clubs. A low shot type will result in longer distances than a high shot type.</li> \r\n\
+        <li>In the <b>Club Set</b> field, select the appropriate default or custom set.\r\n\
+        <b>NOTE:</b> This setting can be configured with one of 4 unique club set configurations. You can add an additional <a href = \"#clubset-configuration\">clubset configuration</a> later which can be customized to match the exact clubs that you use to practice with.</li>\r\n\
+        <li>In the <b>Left Handed</b> and <b>Right Handed</b> field, select the appropriate option. </li></ul> \r\n\
+        <li>Under <b>Course Setup</b>, create the conditions that you want to practice in.<br></li> \r\n\
+        <ul><li>In the <b>Green Speed</b> field, select the speed of the greens.</li> \r\n\
+        <li>In the <b>Wind</b> field, select the speed of the wind.</li> \r\n\
+        <li>In the <b>Wind Direction</b> field, select the direction of the wind.</li> \r\n\
+        <li>In the <b>Weather</b> field, select the conditions of the weather.</li></ul> \r\n\
+        <li>Click <b>Start.</b></li> When the practice mode first begins, a flyby of the first hole appears. A flyby is a bird's-eye view of the hole, so you can see exactly what it looks like. You can also choose to <a href=\"#view-a-flyby\">see a flyby</a> of any hole whenever you want. A <b>Practice Tips</b> box appears when the flyby is complete. Click <b>Close</b>. Select the <b>Do not show this message at startup</b> check box to not display tips upon startup.</li>\r\n\
+        <p><b>Note:</b> Many of these options can be changed during a game using the <b>Menu</b> options or the <a href=\"#keyboard-options\">keyboard shortcuts</a>.</ol> "
+    "67": 
+      name: extended
+      filter_id: ""
+      page_id: 33
+      id: 67
+      content: ""
+    "112": 
+      name: body
+      filter_id: ""
+      page_id: 56
+      id: 112
+      content: |
+        <p><strong><a name="faq4"></a>If I already own a Dancin' Dogg how can I upgrade to 3DD?</strong></p> 
+        <blockquote> 
+          <p> 
+            If you already own an OptiShot then you can simply <a href="http://www.dancindogg.com/golf_simulator/downloads" title="Home Golf Simulators-download">download</a> the new
+            OptiShot 2.0 release.
+            If you own an earlier Shot Making Simulator then you need to
+            <a href="http://store.dancindogg.com/ddstore/merchant.mvc?Screen=PROD&amp;Product_Code=20080040&amp;Category_Code=DDGS&amp;Store_Code=DG&amp;Offset="> 
+              purchase the upgrade</a>.
+          </p> 
+        </blockquote> 
+
+    "46": 
+      name: body
+      filter_id: ""
+      page_id: 23
+      id: 46
+      content: "<p>A mulligan is a retaken shot, usually due to a previously errant one. OptiShot 2010 allows you to take a mulligan at any time. It is not typical to take them when you are putting. Only the second shot is counted on the scorecard.</p> \r\n\
+        <h4>To take a Mulligan</h4> \r\n\
+        <ul> \r\n\
+        <li>From <b>Menu</b>, click <b>Mulligan</b>. The shot will begin at the last place the ball was located.</li> \r\n\
+        <br> \r\n\
+        <b>Note:</b> You can also use the <a href=\"#keyboard-options\">keyboard shortcuts</a> to take a mulligan.\r\n \r\n\
+        </ul> "
+    "90": 
+      name: body
+      filter_id: ""
+      page_id: 45
+      id: 90
+      content: <r:snippet name="change-options" />
+    "88": 
+      name: body
+      filter_id: ""
+      page_id: 44
+      id: 88
+      content: <r:snippet name="view-replay" />
+    "113": 
+      name: extended
+      filter_id: ""
+      page_id: 56
+      id: 113
+      content: ""
+    "91": 
+      name: extended
+      filter_id: ""
+      page_id: 45
+      id: 91
+      content: ""
+    "89": 
+      name: extended
+      filter_id: ""
+      page_id: 44
+      id: 89
+      content: ""
+    "47": 
+      name: extended
+      filter_id: ""
+      page_id: 23
+      id: 47
+      content: ""
+    "26": 
+      name: body
+      filter_id: ""
+      page_id: 13
+      id: 26
+      content: |-
+        <ol> 
+        <li>From <b>Start</b>, click <b>All Programs</b>.</li> 
+        <li>Click <b>Dancin' Dogg Golf</b>.</li> 
+        <li>Click the <b>OptiShot 2010</b> directory, and then click <b>OptiShot 2010</b>. OptiShot launches, and an Important lighting page appears. <br> 
+        <b>Note:</b> If this isn't your first time opening, you may have selected the option to have this page not appear upon startup. If this is the case, then the <b>Main Menu</b> will appear.</li> 
+        <li>Click <b>OK</b> on the lighting page after you have read all of the important information. <br> <b>Note: </b>If you do not want to see this page again, select the <b>Do not show me this again</b> check box. </li> 
+        <li>The <b>Main Menu</b> appears. Click <b>Play</b>. The <a href="#setup-a-game"><b>Game Setup</b></a> page appears.<br> 
+        <b>Note:</b> If you have a saved game or a game that was stopped in the middle, a <b>Resume Game</b> page appears asking if you want to resume that game. Click <b>Yes</b> to resume that game and the game will be launched at the beginning of the last hole played. Click <b>No</b>, and the Game Setup page appears for a new game.</li> 
+        </ol>
+    "70": 
+      name: body
+      filter_id: ""
+      page_id: 35
+      id: 70
+      content: <r:snippet name="clubset-config" />
+    "68": 
+      name: body
+      filter_id: ""
+      page_id: 34
+      id: 68
+      content: <r:snippet name="setup-shot" />
+    "69": 
+      name: extended
+      filter_id: ""
+      page_id: 34
+      id: 69
+      content: ""
+    "71": 
+      name: extended
+      filter_id: ""
+      page_id: 35
+      id: 71
+      content: ""
+    "27": 
+      name: extended
+      filter_id: ""
+      page_id: 13
+      id: 27
+      content: ""
+    "114": 
+      name: body
+      filter_id: ""
+      page_id: 57
+      id: 114
+      content: |
+        <p><strong><a name="faq5"></a>Can I use the OptiShot outside?</strong> 
+        </p> 
+        <blockquote> 
+          <p> 
+            No. OptiShot is designed to be used inside and must have the proper lighting
+            conditions for its infrared sensors to function accurately. If your
+            simulator is reporting inaccurate or non-sensical swing results, the
+            most likely cause is your lighting environment.
+            OptiShot cannot be used in direct sunlight.
+          </p> 
+        
+          <p> 
+            To setup a room with optimal lighting conditions, take the following steps:
+          </p> 
+          <ol> 
+            <li>Replace any light bulbs with fluorescent or compact fluorescent bulbs. Eliminate incandescent and halogen
+              light.
+            </li> 
+            <li>Pull the shades on or cover any windows to prevent any outdoor light from entering the room.</li> 
+            <li>Adjust any furniture that might be causing shadows to cross one or more or the sensors.</li> 
+            <li>Overhead fluorescent light is generally better that light from the side of the room.</li> 
+          </ol> 
+          <p> 
+            With your room setup properly your simulator should give you accurate and consistent results.
+          </p> 
+        </blockquote> 
+
+    "50": 
+      name: body
+      filter_id: ""
+      page_id: 25
+      id: 50
+      content: <r:snippet name="keyboard-options" />
+    "48": 
+      name: body
+      filter_id: ""
+      page_id: 24
+      id: 48
+      content: <r:snippet name="clear-tracers" />
+    "51": 
+      name: extended
+      filter_id: ""
+      page_id: 25
+      id: 51
+      content: ""
+    "49": 
+      name: extended
+      filter_id: ""
+      page_id: 24
+      id: 49
+      content: ""
+    "115": 
+      name: extended
+      filter_id: ""
+      page_id: 57
+      id: 115
+      content: ""
+    "30": 
+      name: body
+      filter_id: ""
+      page_id: 15
+      id: 30
+      content: <r:snippet name="setup-shot" />
+    "1": 
+      name: body
+      filter_id: ""
+      page_id: 1
+      id: 1
+      content: |
+        <div id="extra">
+          <p><span>Need Help with OptiShot? We're here to help!</span></p>
+        
+          <form method="get" action="http://www.google.com/search" style="margin: 20px 0;"> 
+            <input type="text" name="q" style="width:300px;" /> 
+            <input type="submit" value="Search OptiShot Help" /> 
+            <input type="hidden" name="sitesearch" value="dancindogg.com/help" /> 
+          </form> 
+        </div>
+        
+        <div class="wikistyle"> 
+        <h2><r:title/></h2>
+                <p>OptiShot 2010 is a comprehensive golf simulation package that allows you to practice and play golf in the comfort of your own home. You can drop the ball anywhere on any course and practice shot after shot or play a game with up to four playes. Once you play a game, you can save a game, or resume an unfinished game. Whatever you choose to do, your game can only improve with OptiShot's proprietary swing analysis software.</p> 
+        
+        <p>
+        The main areas of OptiShot 2010 are:
+        </p> 
+        
+        <!-- List a table of contents of the main help topics -->
+        <ol> 
+        <r:find url="/topics">
+          <r:children:each>
+                <li><a href="#<r:slug/>"><r:title /></a></li>
+          </r:children:each>
+        </r:find>
+        </ol>
+        
+        <!-- List content of main help topics -->
+        <r:find url="/topics">
+          <r:children:each>
+                <h2 id="<r:slug/>"><r:title /></h2>
+                <p><r:content/></p>
+          </r:children:each>
+        </r:find>
+        
+        </div>
+
+    "28": 
+      name: body
+      filter_id: ""
+      page_id: 14
+      id: 28
+      content: |-
+        <ol> 
+        <li><a href="#accessing-the-play-mode-in-optishot-2010">Access Play mode.</a> The <b>Game Setup</b> page appears.
+         </li> 
+        <li>Under <b>Course Name</b>, select the course on which you would like to play. A brief course description is described under <b>Course Description</b>.</li> 
+        <li>Under <b>Game Setup</b>, select the type of gimmies you want. The default is auto. A gimmie defines how you want to handle putting and whether you will allow gimmies. <ul> 
+            <li><b>None</b>: All putts must be putted out.</li> 
+            <li><b>Auto Putt</b>: 3DD Golf mathematically calculates from 1 to 3 putts based on your distance from the hole and known averages for those distances.</li> 
+            <li><b>3 Feet</b>: Any putt inside of 3 feet is counted as a gimmie.</li> 
+            <li><b>18 inches</b>: Any putt inside of 18 inches is counted as a gimmie.</li> </ul> 
+          <br><b>Note:</b> The gimmies setting applies the same to every player participating in the game. Once selected here and saved, you cannot change the gimmie option for this game. </li> 
+        <li>Under <b>Options</b>, select the <b>Mulligans</b> check box to enable or disable. A <a href="#take-a-mulligan">mulligan</a> is a retaken shot, usually due to a previously errant one. OptiShot 2010 allows you to take a mulligan at any time during the game. </li> 
+        <li>Under <b>Course Setup</b>, create the conditions that you want to play in.<br></li> 
+        <ul><li>In the <b>Green Speed</b> field, select the speed of the greens.</li> 
+        <li>In the <b>Wind</b> field, select the speed of the wind.</li> 
+        <li>In the <b>Wind Direction</b> field, select the direction of the wind.</li> 
+        <li>In the <b>Weather</b> field, select the conditions of the weather.</li></ul> 
+        <li>Click <b>Next</b>. The <b>Player Setup</b> page appears. You can enter up to 4 players.</li> 
+        <li>Under <b>Enter Players Name</b>, select the check box to activate a player and type the players name.</li> 
+        <ul><li>In the <b>Tee Box</b> field, select the appropriate placement of the tee. </li> 
+        <li>In the <b>Shot Type</b> field, select your normal shot. <br> 
+        <b>NOTE:</b> This setting defines the average shot you hit with your clubs. A low shot type will result in longer distances than a high shot type.</li> 
+        <li>In the <b>Club Set</b> field, select the appropriate default or custom set.
+        <b>NOTE:</b> This setting can be configured with one of 4 unique club set configurations. You can add additional <a href = "#clubset-configuration">clubset configurations</a> later each of which can be customized to match the exact clubs that each player uses.</li>
+        <li>In the <b>Left Handed</b> and <b>Right Handed</b> field, select whether the player is a right-handed hitter or a left-handed hitter. </li></ul> 
+        <li>Repeat step 7 for each player that will play this game.</li> 
+        <li>Click <b>Play</b></li>. When the play mode first begins, a flyby of the first hole appears. A flyby is a bird's-eye view of the hole, so you can see exactly what it looks like. You can also choose to <a href="#view-a-flyby">see a flyby</a> of any hole whenever you want.</li></ol> 
+        
+        <p><b>Note:</b> Many of these options can be changed during a game using the <b>Menu</b> options or the <a href="#keyboard-options">keyboard shortcuts</a>.
+    "72": 
+      name: body
+      filter_id: ""
+      page_id: 36
+      id: 72
+      content: <r:snippet name="clear-tracers" />
+    "31": 
+      name: extended
+      filter_id: ""
+      page_id: 15
+      id: 31
+      content: ""
+    "29": 
+      name: extended
+      filter_id: ""
+      page_id: 14
+      id: 29
+      content: ""
+    "10": 
+      name: body
+      filter_id: ""
+      page_id: 5
+      id: 10
+      content: |
+        <p> 
+        OptiShot 2010 allows you to play on replications of several famous golf courses with 1-4 players. In play mode an actual scorecard is kept to track your game. You have the option to choose to use mulligans and gimmies to move the game along, as well as setting up your course conditions from weather to wind to green speed. You can change club configurations and tee box locations per player to allow for handicaps and make things equal for all players, such as when a father wants to play his young son. </p> 
+        <p>The following topics are available to help you work in the play mode:</p> 
+        
+        <!-- List a table of contents -->
+        <ol> 
+        <r:find url="/topics/playmode">
+          <r:children:each>
+                <li><a href="/play-mode-content#<r:slug/>"><r:title /></a></li>
+          </r:children:each>
+        </r:find>
+        </ol>
+
+    "73": 
+      name: extended
+      filter_id: ""
+      page_id: 36
+      id: 73
+      content: ""
+    "94": 
+      name: body
+      filter_id: ""
+      page_id: 47
+      id: 94
+      content: "<p>The scorecard is set up like a real golf scorecard with the hole, par, and handicap information. It is displayed after each hole for a brief time. However, you can view the scorecard at anytime.</p> \r\n\
+        </ol></p> \r\n \r\n\
+        <h4>To view the scorecard</h4> \r\n\
+        <ul> \r\n\
+        <li>From <b>Menu</b>, click <b>Scorecard</b>. <br><b>Note:</b> Click anywhere on the screen to make the scorecard disappear. You can also click <b>S</b> on your keyboard to make the scorecard appear and disappear from screen.\r\n\
+        </li> \r\n\
+        </ul> "
+    "116": 
+      name: body
+      filter_id: ""
+      page_id: 58
+      id: 116
+      content: |
+        <p><strong><a name="q15"></a>Can the program calculate in Kilometers?</strong></p> 
+        <blockquote> 
+          <p> 
+            Yes, the software can be configured to display swing details in metric or standard units of measure.
+          </p> 
+        </blockquote> 
+
+    "95": 
+      name: extended
+      filter_id: ""
+      page_id: 47
+      id: 95
+      content: ""
+    "117": 
+      name: extended
+      filter_id: ""
+      page_id: 58
+      id: 117
+      content: ""
+    "32": 
+      name: body
+      filter_id: ""
+      page_id: 16
+      id: 32
+      content: <r:snippet name="clubset-config" />
+    "3": 
+      name: body
+      filter_id: ""
+      page_id: 2
+      id: 3
+      content: |
+        html,body
+        {
+          height:100%;
+          color:black;
+        }
+        
+        body
+        {
+          background-color:white;
+          font:13.34px helvetica,arial,freesans,clean,sans-serif;*font-size:small;
+        }
+        
+        #page {
+          margin: 15px auto;
+          width: 900px;
+          text-align: left;
+          border: 2px solid #9EA3AC;
+          padding: 5px;
+          background-color: #FFFFFF;
+          clear: both; }
+        
+        #header {
+          color: #FFFFFF;
+          font-family: Arial,Helvetica,Geneva,sans-serif;
+          font-size: 35px;
+          font-weight: bold;
+          letter-spacing: 0.02em;
+          line-height: 0.72em;
+          text-transform: uppercase; }
+        
+        #main {
+          background-color: white;
+          float: left;
+          width: 100%;
+          margin: 15px 0px 30px; }
+        
+        h1 {
+          color: #000000;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 25px;
+          font-weight: bold;
+          letter-spacing: 0.02em;
+          line-height: 0.72em;
+          text-transform: uppercase; }
+        
+        h2 {
+          color: #451811;
+          font-family: Georgia, sans-serif;
+          font-size: 270%;
+          font-weight: normal;
+          margin: 0px; }
+        
+        h3 {
+          font-family: Helvetica, Arial, Verdana, sans-serif;
+          font-size: 195%;
+          margin: 0px;
+          font-weight: bold; }
+        
+        h3 a {
+          color: #451811;
+          text-decoration: none;
+          border-bottom: none;
+          margin: 0px; }
+        
+        h3 a:hover {
+          color: #902f1c;
+          border-bottom: none; }
+        
+        a {
+          color: #3671a1;
+          text-decoration: none;
+          border-bottom: 1px solid #DBD6D1; }  
+        
+        a:hover {
+          color: #3671a1;
+          text-decoration: none;
+          border-bottom: 2px solid #DBD6D1; }
+        
+        p {
+          line-height: 1.3em;
+          margin: 0px 0px 10px; }
+        
+        ul {
+          padding: 0; }
+        
+        li {
+          padding: 0; }
+        
+        
+        /*---MAIN COLUMN---*/  
+        
+        #content-wrapper {
+          float: left;
+          width: 600px; }
+        
+        #content {
+          padding: 0px 15px; }
+        
+        
+        /*---SIDEBAR---*/  
+        
+        #sidebar-wrapper {
+          float: right;
+          width: 300px; }
+        
+        #sidebar {
+          font-size: 90%;
+          padding: 15px;
+          padding-top: 0px; }
+        
+        #sidebar h3 {
+          color: #222222;
+          font-family: Helvetica, Arial, Verdana, sans-serif;
+          font-size: 17px;
+          font-weight: bold;
+          margin: 0px; }
+        
+        #sidebar p {
+          line-height: 1.4em; }
+        
+        
+        /*---ARTICLE---*/ 
+        
+        .entry {
+          margin-bottom: 20px; }
+        
+        .entry .info {
+          margin-top: 1em;
+          font-size: 1em; }
+        
+        .entry p {
+          font-size: 1.1em; }
+        
+        .posted {
+          color: #918C7E;
+          font-family: "lucida grande",arial,helvetica,verdana,sans-serif;
+          font-size: 10px;
+          margin: -3px 0 5px;
+          padding: 0px; }
+        
+        .posted em {
+          color: #451811;
+          font-style: italic;
+          margin: 0px 6px;
+          font-weight: bold; }
+        
+        .posted img {
+          background: transparent none repeat scroll 0 0;
+          border: medium none;
+          margin: 0 4px -5px 2px;
+          text-decoration: none; }
+        
+        
+        /*---STYLES---*/ 
+        
+        #extra {
+          margin-bottom: 10px; }
+        
+        #extra .box {
+          background-color: #e8f0f6;
+          border-color: #D5E9F6; }
+        
+        #extra p {
+          line-height: 1.2em;
+          margin: 0px 0px 5px 0px; }
+        
+        #extra em {
+          font-style: italic; }
+        
+        #extra span {
+          color: #d26511;
+          font-size: 120%; }
+        
+        #player, #gallery {
+          background: #FFFFFF;
+          float: left;
+          clear: both;
+          margin: 0px 15px 15px 0px;
+          padding: 3px;
+          border: 1px solid #a9cde5; }
+        
+        #gallery a, 
+        #gallery a:hover, 
+        #player a, 
+        #player a:hover,
+        #extra img a,
+        #extra img a:hover {
+          border-bottom: none !important;
+          text-decoration: none !important; }
+        
+        #extra a img {
+          margin-bottom: -3px; }
+        
+        .spot {
+          margin-bottom: 20px;
+          clear: both; }
+        
+        .spot p {
+          font-family: Verdana, sans-serif;
+          font-size: 11px; 
+          color: #333333;
+          margin-top: 0px; }
+        
+        .spot img {
+          float: left;
+          padding: 0px 12px 10px 0px; }
+        
+        .box {
+          padding: 15px;
+          border: 1px solid #dbd6d1;
+          background-color: #efedeb;
+          margin-bottom: 20px; }
+        
+        .box h3 {
+          font-size: 18px;
+          margin-bottom: 2px; }
+        
+        .box input {
+          margin-top: 5px; }
+        
+        .box input.email {
+          font-size: 10px;
+          padding: 3px; 
+          color: #a29e96; 
+          width: 140px; }
+        
+        .box input.subscribe {
+          width: 70px;
+          margin-left: 5px;
+          color: #232323; }
+        
+        .box ul {
+          margin-left: 20px; }
+        
+        .hidden {
+          display: none; }
+        
+        .clear {
+          clear: both; }
+        
+        /*---SITEMAP---*/ 
+        
+        #sitemap ul {
+          list-style-type: disc;
+          margin: 5px 0px 10px 35px;
+          line-height: 2em; }
+        
+        #sitemap li a {
+          font-family: Helvetica, Arial, Verdana, sans-serif;
+          font-size: 180%;
+          font-weight: bold;
+          margin: 0px; 
+          color: #451811;
+          text-decoration: none;
+          border-bottom: none; }
+        
+        #sitemap li a:hover {
+          color: #902f1c;
+          border-bottom: none; }
+        
+        #sitemap ul.second {
+          font-size: 80%; }
+        
+        /*---FOOTER---*/ 
+        
+        #footer-wrapper {
+          margin: 5px auto;
+          width: 900px; }
+        
+        #footer {
+          color: #595452;
+          float: right;
+          font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+          font-size: 90%;
+          margin-bottom: 30px; }
+        
+        
+        /*---------------------------------  Navigation.css  ---*/ 
+        
+        #nav {
+        	height: 38px;
+        	background: transparent url(http://spurrd.com/assets/132/nav-background.gif) repeat-x top left; }
+        
+        #nav ul {
+        	display: block;
+        	margin: 0;
+        	padding: 0;
+        	list-style-type: none;
+        	width: auto; }
+        
+        #nav ul li {
+        	display: block;
+        	float: left;
+        	margin: 0;
+        	padding: 0; }
+        
+        #nav ul li a {
+          font-family: "Lucida Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
+          font-size: 13px;
+        	display: block;
+        	float: left;
+        	color: #3D3D3D;
+        	text-decoration: none;
+        	padding: 8px 16px 7px;
+        	border-bottom: none;
+        	background: transparent url(http://spurrd.com/assets/150/nav-divider.gif) no-repeat top right; }
+        
+        #nav ul li a:hover {
+          color: #FFFFFF;
+          background: #49140c;
+          border-bottom: 1px solid #49140c; }
+        
+        #nav ul li.selected a {
+          color: #FFFFFF;
+          background: #0b0b0a;
+          border-bottom: 1px solid #0b0b0a; }
+        
+        
+        /*---------------------------------  Lightbox.css  ---*/ 
+        
+        #lightbox{	position: absolute;	left: 0; width: 100%; z-index: 100; text-align: center; line-height: 0;}
+        #lightbox img{ width: auto; height: auto;}
+        #lightbox a img{ border: none; }
+        
+        #outerImageContainer{ position: relative; background-color: #fff; width: 250px; height: 250px; margin: 0 auto; }
+        #imageContainer{ padding: 10px; }
+        
+        #loading{ position: absolute; top: 40%; left: 0%; height: 25%; width: 100%; text-align: center; line-height: 0; }
+        #hoverNav{ position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10; border-bottom: none; }
+        #imageContainer>#hoverNav{ left: 0;}
+        #hoverNav a{ outline: none; border-bottom: none;}
+        
+        #prevLink, #nextLink{ width: 49%; height: 100%; background-image: url(data:image/gif;base64,AAAA); /* Trick IE into showing hover */ display: block; }
+        #prevLink { left: 0; float: left;}
+        #nextLink { right: 0; float: right;} 
+        #prevLink:hover, #prevLink:visited:hover { background: url(http://spurrd.com/assets/192/prevlabel.gif) left 15% no-repeat; }
+        #nextLink:hover, #nextLink:visited:hover { background: url(http://www.spurrd.com/assets/189/nextlabel.gif) right 15% no-repeat; }
+        
+        #imageDataContainer{ font: 10px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100%	; }
+        
+        #imageData{	padding:0 10px; color: #666; }
+        #imageData #imageDetails{ width: 70%; float: left; text-align: left; }	
+        #imageData #caption{ font-weight: bold;	}
+        #imageData #numberDisplay{ display: block; clear: left; padding-bottom: 1.0em;	}			
+        #imageData #bottomNavClose{ width: 66px; float: right;  padding-bottom: 0.7em; outline: none;}	 	
+        
+        #overlay{ position: absolute; top: 0; left: 0; z-index: 90; width: 100%; height: 500px; background-color: #000; }
+        
+        .wikistyle h1,.wikistyle h2,.wikistyle h3,.wikistyle h4,.wikistyle h5,.wikistyle h6{border:0!important;}
+        .wikistyle h1{font-size:170%!important;border-top:4px solid #aaa!important;padding-top:.5em!important;margin-top:1.5em!important;}
+        .wikistyle h1:first-child{margin-top:0!important;padding-top:.25em!important;border-top:none!important;}
+        .wikistyle h2{font-size:150%!important;margin-top:1.5em!important;border-top:4px solid #e0e0e0!important;padding-top:.5em!important;}
+        .wikistyle h3{margin-top:1em!important;}
+        .wikistyle h4{font-size:120%;}
+        .wikistyle p{margin:1em 0!important;line-height:1.5em!important;}
+        .wikistyle ul{margin:1em 0 1em 2em!important;}
+        .wikistyle ol{margin:1em 0 1em 2em!important;}
+        .wikistyle ul ul,.wikistyle ul ol,.wikistyle ol ol,.wikistyle ol ul{margin-top:0!important;margin-bottom:0!important;}
+        .wikistyle blockquote{margin:1em 0!important;border-left:5px solid #ddd!important;padding-left:.6em!important;color:#555!important;}
+        .wikistyle dt{font-weight:bold!important;margin-left:1em!important;}
+        .wikistyle dd{margin-left:2em!important;margin-bottom:1em!important;}
+        .wikistyle table{margin:1em 0!important;}
+        .wikistyle table th{border-bottom:1px solid #bbb!important;padding:.2em 1em!important;}
+        .wikistyle table td{border-bottom:1px solid #ddd!important;padding:.2em 1em!important;}
+        .wikistyle pre{margin:1em 0!important;font-size:90%!important;background-color:#f8f8ff!important;border:1px solid #dedede!important;padding:.5em!important;line-height:1.5em!important;color:#444!important;overflow:auto!important;}
+        .wikistyle pre code{padding:0!important;font-size:100%!important;background-color:#f8f8ff!important;border:none!important;}
+        .wikistyle code{font-size:90%!important;background-color:#f8f8ff!important;color:#444!important;padding:0 .2em!important;border:1px solid #dedede!important;}
+        .wikistyle pre.console{margin:1em 0!important;font-size:90%!important;background-color:black!important;padding:.5em!important;line-height:1.5em!important;color:white!important;}
+        .wikistyle pre.console code{padding:0!important;font-size:100%!important;background-color:black!important;border:none!important;color:white!important;}
+        .wikistyle pre.console span{color:#888!important;}
+        .wikistyle pre.console span.command{color:yellow!important;}
+
+    "74": 
+      name: body
+      filter_id: ""
+      page_id: 37
+      id: 74
+      content: "<p>When you take a shot in OptiShot Practice mode, you can view the entire shot and have the program follow the ball to the point where it lands. This is called following the ball. Or, you can choose to just place your view where the ball lands ready for the next shot and not see the shot in the air. The default is to <b>not</b> follow the ball. </p> \r\n \r\n\
+        <h4>To never follow a ball</h4> \r\n\
+        <ul> \r\n\
+        <li>From <b>Menu</b>, click <b>Never Follow</b>.\r\n\
+        <br><b>Note:</b> The <b>Menu</b> will display <b>Always Follow</b> to indicate that the <b>Never Follow </b>option is selected. </li> \r\n \r\n\
+        </ul> \r\n \r\n\
+        <h4>To always follow a ball</h4> \r\n\
+        <ul> \r\n\
+        <li>From <b>Menu</b>, click <b>Always Follow</b>.\r\n\
+        <br><b>Note:</b> The <b>Menu</b> will display <b>Never Follow</b> to indicate that the <b>Always Follow</b> option is selected.</li> \r\n \r\n\
+        </ul> "
+    "75": 
+      name: extended
+      filter_id: ""
+      page_id: 37
+      id: 75
+      content: ""
+    "54": 
+      name: body
+      filter_id: ""
+      page_id: 27
+      id: 54
+      content: <r:snippet name="view-shot-data" />
+    "4": 
+      name: extended
+      filter_id: ""
+      page_id: 2
+      id: 4
+      content: ""
+    "96": 
+      name: body
+      filter_id: ""
+      page_id: 48
+      id: 96
+      content: <r:snippet name="ball-type" />
+    "118": 
+      name: body
+      filter_id: ""
+      page_id: 59
+      id: 118
+      content: |
+        <p><strong><a name="faq7"></a>Where can I locate my OptiShot product key?</strong></p> 
+        <blockquote> 
+          <ul> 
+            <li>Update your OptiShot to the latest version</li> 
+            <li>Your OptiShot product key can be found in the bottom right of the main menu of 3DD Golf and begins with OPT</li> 
+          </ul> 
+        </blockquote> 
+
+    "11": 
+      name: extended
+      filter_id: ""
+      page_id: 5
+      id: 11
+      content: ""
+    "119": 
+      name: extended
+      filter_id: ""
+      page_id: 59
+      id: 119
+      content: ""
+    "33": 
+      name: extended
+      filter_id: ""
+      page_id: 16
+      id: 33
+      content: ""
+    "5": 
+      name: body
+      filter_id: ""
+      page_id: 3
+      id: 5
+      content: ""
+    "76": 
+      name: body
+      filter_id: ""
+      page_id: 38
+      id: 76
+      content: <r:snippet name="keyboard-options" />
+    "97": 
+      name: extended
+      filter_id: ""
+      page_id: 48
+      id: 97
+      content: ""
+    "120": 
+      name: body
+      filter_id: ""
+      page_id: 60
+      id: 120
+      content: |
+        <p><strong><a name="faq8"></a>I own more than one OptiShot Simulator how do I add a Premium Course to all my
+          systems?</strong></p> 
+        <blockquote> 
+          <p> 
+            If you have more than one OptiShot, you will need to
+            <a href="http://store.dancindogg.com/ddstore/merchant.mvc?Screen=CTGY&amp;Store_Code=DG&amp;Category_Code=COURSES">purchase
+              a Premium Course</a> for each system.
+          </p> 
+        </blockquote> 
+
+    "12": 
+      name: body
+      filter_id: ""
+      page_id: 6
+      id: 12
+      content: Add help about installation
+    "121": 
+      name: extended
+      filter_id: ""
+      page_id: 60
+      id: 121
+      content: ""
+    "55": 
+      name: extended
+      filter_id: ""
+      page_id: 27
+      id: 55
+      content: ""
+    "98": 
+      name: body
+      filter_id: ""
+      page_id: 49
+      id: 98
+      content: <r:snippet name="ball-type" />
+    "100": 
+      name: body
+      filter_id: ""
+      page_id: 50
+      id: 100
+      content: <r:snippet name="changing-clubs" />
+    "13": 
+      name: extended
+      filter_id: ""
+      page_id: 6
+      id: 13
+      content: ""
+    "6": 
+      name: extended
+      filter_id: ""
+      page_id: 3
+      id: 6
+      content: ""
+    "7": 
+      name: sidebar
+      filter_id: ""
+      page_id: 1
+      id: 7
+      content: |
+        <div class="box">
+        <h3>Help Topics</h3> 
+        <ol> 
+        <r:find url="/topics">
+          <r:children:each>
+                <li><a href="/#<r:slug/>"><r:title/></a></li>
+          </r:children:each>
+        </r:find>
+        </ol>
+        </div>
+
+    "77": 
+      name: extended
+      filter_id: ""
+      page_id: 38
+      id: 77
+      content: ""
+    "101": 
+      name: extended
+      filter_id: ""
+      page_id: 50
+      id: 101
+      content: ""
+    "122": 
+      name: body
+      filter_id: ""
+      page_id: 61
+      id: 122
+      content: "<p><strong><a name=\"faq9\"></a>I have a Dancin\xE2\x80\x99Dogg Shot Making Simulator, how can I play my Premium Course?</strong> \r\n\
+        </p> \r\n\
+        <blockquote> \r\n  <p> \r\n    Dancin\xE2\x80\x99Dogg Shot Making Simulator users must first update to OptiShot 2010\r\n    <a href=\"http://store.dancindogg.com/ddstore/merchant.mvc?Screen=CTGY&amp;Store_Code=DG&amp;Category_Code=WARE\">here</a>.\r\n    After upgrading to the latest OptiShot software, you can purchase and download\r\n    <a href=\"http://store.dancindogg.com/ddstore/merchant.mvc?Screen=CTGY&amp;Store_Code=DG&amp;Category_Code=COURSES\">Premium\r\n      Courses here</a>.\r\n  </p> \r\n\
+        </blockquote> \r\n"
+    "14": 
+      name: body
+      filter_id: ""
+      page_id: 7
+      id: 14
+      content: ""
+    "56": 
+      name: body
+      filter_id: ""
+      page_id: 28
+      id: 56
+      content: <r:snippet name="view-flyby" />
+  Radiant::Configs: 
+    "6": 
+      id: 6
+      value: "1209600"
+      key: session_timeout
+    "1": 
+      id: 1
+      value: Radiant CMS
+      key: admin.title
+    "2": 
+      id: 2
+      value: Publishing for Small Teams
+      key: admin.subtitle
+    "3": 
+      id: 3
+      value: body, extended
+      key: defaults.page.parts
+    "4": 
+      id: 4
+      value: draft
+      key: defaults.page.status
+    "5": 
+      id: 5
+      value: ""
+      key: defaults.page.filter
+  Users: 
+    "11": 
+      updated_by_id: 
+      session_token: a501bd717b463247b1cc4730fa65e2b230647bff
+      salt: 13fda88e58ab24e9ef9934e4aa6cf550b567f24a
+      name: Morgan
+      created_at: 2010-06-18 19:02:59.172948 Z
+      updated_at: 2010-06-18 20:37:09.057963 Z
+      notes: ""
+      created_by_id: 1
+      lock_version: 1
+      designer: true
+      admin: false
+      id: 11
+      locale: ""
+      password: 502824feb4c86ffe46050a5452ed4b3c8960b63c
+      login: morgan
+      email: morgan@dancindogg.com
+    "1": 
+      updated_by_id: 
+      session_token: 75862eb22e54b1c14f4dc8f82f53201131736d65
+      salt: 55b25ff3da4e6ef6364f3984cb8ecf723eb7b2af
+      name: ddadmin
+      created_at: 2010-05-13 18:41:22.425387 Z
+      updated_at: 2010-06-30 18:11:09.919266 Z
+      notes: 
+      created_by_id: 
+      lock_version: 1
+      designer: false
+      admin: true
+      id: 1
+      locale: 
+      password: 07690b541f370ea39ba5d4853126aa802841e3ea
+      login: ddadmin
+      email: 
+description: Backup of the database as of Mon, 26 Jul 2010 12:24:39 -0400
