@@ -8,6 +8,7 @@ gem "unicorn"
 gem "schneider"
 gem "httparty"
 gem "utility_drawer"
+gem "aws-s3", "0.6.2"
 
 
 # bundler requires these gems in all environments
