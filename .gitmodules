@@ -28,3 +28,6 @@
 [submodule "vendor/extensions/import_export"]
 	path = vendor/extensions/import_export
 	url = git://github.com/radiant/radiant-import-export-extension.git
+[submodule "vendor/extensions/paperclipped"]
+	path = vendor/extensions/paperclipped
+	url = git://github.com/voomify/paperclipped.git
