@@ -22,3 +22,6 @@ config.action_controller.perform_caching             = true
 # config.after_initialize do 
 #   SiteController.cache_timeout = 12.hours
 # end
+
+# See environment.rb for notes on Usage
+config.middleware.use ::Radiant::Cache
