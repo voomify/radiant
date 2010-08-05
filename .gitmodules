@@ -31,6 +31,3 @@
 [submodule "vendor/extensions/paperclipped"]
 	path = vendor/extensions/paperclipped
 	url = git://github.com/voomify/paperclipped.git
-[submodule "vendor/plugins/tasks"]
-	path = vendor/plugins/tasks
-	url = git://github.com/voomify/tasks.git
