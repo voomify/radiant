@@ -20,12 +20,12 @@ padding:1px;background:#d1d1d1;border:1px solid #B9B9B9;
 }
 
 .jcarousel-skin-tango .image {
-	background: transparent url(../images/carousel/hover-image.jpg) no-repeat 2px 2px;
+	background: transparent url(../img/carousel/hover-image.jpg) no-repeat 2px 2px;
 	width:127px;height:120px; 
 }
 
 .jcarousel-skin-tango .video {
-	background: transparent url(../images/carousel/hover-video.jpg) no-repeat 2px 2px;
+	background: transparent url(../img/carousel/hover-video.jpg) no-repeat 2px 2px;
 	width:127px;height:120px; 
 }
 
@@ -75,7 +75,7 @@ width: 890px;
     width: 32px;
     height: 32px;
     cursor: pointer;
-    background: transparent url(../images/carousel/next-horizontal.png) no-repeat 0 0;
+    background: transparent url(../img/carousel/next-horizontal.png) no-repeat 0 0;
 }
 
 .jcarousel-skin-tango .jcarousel-next-horizontal:hover {
@@ -101,7 +101,7 @@ width: 890px;
     width: 32px;
     height: 32px;
     cursor: pointer;
-    background: transparent url(../images/carousel/prev-horizontal.png) no-repeat 0 0;
+    background: transparent url(../img/carousel/prev-horizontal.png) no-repeat 0 0;
 }
 
 .jcarousel-skin-tango .jcarousel-prev-horizontal:hover {
