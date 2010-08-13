@@ -37,3 +37,6 @@
 [submodule "vendor/extensions/stereotype"]
 	path = vendor/extensions/stereotype
 	url = git://github.com/Aissac/radiant-stereotype-extension.git
+[submodule "vendor/extensions/custom_fields"]
+	path = vendor/extensions/custom_fields
+	url = git://github.com/voomify/radiant-custom-fields-extension.git
