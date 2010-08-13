@@ -1,5 +1,8 @@
 == Welcome to Radiant
 
+This is the Voomify fork of Radiant. You should not use this unless you know what your doing.
+Use the radiant/radiant project instead.
+
 Radiant is a no-fluff, open source content management system designed for
 small teams. It is similar to Textpattern or MovableType, but is a general
 purpose content management system (not just a blogging engine).
