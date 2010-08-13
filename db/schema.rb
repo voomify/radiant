@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(:version => 20091003095744) do
 
   add_index "config", ["key"], :name => "key", :unique => true
 
+  create_table "custom_fields", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "custom_fields", ["name", "page_id"], :name => "index_custom_fields_on_name_and_page_id"
+  add_index "custom_fields", ["name"], :name => "index_custom_fields_on_name"
+  add_index "custom_fields", ["value"], :name => "index_custom_fields_on_value"
+
   create_table "extension_meta", :force => true do |t|
     t.string  "name"
     t.integer "schema_version", :default => 0

@@ -34,9 +34,6 @@
 [submodule "vendor/plugins/schneider"]
 	path = vendor/plugins/schneider
 	url = git://github.com/voomify/schneider.git
-[submodule "vendor/extensions/custom_fields"]
-	path = vendor/extensions/custom_fields
-	url = git://github.com/Aissac/radiant-custom-fields-extension.git
 [submodule "vendor/extensions/stereotype"]
 	path = vendor/extensions/stereotype
 	url = git://github.com/Aissac/radiant-stereotype-extension.git
