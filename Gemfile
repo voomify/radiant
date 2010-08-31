@@ -9,6 +9,7 @@ gem "schneider"
 gem "httparty"
 gem "utility_drawer"
 gem "aws-s3", "0.6.2"
+gem "activeresource", "2.3.8"
 
 
 # bundler requires these gems in all environments

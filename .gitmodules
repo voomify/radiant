@@ -37,3 +37,6 @@
 [submodule "vendor/extensions/custom_fields"]
 	path = vendor/extensions/custom_fields
 	url = git://github.com/voomify/radiant-custom-fields-extension.git
+[submodule "vendor/extensions/highrise_contact"]
+	path = vendor/extensions/highrise_contact
+	url = git://github.com/voomify/highrise_contact.git
