@@ -4,12 +4,12 @@ gem "RedCloth"
 gem "pg"
 gem "rack", "1.1.0"
 gem "will_paginate"
-gem "httparty"
 gem "aws-s3", "0.6.2"
 gem "activeresource", "2.3.8"
 
 # voomify specific
 gem "utility_drawer"
+gem "httparty"
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
