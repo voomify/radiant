@@ -7,10 +7,6 @@ gem "will_paginate"
 gem "aws-s3", "0.6.2"
 gem "activeresource", "2.3.8"
 
-# voomify specific
-gem "utility_drawer"
-gem "httparty"
-
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
 # gem "geokit"
