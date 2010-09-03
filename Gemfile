@@ -4,13 +4,10 @@ gem "RedCloth"
 gem "pg"
 gem "rack", "1.1.0"
 gem "will_paginate"
-gem "unicorn"
-gem "schneider"
 gem "httparty"
 gem "utility_drawer"
 gem "aws-s3", "0.6.2"
 gem "activeresource", "2.3.8"
-gem "rake"
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
