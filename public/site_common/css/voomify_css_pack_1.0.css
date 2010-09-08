@@ -1,0 +1,636 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 0.9
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* reset.css */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+
+/* typography.css */
+html {font-size:100.01%;}
+body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
+h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:2em;margin-bottom:0.75em;}
+h3 {font-size:1.5em;line-height:1;margin-bottom:1em;}
+h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+h6 {font-size:1em;font-weight:bold;}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+p {margin:0 0 1.5em;}
+p img.left {float:left;margin:1.5em 1.5em 1.5em 0;padding:0;}
+p img.right {float:right;margin:1.5em 0 1.5em 1.5em;}
+a:focus, a:hover {color:#000;}
+a {color:#009;text-decoration:underline;}
+blockquote {margin:1.5em;color:#666;font-style:italic;}
+strong {font-weight:bold;}
+em, dfn {font-style:italic;}
+dfn {font-weight:bold;}
+sup, sub {line-height:0;}
+abbr, acronym {border-bottom:1px dotted #666;}
+address {margin:0 0 1.5em;font-style:italic;}
+del {color:#666;}
+pre {margin:1.5em 0;white-space:pre;}
+pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+li ul, li ol {margin:0;}
+ul, ol {margin:0 1.5em 1.5em 0;padding-left:3.333em;}
+ul {list-style-type:disc;}
+ol {list-style-type:decimal;}
+dl {margin:0 0 1.5em 0;}
+dl dt {font-weight:bold;}
+dd {margin-left:1.5em;}
+table {margin-bottom:1.4em;width:100%;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
+caption {background:#eee;}
+.small {font-size:.8em;margin-bottom:1.875em;line-height:1.875em;}
+.large {font-size:1.2em;line-height:2.5em;margin-bottom:1.25em;}
+.hide {display:none;}
+.quiet {color:#666;}
+.loud {color:#000;}
+.highlight {background:#ff0;}
+.added {background:#060;color:#fff;}
+.removed {background:#900;color:#fff;}
+.first {margin-left:0;padding-left:0;}
+.last {margin-right:0;padding-right:0;}
+.top {margin-top:0;padding-top:0;}
+.bottom {margin-bottom:0;padding-bottom:0;}
+
+/* forms.css */
+label {font-weight:bold;}
+fieldset {padding:1.4em;margin:0 0 1.5em 0;border:1px solid #ccc;}
+legend {font-weight:bold;font-size:1.2em;}
+input[type=text], input[type=password], input.text, input.title, textarea, select {background-color:#fff;border:1px solid #bbb;}
+input[type=text]:focus, input[type=password]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus {border-color:#666;}
+input[type=text], input[type=password], input.text, input.title, textarea, select {margin:0.5em 0;}
+input.text, input.title {width:300px;padding:5px;}
+input.title {font-size:1.5em;}
+textarea {width:390px;height:250px;padding:5px;}
+input[type=checkbox], input[type=radio], input.checkbox, input.radio {position:relative;top:.25em;}
+form.inline {line-height:3;}
+form.inline p {margin-bottom:0;}
+.error, .notice, .success {padding:.8em;margin-bottom:1em;border:2px solid #ddd;}
+.error {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
+.notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
+.error a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+
+/* grid.css */
+.container {width:950px;margin:0 auto;}
+.showgrid {background:url(src/grid.png);}
+.column, .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18, .span-19, .span-20, .span-21, .span-22, .span-23, .span-24 {float:left;margin-right:10px;}
+.last {margin-right:0;}
+.span-1 {width:30px;}
+.span-2 {width:70px;}
+.span-3 {width:110px;}
+.span-4 {width:150px;}
+.span-5 {width:190px;}
+.span-6 {width:230px;}
+.span-7 {width:270px;}
+.span-8 {width:310px;}
+.span-9 {width:350px;}
+.span-10 {width:390px;}
+.span-11 {width:430px;}
+.span-12 {width:470px;}
+.span-13 {width:510px;}
+.span-14 {width:550px;}
+.span-15 {width:590px;}
+.span-16 {width:630px;}
+.span-17 {width:670px;}
+.span-18 {width:710px;}
+.span-19 {width:750px;}
+.span-20 {width:790px;}
+.span-21 {width:830px;}
+.span-22 {width:870px;}
+.span-23 {width:910px;}
+.span-24 {width:950px;margin-right:0;}
+input.span-1, textarea.span-1, input.span-2, textarea.span-2, input.span-3, textarea.span-3, input.span-4, textarea.span-4, input.span-5, textarea.span-5, input.span-6, textarea.span-6, input.span-7, textarea.span-7, input.span-8, textarea.span-8, input.span-9, textarea.span-9, input.span-10, textarea.span-10, input.span-11, textarea.span-11, input.span-12, textarea.span-12, input.span-13, textarea.span-13, input.span-14, textarea.span-14, input.span-15, textarea.span-15, input.span-16, textarea.span-16, input.span-17, textarea.span-17, input.span-18, textarea.span-18, input.span-19, textarea.span-19, input.span-20, textarea.span-20, input.span-21, textarea.span-21, input.span-22, textarea.span-22, input.span-23, textarea.span-23, input.span-24, textarea.span-24 {border-left-width:1px;border-right-width:1px;padding-left:5px;padding-right:5px;}
+input.span-1, textarea.span-1 {width:18px;}
+input.span-2, textarea.span-2 {width:58px;}
+input.span-3, textarea.span-3 {width:98px;}
+input.span-4, textarea.span-4 {width:138px;}
+input.span-5, textarea.span-5 {width:178px;}
+input.span-6, textarea.span-6 {width:218px;}
+input.span-7, textarea.span-7 {width:258px;}
+input.span-8, textarea.span-8 {width:298px;}
+input.span-9, textarea.span-9 {width:338px;}
+input.span-10, textarea.span-10 {width:378px;}
+input.span-11, textarea.span-11 {width:418px;}
+input.span-12, textarea.span-12 {width:458px;}
+input.span-13, textarea.span-13 {width:498px;}
+input.span-14, textarea.span-14 {width:538px;}
+input.span-15, textarea.span-15 {width:578px;}
+input.span-16, textarea.span-16 {width:618px;}
+input.span-17, textarea.span-17 {width:658px;}
+input.span-18, textarea.span-18 {width:698px;}
+input.span-19, textarea.span-19 {width:738px;}
+input.span-20, textarea.span-20 {width:778px;}
+input.span-21, textarea.span-21 {width:818px;}
+input.span-22, textarea.span-22 {width:858px;}
+input.span-23, textarea.span-23 {width:898px;}
+input.span-24, textarea.span-24 {width:938px;}
+.append-1 {padding-right:40px;}
+.append-2 {padding-right:80px;}
+.append-3 {padding-right:120px;}
+.append-4 {padding-right:160px;}
+.append-5 {padding-right:200px;}
+.append-6 {padding-right:240px;}
+.append-7 {padding-right:280px;}
+.append-8 {padding-right:320px;}
+.append-9 {padding-right:360px;}
+.append-10 {padding-right:400px;}
+.append-11 {padding-right:440px;}
+.append-12 {padding-right:480px;}
+.append-13 {padding-right:520px;}
+.append-14 {padding-right:560px;}
+.append-15 {padding-right:600px;}
+.append-16 {padding-right:640px;}
+.append-17 {padding-right:680px;}
+.append-18 {padding-right:720px;}
+.append-19 {padding-right:760px;}
+.append-20 {padding-right:800px;}
+.append-21 {padding-right:840px;}
+.append-22 {padding-right:880px;}
+.append-23 {padding-right:920px;}
+.prepend-1 {padding-left:40px;}
+.prepend-2 {padding-left:80px;}
+.prepend-3 {padding-left:120px;}
+.prepend-4 {padding-left:160px;}
+.prepend-5 {padding-left:200px;}
+.prepend-6 {padding-left:240px;}
+.prepend-7 {padding-left:280px;}
+.prepend-8 {padding-left:320px;}
+.prepend-9 {padding-left:360px;}
+.prepend-10 {padding-left:400px;}
+.prepend-11 {padding-left:440px;}
+.prepend-12 {padding-left:480px;}
+.prepend-13 {padding-left:520px;}
+.prepend-14 {padding-left:560px;}
+.prepend-15 {padding-left:600px;}
+.prepend-16 {padding-left:640px;}
+.prepend-17 {padding-left:680px;}
+.prepend-18 {padding-left:720px;}
+.prepend-19 {padding-left:760px;}
+.prepend-20 {padding-left:800px;}
+.prepend-21 {padding-left:840px;}
+.prepend-22 {padding-left:880px;}
+.prepend-23 {padding-left:920px;}
+.border {padding-right:4px;margin-right:5px;border-right:1px solid #eee;}
+.colborder {padding-right:24px;margin-right:25px;border-right:1px solid #eee;}
+.pull-1 {margin-left:-40px;}
+.pull-2 {margin-left:-80px;}
+.pull-3 {margin-left:-120px;}
+.pull-4 {margin-left:-160px;}
+.pull-5 {margin-left:-200px;}
+.pull-6 {margin-left:-240px;}
+.pull-7 {margin-left:-280px;}
+.pull-8 {margin-left:-320px;}
+.pull-9 {margin-left:-360px;}
+.pull-10 {margin-left:-400px;}
+.pull-11 {margin-left:-440px;}
+.pull-12 {margin-left:-480px;}
+.pull-13 {margin-left:-520px;}
+.pull-14 {margin-left:-560px;}
+.pull-15 {margin-left:-600px;}
+.pull-16 {margin-left:-640px;}
+.pull-17 {margin-left:-680px;}
+.pull-18 {margin-left:-720px;}
+.pull-19 {margin-left:-760px;}
+.pull-20 {margin-left:-800px;}
+.pull-21 {margin-left:-840px;}
+.pull-22 {margin-left:-880px;}
+.pull-23 {margin-left:-920px;}
+.pull-24 {margin-left:-960px;}
+.pull-1, .pull-2, .pull-3, .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10, .pull-11, .pull-12, .pull-13, .pull-14, .pull-15, .pull-16, .pull-17, .pull-18, .pull-19, .pull-20, .pull-21, .pull-22, .pull-23, .pull-24 {float:left;position:relative;}
+.push-1 {margin:0 -40px 1.5em 40px;}
+.push-2 {margin:0 -80px 1.5em 80px;}
+.push-3 {margin:0 -120px 1.5em 120px;}
+.push-4 {margin:0 -160px 1.5em 160px;}
+.push-5 {margin:0 -200px 1.5em 200px;}
+.push-6 {margin:0 -240px 1.5em 240px;}
+.push-7 {margin:0 -280px 1.5em 280px;}
+.push-8 {margin:0 -320px 1.5em 320px;}
+.push-9 {margin:0 -360px 1.5em 360px;}
+.push-10 {margin:0 -400px 1.5em 400px;}
+.push-11 {margin:0 -440px 1.5em 440px;}
+.push-12 {margin:0 -480px 1.5em 480px;}
+.push-13 {margin:0 -520px 1.5em 520px;}
+.push-14 {margin:0 -560px 1.5em 560px;}
+.push-15 {margin:0 -600px 1.5em 600px;}
+.push-16 {margin:0 -640px 1.5em 640px;}
+.push-17 {margin:0 -680px 1.5em 680px;}
+.push-18 {margin:0 -720px 1.5em 720px;}
+.push-19 {margin:0 -760px 1.5em 760px;}
+.push-20 {margin:0 -800px 1.5em 800px;}
+.push-21 {margin:0 -840px 1.5em 840px;}
+.push-22 {margin:0 -880px 1.5em 880px;}
+.push-23 {margin:0 -920px 1.5em 920px;}
+.push-24 {margin:0 -960px 1.5em 960px;}
+.push-1, .push-2, .push-3, .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12, .push-13, .push-14, .push-15, .push-16, .push-17, .push-18, .push-19, .push-20, .push-21, .push-22, .push-23, .push-24 {float:right;position:relative;}
+.prepend-top {margin-top:1.5em;}
+.append-bottom {margin-bottom:1.5em;}
+.box {padding:1.5em;margin-bottom:1.5em;background:#E5ECF9;}
+hr {background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:.1em;margin:0 0 1.45em;border:none;}
+hr.space {background:#fff;color:#fff;visibility:hidden;}
+.clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+.clearfix, .container {display:block;}
+.clear {clear:both;}
+
+/* -------------------------------------------------------------- 
+  
+   screen.css for BP-Vertical-Positioning plugin
+   * Allows vertical positioning and div reordering using Blueprint CSS Framework
+   
+   Created by Sean Stewart [seankstewart.com]
+
+-------------------------------------------------------------- */
+
+/* ----- VERTICAL POSITION STYLES ------ */
+.lift-1 {margin-top:-1.5em;}
+.lift-2 {margin-top:-3em;}
+.lift-3 {margin-top:-4.5em;}
+.lift-4 {margin-top:-6em;}
+.lift-5 {margin-top:-7.5em;}
+.lift-6 {margin-top:-9em;}
+.lift-7 {margin-top:-10.5em;}
+.lift-8 {margin-top:-12em;}
+.lift-9 {margin-top:-13.5em;}
+.lift-10 {margin-top:-15em;}
+.lift-11 {margin-top:-16.5em;}
+.lift-12 {margin-top:-18em;}
+.lift-13 {margin-top:-19.5em;}
+.lift-14 {margin-top:-21em;}
+.lift-15 {margin-top:-22.5em;}
+.lift-16 {margin-top:-24em;}
+.lift-17 {margin-top:-25.5em;}
+.lift-18 {margin-top:-27em;}
+.lift-19 {margin-top:-28.5em;}
+.lift-20 {margin-top:-30em;}
+.lift-21 {margin-top:-31.5em;}
+.lift-22 {margin-top:-33em;}
+.lift-23 {margin-top:-34.5em;}
+.lift-24 {margin-top:-36em;}
+
+.drop-1 {margin-top:1.5em;}
+.drop-2 {margin-top:3em;}
+.drop-3 {margin-top:4.5em;}
+.drop-4 {margin-top:6em;}
+.drop-5 {margin-top:7.5em;}
+.drop-6 {margin-top:9em;}
+.drop-7 {margin-top:10.5em;}
+.drop-8 {margin-top:12em;}
+.drop-9 {margin-top:13.5em;}
+.drop-10 {margin-top:15em;}
+.drop-11 {margin-top:16.5em;}
+.drop-12 {margin-top:18em;}
+.drop-13 {margin-top:19.5em;}
+.drop-14 {margin-top:21em;}
+.drop-15 {margin-top:22.5em;}
+.drop-16 {margin-top:24em;}
+.drop-17 {margin-top:25.5em;}
+.drop-18 {margin-top:27em;}
+.drop-19 {margin-top:28.5em;}
+.drop-20 {margin-top:30em;}
+.drop-21 {margin-top:31.5em;}
+.drop-22 {margin-top:33em;}
+.drop-23 {margin-top:34.5em;}
+.drop-24 {margin-top:36em;}
+
+
+
+/* ----- DIV REORDER STYLES ------ */
+.container {position:relative;}
+
+.ap {position:absolute;top:0;left:0;clear:both;}
+.move {height:21em;overflow:hidden;margin-right:0;}
+
+.move-1 {padding-top:21em;}
+.move-2 {padding-top:42em;}
+.move-3 {padding-top:63em;}
+.move-4 {padding-top:84em;}
+.move-5 {padding-top:105em;}
+.move-6 {padding-top:126em;}
+.move-7 {padding-top:147em;}
+.move-8 {padding-top:168em;}
+.move-9 {padding-top:189em;}
+.move-10 {padding-top:210em;}
+.move-11 {padding-top:231em;}
+.move-12 {padding-top:252em;}
+.move-13 {padding-top:273em;}
+.move-14 {padding-top:294em;}
+.move-15 {padding-top:315em;}
+.move-16 {padding-top:336em;}
+.move-17 {padding-top:357em;}
+.move-18 {padding-top:378em;}
+.move-19 {padding-top:399em;}
+.move-20 {padding-top:420em;}
+.move-21 {padding-top:441em;}
+.move-22 {padding-top:462em;}
+.move-23 {padding-top:483em;}
+.move-24 {padding-top:504em;}
+
+/* ----- SUPERFISH	 ------ */
+/* ----- 			 ------ */
+/* ----- 			 ------ */
+
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu {
+	line-height:	1.0;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			10em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			2.5em; /* match top ul list item height */
+	z-index:		99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float:			left;
+	margin-bottom:	1em;
+}
+.sf-menu a {
+	border-left:	1px solid #fff;
+	border-top:		1px solid #CFDEFF;
+	padding: 		.75em 1em;
+	text-decoration:none;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color:			#13a;
+}
+.sf-menu li {
+	background:		#BDD2FF;
+}
+.sf-menu li li {
+	background:		#AABDE6;
+}
+.sf-menu li li li {
+	background:		#9AAEDB;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background:		#CFDEFF;
+	outline:		0;
+}
+
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 	2.25em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		block;
+	right:			.75em;
+	top:			1.05em; /* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	background:		url('../images/arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.8em;
+	background-position: 0 -100px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+.sf-menu ul a > .sf-sub-indicator { background-position:  0 0; }
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+	background:	url('../images/shadow.png') no-repeat bottom right;
+	padding: 0 8px 9px 0;
+	-moz-border-radius-bottomleft: 17px;
+	-moz-border-radius-topright: 17px;
+	-webkit-border-top-right-radius: 17px;
+	-webkit-border-bottom-left-radius: 17px;
+}
+.sf-shadow ul.sf-shadow-off {
+	background: transparent;
+}
+
+/* -------------------------------------------------------------- 
+	Shadowbox 3.0.3
+-------------------------------------------------------------- */
+#sb-title-inner,#sb-info-inner,#sb-loading-inner,div.sb-message{font-family:"HelveticaNeue-Light","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:200;color:#fff;}
+#sb-container{position:fixed;margin:0;padding:0;top:0;left:0;z-index:999;text-align:left;visibility:hidden;display:none;}
+#sb-overlay{position:relative;height:100%;width:100%;}
+#sb-wrapper{position:absolute;visibility:hidden;width:100px;}
+#sb-wrapper-inner{position:relative;border:1px solid #303030;overflow:hidden;height:100px;}
+#sb-body{position:relative;height:100%;}
+#sb-body-inner{position:absolute;height:100%;width:100%;}
+#sb-player.html{height:100%;overflow:auto;}
+#sb-body img{border:none;}
+#sb-loading{position:relative;height:100%;}
+#sb-loading-inner{position:absolute;font-size:14px;line-height:24px;height:24px;top:50%;margin-top:-12px;width:100%;text-align:center;}
+#sb-loading-inner span{background:url(loading.gif) no-repeat;padding-left:34px;display:inline-block;}
+#sb-body,#sb-loading{background-color:#060606;}
+#sb-title,#sb-info{position:relative;margin:0;padding:0;overflow:hidden;}
+#sb-title,#sb-title-inner{height:26px;line-height:26px;}
+#sb-title-inner{font-size:16px;}
+#sb-info,#sb-info-inner{height:20px;line-height:20px;}
+#sb-info-inner{font-size:12px;}
+#sb-nav{float:right;height:16px;padding:2px 0;width:45%;}
+#sb-nav a{display:block;float:right;height:16px;width:16px;margin-left:3px;cursor:pointer;background-repeat:no-repeat;}
+#sb-nav-close{background-image:url(close.png);}
+#sb-nav-next{background-image:url(next.png);}
+#sb-nav-previous{background-image:url(previous.png);}
+#sb-nav-play{background-image:url(play.png);}
+#sb-nav-pause{background-image:url(pause.png);}
+#sb-counter{float:left;width:45%;}
+#sb-counter a{padding:0 4px 0 0;text-decoration:none;cursor:pointer;color:#fff;}
+#sb-counter a.sb-counter-current{text-decoration:underline;}
+div.sb-message{font-size:12px;padding:10px;text-align:center;}
+div.sb-message a:link,div.sb-message a:visited{color:#fff;text-decoration:underline;}
+
+/*
+ * jQuery Nivo Slider v1.7
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2010, Gilbert Pellegrom
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * March 2010
+ */
+#slider{
+	border: 11px solid #FFF;
+	margin-top: 35px;
+	position:relative;
+}
+
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+ 
+.nivoSlider {
+	position:relative;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:60;
+	display:none;
+}
+
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:50;
+	height:100%;
+}
+
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	opacity:0.8;
+	width:100%;
+	z-index:89;
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	left:47%;
+	bottom:-33px;
+}
+
+.nivo-directionNav a {
+	background:url("../img/slider/arrows.png") no-repeat scroll 0 0 transparent;
+	position:absolute;
+	top:45%;
+	z-index:99;
+	cursor:pointer;
+	display:block;
+	height:34px;
+	text-indent:-9999px;
+	width:32px;
+}
+
+.nivo-prevNav {
+	left:14px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+
+a.nivo-nextNav {
+background-position:-32px 0;
+right:10px;
+}
+
+.nivo-controlNav a {
+	display:block;
+	width:10px;
+	height:10px;
+	background:url("../img/slider/bullets.png") no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+	cursor: pointer;
+}
+.nivo-controlNav a.active {
+	background-position:-10px 0;
+}
