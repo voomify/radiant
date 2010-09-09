@@ -8,8 +8,8 @@ gem "aws-s3", "0.6.2"
 gem "activeresource", "2.3.8"
 
 # use these gems for debugging voomify along with schneider vendored
-#gem "httparty"
-#gem "utility_drawer"
+gem "httparty"
+gem "utility_drawer"
 
 # bundler requires these gems in all environments
 # gem "nokogiri", "1.4.2"
