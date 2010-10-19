@@ -1,0 +1,52 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.3)
+    activeresource (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
+    builder (2.1.2)
+    color (1.4.1)
+    crack (0.1.8)
+    fastercsv (1.5.3)
+    hoe (2.6.2)
+      rake (>= 0.8.7)
+      rubyforge (>= 2.0.4)
+    httparty (0.6.1)
+      crack (= 0.1.8)
+    json_pure (1.4.6)
+    mime-types (1.16)
+    pdf-writer (1.1.8)
+      color (>= 1.4.0)
+      transaction-simple (~> 1.3)
+    pg (0.9.0)
+    rack (1.1.0)
+    rake (0.8.7)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
+    ruport (1.6.3)
+      fastercsv
+      pdf-writer (= 1.1.8)
+    transaction-simple (1.4.0)
+      hoe (>= 1.1.7)
+    utility_drawer (0.1.5)
+    will_paginate (2.3.15)
+    xml-simple (1.0.12)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth
+  activeresource (= 2.3.8)
+  aws-s3 (= 0.6.2)
+  httparty
+  pg
+  rack (= 1.1.0)
+  ruport
+  utility_drawer
+  will_paginate
