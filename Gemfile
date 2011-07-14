@@ -5,7 +5,7 @@ gem "pg"
 gem "rack", "1.1.0"
 gem "will_paginate"
 gem "aws-s3", "0.6.2"
-gem "activeresource", "2.3.8"
+# gem "activeresource", "2.3.8"
 gem 'ruport'
 
 # use these gems for debugging voomify along with schneider vendored
