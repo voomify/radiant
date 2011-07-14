@@ -10,7 +10,7 @@ module Radiant
     annotate :version, :description, :url, :root, :extension_name
 
     attr_writer :active
-
+    
     def active?
       @active
     end
@@ -32,10 +32,20 @@ module Radiant
       File.join(self.root, 'db', 'migrate')
     end
     
+    def migrates_from
+      @migrates_from ||= {}
+    end
+    
     def routing_file
       File.join(self.root, 'config', 'routes.rb')
     end
-    
+        
+    def load_initializers
+      Dir["#{self.root}/config/initializers/**/*.rb"].sort.each do |initializer|
+        load(initializer)
+      end
+    end
+
     def migrator
       unless @migrator
         extension = self
@@ -43,16 +53,26 @@ module Radiant
       end
       @migrator
     end
-
+    
     def admin
       AdminUI.instance
     end
     
-    def tab(name,&block)
+    def tab(name, options={}, &block)
       @the_tab = admin.nav[name]
       unless @the_tab
         @the_tab = Radiant::AdminUI::NavTab.new(name)
-        admin.nav << @the_tab
+        before = options.delete(:before)
+        after = options.delete(:after)
+        tab_name = before || after
+        tab_object = admin.nav[tab_name]
+        if tab_object
+          index = admin.nav.index(tab_object)
+          index += 1 unless before
+          admin.nav.insert(index, @the_tab)
+        else
+          admin.nav << @the_tab
+        end
       end
       if block_given?
         block.call(@the_tab)
@@ -110,6 +130,10 @@ module Radiant
         @route_definitions ||= []
       end
 
+      def migrate_from(extension_name, until_migration=nil)
+        instance.migrates_from[extension_name] = until_migration
+      end
+
       # Expose the configuration object for init hooks
       # class MyExtension < ActiveRecord::Base
       #   extension_config do |config|
@@ -121,6 +145,7 @@ module Radiant
       def extension_config(&block)
         yield Rails.configuration
       end
+      
     end
   end
 end

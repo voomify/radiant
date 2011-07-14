@@ -13,7 +13,7 @@ describe Radiant::Extension do
       Radiant::Extension.should respond_to(attribute)
     end
   end
-  
+
   it "should have access to the Radiant::AdminUI instance" do
     BasicExtension.instance.should respond_to(:admin)
     BasicExtension.admin.should == Radiant::AdminUI.instance
@@ -37,7 +37,7 @@ describe Radiant::Extension do
     it { should be_routed }
   end
   context "when the routing_file does not exist" do
-    subject { BasicExtension }
+    subject { UnroutedExtension }
     it { should_not be_routed }
   end
   
@@ -60,14 +60,34 @@ describe Radiant::Extension do
     end
   end
 
-  it "should allow the manipulation of tabs" do
-    BasicExtension.admin.nav['Design'].length.should == 2
+  it "should allow the addition of items" do
+    start_length = BasicExtension.admin.nav['Design'].length
     BasicExtension.class_eval {
       tab 'Design' do
         add_item "Pages", "/admin/pages"
       end
     }
-    BasicExtension.admin.nav['Design'].length.should == 3
+    BasicExtension.admin.nav['Design'].length.should == start_length + 1
+  end
+  
+  it "should allow the ordering of nav tabs after other tabs" do
+    nav = BasicExtension.admin.nav
+    BasicExtension.class_eval {
+      tab "Assets", :before => "Design"
+    }
+    assets = nav["Assets"]
+    content = nav["content"]
+    nav.index(assets).should == (nav.index(content) + 1)
+  end
+  
+  it "should allow the ordering of nav tabs before other tabs" do
+    nav = BasicExtension.admin.nav
+    BasicExtension.class_eval {
+      tab "Assets", :before => "Design"
+    }
+    assets = nav["Assets"]
+    design = nav["Design"]
+    nav.index(assets).should == (nav.index(design) - 1)
   end
   
   it "should allow the addition of tabs" do

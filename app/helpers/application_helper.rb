@@ -1,7 +1,6 @@
 module ApplicationHelper
   include LocalTime
   include Admin::RegionsHelper
-  include Radiant::LegacyRoutes
   
   def config
     Radiant::Config
@@ -40,18 +39,6 @@ module ApplicationHelper
   
   def save_model_and_continue_editing_button(model)
     submit_tag t('buttons.save_and_continue'), :name => 'continue', :class => 'button', :accesskey => "s"
-  end
-  
-  # Redefine pluralize() so that it doesn't put the count at the beginning of
-  # the string.
-  def pluralize(count, singular, plural = nil)
-    if count == 1
-      singular
-    elsif plural
-      plural
-    else
-      ActiveSupport::Inflector.pluralize(singular)
-    end
   end
   
   def current_item?(item)
@@ -158,7 +145,7 @@ module ApplicationHelper
   end
   
   def filter_options_for_select(selected=nil)
-    options_for_select([[t('select.none'), '']] + TextFilter.descendants.map { |s| s.filter_name }.sort, selected)
+    options_for_select([[t('select.none'), '']] + TextFilter.descendants_names, selected)
   end
   
   def body_classes
@@ -228,7 +215,9 @@ module ApplicationHelper
       depagination_limit = options.delete(:max_per_page)                           # supply :max_per_page => false to include the 'show all' link no matter how large the collection
       html = will_paginate(list, will_paginate_options.merge(options))
       if depaginate && list.total_pages > 1 && (!depagination_limit.blank? || list.total_entries <= depagination_limit.to_i)
-        html << content_tag(:div, link_to("show all", :pp => list.total_entries), :class => 'depaginate')
+        html << content_tag(:div, link_to(t('show_all'), :pp => 'all'), :class => 'depaginate')
+      elsif depaginate && list.total_entries > depagination_limit.to_i
+        html = content_tag(:div, link_to("paginate", :p => 1), :class => 'pagination')
       end
       html
     end

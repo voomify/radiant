@@ -74,13 +74,6 @@ describe ApplicationHelper do
     helper.save_model_and_continue_editing_button(model).should =~ /^<input/
   end
   
-  it "should redefine pluralize without the count" do
-    helper.pluralize(1, "page").should == "page"
-    helper.pluralize(2, "page").should == "pages"
-    helper.pluralize(0, "page").should == "pages"
-    helper.pluralize(2, "ox", "oxen").should == "oxen"
-  end
-  
   it "should determine whether a given url matches the current url" do
     request = mock("request")
     helper.stub!(:request).and_return(request)
@@ -179,7 +172,12 @@ describe ApplicationHelper do
   it "should provide the admin object" do
     helper.admin.should == Radiant::AdminUI.instance
   end
-  
+
+  it "should return filter options for select" do
+    helper.filter_options_for_select.should =~ %r{<option value=\"\">&lt;none&gt;</option>}
+    helper.filter_options_for_select.should =~ %r{<option value=\"Markdown\">Markdown</option>}
+  end 
+
   it "should include the regions helper" do
     ApplicationHelper.included_modules.should include(Admin::RegionsHelper)
   end

@@ -1,5 +1,6 @@
 class Admin::WelcomeController < ApplicationController
   no_login_required
+  before_filter :never_cache
   skip_before_filter :verify_authenticity_token
   
   def index
@@ -23,7 +24,7 @@ class Admin::WelcomeController < ApplicationController
   end
   
   def logout
-    cookies[:session_token] = { :expires => 1.day.ago }
+    request.cookies[:session_token] = { :expires => 1.day.ago.utc }
     self.current_user.forget_me if self.current_user
     self.current_user = nil
     announce_logged_out
@@ -31,6 +32,10 @@ class Admin::WelcomeController < ApplicationController
   end
   
   private
+  
+    def never_cache
+      expires_now
+    end
   
     def announce_logged_out
       flash[:notice] = t('welcome_controller.logged_out')

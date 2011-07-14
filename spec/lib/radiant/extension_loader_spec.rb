@@ -28,16 +28,26 @@ describe Radiant::ExtensionLoader do
     @initializer.should_receive(:configuration).and_return(@configuration)
     @instance.configuration.should == @configuration
   end
-
+  
   it "should only load extensions specified in the configuration" do
     @configuration.should_receive(:extensions).at_least(:once).and_return([:basic])
+    @configuration.should_receive(:ignored_extensions).at_least(:once).and_return([])
     @instance.stub!(:all_extension_roots).and_return(@extension_paths)
     @instance.send(:select_extension_roots).should == [File.expand_path("#{RADIANT_ROOT}/test/fixtures/extensions/basic")]
   end
 
   it "should load gem extensions with paths matching radiant-*-extension" do
-    gem_path = File.join RADIANT_ROOT, %w(test fixtures gems radiant-gem_ext-extension-0.0.0)
+    gem_path = File.join RADIANT_ROOT, %w(test fixtures gems radiant-gem_ext-extension-61e0ad14a3ae)
     @configuration.should_receive(:extensions).at_least(:once).and_return([:gem_ext])
+    @configuration.should_receive(:ignored_extensions).at_least(:once).and_return([])
+    @instance.stub!(:all_extension_roots).and_return([File.expand_path(gem_path)])
+    @instance.send(:select_extension_roots).should == [gem_path]
+  end
+
+  it "should load gem extensions packed by bundler from git" do
+    gem_path = File.join RADIANT_ROOT, %w(test fixtures gems radiant-gem_ext-extension-61e0ad14a3ae)
+    @configuration.should_receive(:extensions).at_least(:once).and_return([:gem_ext])
+    @configuration.should_receive(:ignored_extensions).at_least(:once).and_return([])
     @instance.stub!(:all_extension_roots).and_return([File.expand_path(gem_path)])
     @instance.send(:select_extension_roots).should == [gem_path]
   end
@@ -47,6 +57,7 @@ describe Radiant::ExtensionLoader do
     extension_roots = extensions.map {|ext| File.expand_path("#{RADIANT_ROOT}/test/fixtures/extensions/#{ext}") }
     @instance.stub!(:all_extension_roots).and_return(@extension_paths)
     @configuration.should_receive(:extensions).at_least(:once).and_return(extensions)
+    @configuration.should_receive(:ignored_extensions).at_least(:once).and_return([])
     @instance.send(:select_extension_roots).should == extension_roots
   end
 
@@ -55,7 +66,20 @@ describe Radiant::ExtensionLoader do
     extension_roots = @extension_paths[0..-2].unshift(@extension_paths[-1])
     @instance.stub!(:all_extension_roots).and_return(@extension_paths)
     @configuration.should_receive(:extensions).at_least(:once).and_return(extensions)
+    @configuration.should_receive(:ignored_extensions).at_least(:once).and_return([])
     @instance.send(:select_extension_roots).should == extension_roots
+  end
+  
+  it "should not load any ignored extensions" do
+    extensions = [:load_order_red, :all, :load_order_green]
+    extensions -= [:basic]
+    extension_roots = @extension_paths[0..-2].unshift(@extension_paths[-1])
+    @instance.stub!(:all_extension_roots).and_return(@extension_paths)
+    @configuration.should_receive(:extensions).at_least(:once).and_return(extensions)
+    @configuration.should_receive(:ignored_extensions).at_least(:once).and_return([:basic])
+    roots = @instance.send(:select_extension_roots)
+    exts = roots.collect{|e| e.split('/').last }
+    exts.should_not include('basic')
   end
 
   it "should raise an error when an extension named in the configuration cannot be found" do
@@ -75,7 +99,6 @@ describe Radiant::ExtensionLoader do
     @instance.send(:load_paths_for, "#{RADIANT_ROOT}/vendor/extensions/archive").should == %W{
         #{RADIANT_ROOT}/vendor/extensions/archive/lib
         #{RADIANT_ROOT}/vendor/extensions/archive/app/models
-        #{RADIANT_ROOT}/vendor/extensions/archive/test/helpers
         #{RADIANT_ROOT}/vendor/extensions/archive}
   end
 
@@ -94,11 +117,11 @@ describe Radiant::ExtensionLoader do
   end
 
   it "should add extension paths to the configuration" do
-    load_paths = []
+    autoload_paths = []
     @instance.should_receive(:extension_load_paths).and_return(@extension_paths)
-    @configuration.should_receive(:load_paths).at_least(:once).and_return(load_paths)
+    @configuration.should_receive(:autoload_paths).at_least(:once).and_return(autoload_paths)
     @instance.add_extension_paths
-    load_paths.should == @extension_paths
+    autoload_paths.should == @extension_paths
   end
 
   it "should add plugin paths to the configuration" do

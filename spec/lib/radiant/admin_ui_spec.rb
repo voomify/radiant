@@ -27,7 +27,7 @@ describe Radiant::AdminUI do
     @admin.nav.should have(3).items
     @admin.nav[:content].should have(1).items
     @admin.nav[:design].should have(2).items
-    @admin.nav[:settings].should have(3).items
+    @admin.nav[:settings].should have(4).items
   end
 
   it "should have collections of Region Sets for every controller" do
@@ -47,7 +47,9 @@ describe Radiant::AdminUI do
     end
     page.edit.main.should == %w{edit_header edit_form edit_popups}
     page.edit.form.should == %w{edit_title edit_extended_metadata
-                                edit_page_parts edit_layout_and_type}
+                                edit_page_parts}
+    page.edit.layout.should == %w{edit_layout edit_type edit_status
+                                  edit_published_at}
     page.edit.parts_bottom.should == %w{}
     page.edit.form_bottom.should == %w{edit_buttons edit_timestamp}
     page.index.sitemap_head.should == %w{title_column_header

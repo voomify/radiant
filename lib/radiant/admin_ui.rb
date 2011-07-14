@@ -5,18 +5,18 @@ module Radiant
   class AdminUI
     # This may be loaded before ActiveSupport, so do an explicit require
     require 'radiant/admin_ui/region_set'
-
+    
     class DuplicateTabNameError < StandardError; end
-
+    
     # The NavTab Class holds the structure of a navigation tab (including
     # its sub-nav items).
     class NavTab < Array
       attr_reader :name
-
+      
       def initialize(name)
         @name = name
       end
-
+      
       def [](id)
         unless id.kind_of? Fixnum
           self.find {|subnav_item| subnav_item.name.to_s.titleize == id.to_s.titleize }
@@ -24,7 +24,7 @@ module Radiant
           super
         end
       end
-
+      
       def <<(*args)
         options = args.extract_options!
         item = args.size > 1 ? deprecated_add(*(args << caller)) : args.first
@@ -46,7 +46,7 @@ module Radiant
           end
         end
       end
-
+      
       alias :add :<<
       
       def add_item(*args)
@@ -63,30 +63,30 @@ module Radiant
           add NavSubItem.new(args.first, args.second)
         end
       end
-
+      
       def visible?(user)
         any? { |sub_item| sub_item.visible?(user) }
       end
-
+      
       def deprecated_add(name, url, caller)
         ActiveSupport::Deprecation.warn("admin.tabs.add is no longer supported in Radiant 0.9.x.  Please update your code to use: \ntab \"Content\" do\n\tadd_item(...)\nend", caller)
         NavSubItem.new(name, url)
       end
     end
-
+    
     # Simple structure for storing the properties of a tab's sub items.
     class NavSubItem
       attr_reader :name, :url
       attr_accessor :tab
-
+      
       def initialize(name, url = "#")
         @name, @url = name, url
       end
-
+      
       def visible?(user)
         visible_by_controller?(user)
       end
-
+      
       def relative_url
         File.join(ActionController::Base.relative_url_root || '', url)
       end
@@ -102,9 +102,9 @@ module Radiant
         end
       end
     end
-
+    
     include Simpleton
-
+    
     attr_accessor :nav
     
     def nav_tab(*args)
@@ -118,50 +118,53 @@ module Radiant
     def tabs
       nav['Content']
     end
-
+    
     # Region sets
-    %w{page snippet layout user extension}.each do |controller|
+    %w{page snippet layout user configuration extension}.each do |controller|
       attr_accessor controller
       alias_method "#{controller}s", controller
     end
-
+    
     def initialize
       @nav = NavTab.new("Tab Container")
       load_default_regions
     end
-
+    
     def load_default_nav
       content = nav_tab("Content")
       content << nav_item("Pages", "/admin/pages")
       nav << content
-
+      
       design = nav_tab("Design")
       design << nav_item("Layouts", "/admin/layouts")
       design << nav_item("Snippets", "/admin/snippets")
       nav << design
-
+      
       settings = nav_tab("Settings")
+      settings << nav_item("General", "/admin/configuration")
       settings << nav_item("Personal", "/admin/preferences")
       settings << nav_item("Users", "/admin/users")
       settings << nav_item("Extensions", "/admin/extensions")
       nav << settings
     end
-
+    
     def load_default_regions
       @page = load_default_page_regions
       @snippet = load_default_snippet_regions
       @layout = load_default_layout_regions
       @user = load_default_user_regions
+      @configuration = load_default_configuration_regions
       @extension = load_default_extension_regions
     end
-
+    
     private
-
+    
     def load_default_page_regions
-      returning OpenStruct.new do |page|
+      OpenStruct.new.tap do |page|
         page.edit = RegionSet.new do |edit|
           edit.main.concat %w{edit_header edit_form edit_popups}
-          edit.form.concat %w{edit_title edit_extended_metadata edit_page_parts edit_layout_and_type}
+          edit.form.concat %w{edit_title edit_extended_metadata edit_page_parts}
+          edit.layout.concat %w{edit_layout edit_type edit_status edit_published_at}
           edit.form_bottom.concat %w{edit_buttons edit_timestamp}
         end
         page.index = RegionSet.new do |index|
@@ -172,9 +175,9 @@ module Radiant
         page.new = page._part = page.edit
       end
     end
-
+    
     def load_default_user_regions
-      returning OpenStruct.new do |user|
+      OpenStruct.new.tap do |user|
         user.preferences = RegionSet.new do |preferences|
           preferences.main.concat %w{edit_header edit_form}
           preferences.form.concat %w{edit_name edit_email edit_username edit_password edit_locale}
@@ -194,9 +197,9 @@ module Radiant
         user.new = user.edit
       end
     end
-
+    
     def load_default_snippet_regions
-      returning OpenStruct.new do |snippet|
+      OpenStruct.new.tap do |snippet|
         snippet.edit = RegionSet.new do |edit|
           edit.main.concat %w{edit_header edit_form}
           edit.form.concat %w{edit_title edit_content edit_filter}
@@ -211,9 +214,9 @@ module Radiant
         snippet.new = snippet.edit
       end
     end
-
+    
     def load_default_layout_regions
-      returning OpenStruct.new do |layout|
+      OpenStruct.new.tap do |layout|
         layout.edit = RegionSet.new do |edit|
           edit.main.concat %w{edit_header edit_form}
           edit.form.concat %w{edit_title edit_extended_metadata edit_content}
@@ -228,9 +231,23 @@ module Radiant
         layout.new = layout.edit
       end
     end
-
+    
+    def load_default_configuration_regions
+      OpenStruct.new.tap do |configuration|
+        configuration.show = RegionSet.new do |show|
+          show.user.concat %w{preferences}
+          show.config.concat %w{site defaults users}
+        end
+        configuration.edit = RegionSet.new do |edit|
+          edit.main.concat %w{edit_header edit_form}
+          edit.form.concat %w{edit_site edit_defaults edit_users}
+          edit.form_bottom.concat %w{edit_buttons}
+        end
+      end
+    end
+    
     def load_default_extension_regions
-      returning OpenStruct.new do |extension|
+      OpenStruct.new.tap do |extension|
         extension.index = RegionSet.new do |index|
           index.thead.concat %w{title_header website_header version_header}
           index.tbody.concat %w{title_cell website_cell version_cell}

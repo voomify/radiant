@@ -1,13 +1,13 @@
 # Uncomment this if you reference any of your controllers in activate
 # require_dependency 'application_controller'
-
+require 'radiant-<%= file_name %>-extension/version'
 class <%= class_name %> < Radiant::Extension
-  version "1.0"
-  description "Describe your extension here"
+  version Radiant<%= class_name %>::VERSION
+  description "Adds <%= file_name %> to Radiant."
   url "<%= homepage %>"
   
   # extension_config do |config|
-  #   config.gem 'some-awesome-gem
+  #   config.gem 'some-awesome-gem'
   #   config.after_initialize do
   #     run_something
   #   end

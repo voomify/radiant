@@ -38,21 +38,21 @@ unless File.directory? "#{RAILS_ROOT}/app"
         radiant_git = "git://github.com/radiant/radiant.git"
 
         if File.exist?("vendor/radiant/.git/HEAD")
-          system "cd vendor/radiant; git checkout master; git pull origin master"
+          cd("vendor/radiant") { system "git checkout master"; system "git pull origin master"}        
         else
           system "git clone #{radiant_git} vendor/radiant"
         end
 
         case
         when ENV['TAG']
-          system "cd vendor/radiant; git checkout -b v#{ENV['TAG']} #{ENV['TAG']}"
+          cd("vendor/radiant") { system "git checkout -b v#{ENV['TAG']} #{ENV['TAG']}"} 
         when ENV['BRANCH']
-          system "cd vendor/radiant; git checkout --track -b #{ENV['BRANCH']} origin/#{ENV['BRANCH']}"
+          cd("vendor/radiant") { system "git checkout --track -b #{ENV['BRANCH']} origin/#{ENV['BRANCH']}"} 
         when ENV['REVISION']
-          system "cd vendor/radiant; git checkout -b REV_#{ENV['REVISION']} #{ENV['REVISION']}"
+          cd("vendor/radiant") { system "git checkout -b REV_#{ENV['REVISION']} #{ENV['REVISION']}"} 
         end
 
-        system "cd vendor/radiant; git submodule init; git submodule update"
+        cd("vendor/radiant") { system "git submodule update --init"}        
       end
     end
 
@@ -61,9 +61,9 @@ unless File.directory? "#{RAILS_ROOT}/app"
       rm_rf "vendor/radiant"
     end
 
-    desc "Update configs, scripts, sass, stylesheets and javascripts from Radiant."
+    desc "Update configs, scripts, html, images, sass, stylesheets and javascripts from Radiant."
     task :update do
-      tasks = %w{scripts javascripts configs initializers images sass stylesheets cached_assets}
+      tasks = %w{scripts javascripts configs static_html images sass stylesheets cached_assets}
       tasks = tasks & ENV['ONLY'].split(',') if ENV['ONLY']
       tasks = tasks - ENV['EXCEPT'].split(',') if ENV['EXCEPT']
       tasks.each do |task| 
@@ -166,11 +166,21 @@ the new files:"
         end
       end
 
-      desc "Update admin images from your current radiant install"
+      desc "Update static HTML files from your current radiant install"
+      task :static_html do
+        project_dir = RAILS_ROOT + "/public/"
+        html_files = Dir["#{File.dirname(__FILE__)}/../../public/*.html"].delete_if { |f| f =~ /404.html|500.html/ }
+        FileUtils.cp(html_files, project_dir)
+      end
+
+      desc "Update admin and radiant images from your current radiant install"
       task :images do
-        project_dir = RAILS_ROOT + '/public/images/admin/'
-        images = Dir["#{File.dirname(__FILE__)}/../../public/images/admin/*"]
-        FileUtils.cp(images, project_dir)
+        %w{admin radiant}.each do |d|
+          project_dir = RAILS_ROOT + "/public/images/#{d}/"
+          FileUtils.mkdir_p(project_dir)
+          images = Dir["#{File.dirname(__FILE__)}/../../public/images/#{d}/*"]
+          FileUtils.cp_r(images, project_dir)
+        end
       end
 
       desc "Update admin stylesheets from your current radiant install"
@@ -188,19 +198,26 @@ the new files:"
       task :sass do
         copy_sass = proc do |project_dir, sass_files|
           sass_files.reject!{|s| File.basename(s) == 'overrides.sass'} if File.exists?(project_dir + 'overrides.sass') || File.exists?(project_dir + '../overrides.css')
+          sass_files.reject!{|s| File.directory?(s) }
           FileUtils.mkpath(project_dir)
-          FileUtils.cp_r(sass_files, project_dir)
+          FileUtils.cp(sass_files, project_dir)
         end
-        copy_sass[RAILS_ROOT + '/public/stylesheets/sass/admin/', Dir["#{RADIANT_ROOT}/public/stylesheets/sass/admin/*"]]
+        sass_dir = "#{RADIANT_ROOT}/public/stylesheets/sass/admin"
+        copy_sass[RAILS_ROOT + '/public/stylesheets/sass/admin/', Dir["#{sass_dir}/*"]]
+        Dir["#{sass_dir}/*"].each do |d|
+          if File.directory?(d)
+            copy_sass[RAILS_ROOT + "/public/stylesheets/sass/admin/#{File.basename(d)}/", Dir["#{d}/*"]]
+          end
+        end
       end
 
-      desc "Update initializers from your current radiant install"
-      task :initializers do
-        project_dir = RAILS_ROOT + '/config/initializers/'
-        FileUtils.mkpath project_dir
-        initializers = Dir["#{File.dirname(__FILE__)}/../../config/initializers/*.rb"]
-        FileUtils.cp(initializers, project_dir)
-      end
+      # desc "Update initializers from your current radiant install"
+      # task :initializers do
+      #   project_dir = RAILS_ROOT + '/config/initializers/'
+      #   FileUtils.mkpath project_dir
+      #   initializers = Dir["#{File.dirname(__FILE__)}/../../config/initializers/*.rb"]
+      #   FileUtils.cp(initializers, project_dir)
+      # end
     end
   end
 end

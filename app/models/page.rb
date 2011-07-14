@@ -11,6 +11,8 @@ class Page < ActiveRecord::Base
   acts_as_tree :order => 'virtual DESC, title ASC'
   has_many :parts, :class_name => 'PagePart', :order => 'id', :dependent => :destroy
   accepts_nested_attributes_for :parts, :allow_destroy => true
+  has_many :fields, :class_name => 'PageField', :order => 'id', :dependent => :destroy
+  accepts_nested_attributes_for :fields, :allow_destroy => true
   belongs_to :layout
   belongs_to :created_by, :class_name => 'User'
   belongs_to :updated_by, :class_name => 'User'
@@ -24,16 +26,20 @@ class Page < ActiveRecord::Base
 
   validates_format_of :slug, :with => %r{^([-_.A-Za-z0-9]*|/)$}
   validates_uniqueness_of :slug, :scope => :parent_id
-  validates_numericality_of :id, :status_id, :parent_id, :allow_nil => true, :only_integer => true
 
   validate :valid_class_name
 
   include Radiant::Taggable
   include StandardTags
+  include DeprecatedTags
   include Annotatable
 
   annotate :description
   attr_accessor :request, :response, :pagination_parameters
+  class_inheritable_accessor :in_menu
+  self.in_menu = true
+  class_inheritable_accessor :default_child
+  self.default_child = self
 
   set_inheritance_column :class_name
 
@@ -58,9 +64,10 @@ class Page < ActiveRecord::Base
     true
   end
 
-  def child_url(child)
-    clean_url(url + '/' + child.slug)
+  def child_path(child)
+    clean_path(path + '/' + child.slug)
   end
+  alias_method :child_url, :child_path
 
   def headers
     # Return a blank hash that child classes can override or merge
@@ -87,8 +94,20 @@ class Page < ActiveRecord::Base
     !has_part?(name) && self.ancestors.any? { |page| page.has_part?(name) }
   end
 
+  def field(name)
+    if new_record? or fields.any?(&:new_record?)
+      fields.detect { |f| f.name.downcase == name.to_s.downcase }
+    else
+      fields.find_by_name name.to_s
+    end
+  end
+
   def published?
     status == Status[:published]
+  end
+  
+  def scheduled?
+    status == Status[:scheduled]
   end
   
   def status
@@ -99,13 +118,14 @@ class Page < ActiveRecord::Base
     self.status_id = value.id
   end
 
-  def url
+  def path
     if parent?
-      parent.child_url(self)
+      parent.child_path(self)
     else
-      clean_url(slug)
+      clean_path(slug)
     end
   end
+  alias_method :url, :path
 
   def process(request, response)
     @request, @response = request, response
@@ -143,20 +163,20 @@ class Page < ActiveRecord::Base
     parse_object(snippet)
   end
 
-  def find_by_url(url, live = true, clean = true)
+  def find_by_path(path, live = true, clean = true)
     return nil if virtual?
-    url = clean_url(url) if clean
-    my_url = self.url
-    if (my_url == url) && (not live or published?)
+    path = clean_path(path) if clean
+    my_path = self.path
+    if (my_path == path) && (not live or published?)
       self
-    elsif (url =~ /^#{Regexp.quote(my_url)}([^\/]*)/)
+    elsif (path =~ /^#{Regexp.quote(my_path)}([^\/]*)/)
       slug_child = children.find_by_slug($1)
       if slug_child
-        found = slug_child.find_by_url(url, live, clean)
+        found = slug_child.find_by_url(path, live, clean) # TODO: set to find_by_path after deprecation
         return found if found
       end
       children.each do |child|
-        found = child.find_by_url(url, live, clean)
+        found = child.find_by_url(path, live, clean) # TODO: set to find_by_path after deprecation
         return found if found
       end
       file_not_found_types = ([FileNotFoundPage] + FileNotFoundPage.descendants)
@@ -166,13 +186,14 @@ class Page < ActiveRecord::Base
       children.find(:first, :conditions => [condition] + file_not_found_names)
     end
   end
+  alias_method :find_by_url, :find_by_path
 
   def update_status
-    self[:published_at] = Time.now if self[:status_id] == Status[:published].id && self[:published_at] == nil
+    self.published_at = Time.zone.now if published? && self.published_at == nil
     
-    if self[:published_at] != nil && (self[:status_id] == Status[:published].id || self[:status_id] == Status[:scheduled].id)
-      self[:status_id] = Status[:scheduled].id if self[:published_at]  > Time.now
-      self[:status_id] = Status[:published].id if self[:published_at] <= Time.now
+    if self.published_at != nil && (published? || scheduled?)
+      self[:status_id] = Status[:scheduled].id if self.published_at  > Time.zone.now
+      self[:status_id] = Status[:published].id if self.published_at <= Time.zone.now
     end
 
     true    
@@ -183,11 +204,31 @@ class Page < ActiveRecord::Base
     super(options.reverse_merge(:include => :parts), &block)
   end
 
+  def default_child
+    self.class.default_child
+  end
+
+  def allowed_children
+    [default_child, *Page.descendants.sort_by(&:name)].select(&:in_menu?)
+  end
+
+
   class << self
-    def find_by_url(url, live = true)
+    alias_method :in_menu?, :in_menu
+    alias_method :in_menu, :in_menu=
+
+    def find_by_path(path, live = true)
       root = find_by_parent_id(nil)
       raise MissingRootPageError unless root
-      root.find_by_url(url, live)
+      root.find_by_path(path, live)
+    end
+    def find_by_url(*args)
+      ActiveSupport::Deprecation.warn("`find_by_url' has been deprecated; use `find_by_path' instead.", caller)
+      find_by_path(*args)
+    end
+
+    def date_column_names
+      self.columns.collect{|c| c.name if c.sql_type =~ /(date|time)/}.compact
     end
 
     def display_name(string = nil)
@@ -204,6 +245,7 @@ class Page < ActiveRecord::Base
       @display_name = @display_name + " - not installed" if missing? && @display_name !~ /not installed/
       @display_name
     end
+    
     def display_name=(string)
       display_name(string)
     end
@@ -219,7 +261,7 @@ class Page < ActiveRecord::Base
           begin
             p.constantize
           rescue NameError, LoadError
-            eval(%Q{class #{p} < Page; def self.missing?; true end end}, TOPLEVEL_BINDING)
+            eval(%Q{class #{p} < Page; acts_as_tree; def self.missing?; true end end}, TOPLEVEL_BINDING)
           end
         end
       end
@@ -228,6 +270,7 @@ class Page < ActiveRecord::Base
     def new_with_defaults(config = Radiant::Config)
       page = new
       page.parts.concat default_page_parts(config)
+      page.fields.concat default_page_fields(config)
       default_status = config['defaults.page.status']
       page.status = Status[default_status] if default_status
       page
@@ -258,6 +301,13 @@ class Page < ActiveRecord::Base
           PagePart.new(:name => name, :filter_id => config['defaults.page.filter'])
         end
       end
+
+      def default_page_fields(config = Radiant::Config)
+        default_fields = config['defaults.page.fields'].to_s.strip.split(/\s*,\s*/)
+        default_fields.map do |name|
+          PageField.new(:name => name)
+        end
+      end
   end
 
   private
@@ -282,9 +332,10 @@ class Page < ActiveRecord::Base
       true
     end
 
-    def clean_url(url)
-      "/#{ url.strip }/".gsub(%r{//+}, '/')
+    def clean_path(path)
+      "/#{ path.to_s.strip }/".gsub(%r{//+}, '/')
     end
+    alias_method :clean_url, :clean_path
 
     def parent?
       !parent.nil?
@@ -303,7 +354,7 @@ class Page < ActiveRecord::Base
     end
 
     def parse_object(object)
-      text = object.content
+      text = object.content || ''
       text = parse(text)
       text = object.filter.filter(text) if object.respond_to? :filter_id
       text

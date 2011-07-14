@@ -20,7 +20,15 @@ class Status
   
   def self.find_all
     @@statuses.dup
-  end  
+  end
+  
+  def self.selectable
+    find_all - [self['Scheduled']]
+  end
+    
+  def self.selectable_values
+    self.selectable.map(&:name)
+  end
   
   @@statuses = [
     Status.new(:id => 1,   :name => 'Draft'    ),

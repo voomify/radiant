@@ -14,3 +14,7 @@ spec/datasets/tmp
 rerun.txt
 .bundle
 db/development*structure.sql
+*.swp
+radiant-*.gem
+.rvmrc
+Gemfile.lock

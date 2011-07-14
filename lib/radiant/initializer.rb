@@ -10,8 +10,30 @@ require 'radiant/gem_locator'
 module Radiant
   autoload :Cache, 'radiant/cache'
   
+  class << self
+    # Radiant.config returns the Radiant::Config eigenclass object, so it can be used wherever you would use Radiant::Config.
+    #
+    #   Radiant.config['site.title']
+    #   Radiant.config['site.url'] = 'example.com'
+    #
+    # but it will also yield itself to a block:
+    #
+    #   Radiant.config do |config|
+    #     config.define 'something', default => 'something'
+    #     config['other.thing'] = 'nothing'
+    #   end
+    #    
+    def config  # method must be defined before any initializers run
+      yield Radiant::Config if block_given?
+      Radiant::Config
+    end
+  end
+  
+  # NB. Radiant::Configuration (aka Rails.configuration) is an extension-aware subclass of Rails::Configuration 
+  #     Radiant::Config (aka Radiant.config) is the application-configuration model class
+  
   class Configuration < Rails::Configuration
-    attr_accessor :extension_paths
+    attr_accessor :extension_paths, :ignored_extensions
     attr_writer :extensions
     attr_accessor :view_paths
     attr_accessor :extension_dependencies
@@ -42,6 +64,23 @@ module Radiant
     def extensions
       @extensions ||= all_available_extensions
     end
+
+    def extensions_in_order
+      return @extensions_in_order if @extensions_in_order
+      @extensions_in_order = (if extensions.include?(:all)
+        before_all = extensions.collect {|e| e if extensions.index(e).to_i < extensions.index(:all).to_i }.compact
+        after_all = extensions.collect {|e| e if extensions.index(e).to_i > extensions.index(:all).to_i }.compact
+        replacing_all_symbol = all_available_extensions - ((all_available_extensions & before_all) + (all_available_extensions & after_all))
+        before_all + replacing_all_symbol + after_all
+      else
+        extensions
+      end) - ignored_extensions
+    end
+      
+    def ignore_extensions(array)
+      self.ignored_extensions ||= []
+      self.ignored_extensions |= array
+    end
     
     def all_available_extensions
       # load vendorized extensions by inspecting load path(s)
@@ -62,7 +101,6 @@ module Radiant
       AdminUI.instance
     end
 
-
     def extension(ext)
       ::ActiveSupport::Deprecation.warn("Extension dependencies have been deprecated. Extensions may be packaged as gems and use the Gem spec to declare dependencies.", caller)
       @extension_dependencies << ext unless @extension_dependencies.include?(ext)
@@ -70,7 +108,12 @@ module Radiant
 
     def gem(name, options = {})
       super
-      extensions << $1.intern if gems.last.name =~ /^radiant-(.*)-extension$/
+      if gems.last.name =~ /^radiant-(.*)-extension$/ && extension_symbol = $1.intern
+        @extensions ||= []
+        if (@extensions & [extension_symbol, :all]).empty?
+          extensions << extension_symbol
+        end
+      end
     end
 
     def check_extension_dependencies
@@ -97,6 +140,7 @@ end_error
     private
 
       def library_directories
+        require "#{RADIANT_ROOT}/lib/radiant/gem_dependency_fix"
         libs = %W{ 
           #{RADIANT_ROOT}/vendor/radius/lib
           #{RADIANT_ROOT}/vendor/highline/lib
@@ -121,7 +165,7 @@ end_error
       end
 
       # Provide the load paths for the Radiant installation
-      def default_load_paths
+      def default_autoload_paths
         paths = ["#{RADIANT_ROOT}/test/mocks/#{environment}"]
 
         # Add the app's controller directory
@@ -194,7 +238,7 @@ end_error
       # checks for plugins within extensions:
       extension_loader.add_plugin_paths
       super
-      ActiveSupport::Dependencies.load_once_paths -= extension_loader.extension_load_paths
+      ActiveSupport::Dependencies.autoload_once_paths -= extension_loader.extension_load_paths
     end
 
     def load_plugins
@@ -204,20 +248,34 @@ end_error
       load_gems
       check_gem_dependencies
     end
+    
+    def load_application_initializers
+      load_radiant_initializers
+      super
+      extension_loader.load_extension_initalizers
+    end
+
+    def load_radiant_initializers
+      unless RADIANT_ROOT == RAILS_ROOT   ## in that case the initializers will be run during normal rails startup
+        Dir["#{RADIANT_ROOT}/config/initializers/**/*.rb"].sort.each do |initializer|
+          load(initializer)
+        end
+      end
+    end
 
     def after_initialize
       super
       extension_loader.activate_extensions
       configuration.check_extension_dependencies
     end
-
+    
     def initialize_default_admin_tabs
       admin.nav.clear
       admin.load_default_nav
     end
 
     def initialize_framework_views
-      view_paths = returning [] do |arr|
+      view_paths = [].tap do |arr|
         # Add the singular view path if it's not in the list
         arr << configuration.view_path if !configuration.view_paths.include?(configuration.view_path)
         # Add the default view paths

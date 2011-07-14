@@ -18,15 +18,13 @@ module Admin::PagesHelper
     @page.parts.empty? ? "" : @page.parts[0].filter_id
   end
 
-  def homepage
-    @homepage ||= Page.find_by_parent_id(nil)
-  end
-  
   def status_to_display
     @page.status_id = 100 if @page.status_id == 90
-    @display_status = []
-    Status.find_all.each { |s| @display_status <<  [t(s.name.downcase), s.id] unless s.name == 'Scheduled' }
-    return @display_status
+    @display_status = Status.selectable.map{ |s| [I18n.translate(s.name.downcase), s.id] }
+  end
+
+  def clean_page_description(page)
+    page.description.to_s.strip.gsub(/\t/,'').gsub(/\s+/,' ')
   end
 
   def page_edit_javascripts

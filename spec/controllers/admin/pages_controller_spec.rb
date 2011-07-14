@@ -134,8 +134,9 @@ describe Admin::PagesController do
 
         it "should allow access to #{user.to_s.humanize}s for the #{action} action" do
           login_as user
+          controller.should_receive(:paginated?).and_return(false)
           send method, action, :id => Page.first.id
-          response.should redirect_to('/admin/pages')
+          response.should redirect_to('http://test.host/admin/pages')
         end
       end
     end
@@ -190,6 +191,41 @@ describe Admin::PagesController do
     end
   end
 
+  describe '#preview' do
+    
+    let(:preview_page){ pages(:home) }
+    let(:body_id){ preview_page.part('body').id }
+    let(:preview_params){ 
+      {'page' => { 
+        'title' => 'BOGUS',
+        'id' => preview_page.id.to_s, 
+        'parts_attributes' => [{'content' => 'TEST', 'id' => body_id.to_s}] } } 
+    }
+    it 'should render the page with changes' do
+      request.stub!(:referer).and_return("/admin/pages/#{preview_page.id}/edit")
+      post :preview, preview_params
+      response.body.should eql('TEST')
+    end
+
+    describe 'new child' do
+      it 'should not save any changes' do
+        page_count = Page.count
+        request.stub!(:referer).and_return("/admin/pages/#{preview_page.id}/edit")
+        post :preview, preview_params
+        Page.count.should == page_count
+      end
+    end
+    describe 'edit existing page' do
+      it 'should not save any changes' do
+        request.stub!(:referer).and_return("/admin/pages/#{preview_page.id}/edit")
+        original_date = preview_page.updated_at.to_i
+        post :preview, preview_params
+        non_updated_page = Page.find(preview_page.id)
+        non_updated_page.title.should_not equal('BOGUS')
+        non_updated_page.updated_at.to_i.should == original_date
+      end
+    end
+  end
 
   describe "prompting page removal" do
     integrate_views
@@ -204,13 +240,58 @@ describe Admin::PagesController do
     end
   end
 
-  it "should initialize meta and buttons_partials in new action" do
-    get :new, :page_id => page_id(:home)
-    response.should be_success
-    assigns(:meta).should be_kind_of(Array)
-    assigns(:buttons_partials).should be_kind_of(Array)
+  describe '#new' do
+    it "should initialize meta and buttons_partials in new action" do
+      get :new, :page_id => page_id(:home)
+      response.should be_success
+      assigns(:meta).should be_kind_of(Array)
+      assigns(:buttons_partials).should be_kind_of(Array)
+    end
+  
+    it "should set the parent_id from the parameters" do
+      get :new, :page_id => page_id(:home)
+      assigns(:page).parent_id.should == page_id(:home)
+    end
+  
+    it "should set the @page variable" do
+      home = pages(:home)
+      new_page = home.class.new_with_defaults
+      new_page.parent_id = home.id
+      Page.stub!(:new_with_defaults).and_return(new_page)
+      get :new, :page_id => home.id
+      assigns(:page).should == new_page
+    end
+
+     it "should create a page based on the given param" do
+       get :new, :page_id => page_id(:home), :page_class => 'FileNotFoundPage'
+       assigns(:page).should be_a(FileNotFoundPage)
+     end
+
+     it "should gracefully handle bogus page params" do
+       get :new, :page_id => page_id(:home), :page_class => 'BogusPage'
+       assigns(:page).should be_a(Page)
+     end
+
+     it "should instantiate a new page of the given class" do
+       PagesControllerSpecPage = Class.new(Page)
+       PagesControllerSpecPage.stub!(:default_page_parts).and_return(PagePart.new :name => "my_part")
+       get :new, :page_id => page_id(:home), :page_class => 'PagesControllerSpecPage'
+       assigns(:page).parts.map(&:name).should include('my_part')
+     end
   end
 
+  describe '#update' do
+    it 'should update the page updated_at on every update' do
+      start_updated_at = pages(:home).updated_at
+      put :update, :id => page_id(:home), :page => {:breadcrumb => 'Homepage'} and sleep(1)
+      next_updated_at = pages(:home).updated_at
+      lambda{ start_updated_at <=> next_updated_at }.should be_true
+      put :update, :id => page_id(:home), :page => {:breadcrumb => 'Homepage'} and sleep(1)
+      final_updated_at = pages(:home).updated_at
+      lambda{ next_updated_at <=> final_updated_at }.should be_true
+    end
+  end
+  
   it "should initialize meta and buttons_partials in edit action" do
     get :edit, :id => page_id(:home)
     response.should be_success

@@ -1,6 +1,7 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  has_many :pages, :foreign_key => :created_by_id
 
   # Default Order
   default_scope :order => 'name'
@@ -23,8 +24,6 @@ class User < ActiveRecord::Base
   validates_length_of :login, :within => 3..40, :allow_nil => true
   validates_length_of :password, :within => 5..40, :allow_nil => true, :if => :validate_length_of_password?
   validates_length_of :email, :maximum => 255, :allow_nil => true
-
-  validates_numericality_of :id, :only_integer => true, :allow_nil => true
 
   attr_writer :confirm_password
   class << self

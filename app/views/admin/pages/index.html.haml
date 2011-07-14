@@ -2,16 +2,16 @@
 
 .outset
   = render_region :top
-  %table.index#pages{:summary=>"Page hierarchy of the current site"}
+  %table.index#pages{:summary=>t('page_hierarchy')}
     %thead
       %tr
         - render_region :sitemap_head do |sitemap_head|
           - sitemap_head.title_column_header do
-            %th.page= t('page') 
+            %th.name= t('page') 
           - sitemap_head.status_column_header do
-            %th.status{:style=>"width: 8em"}= t('status')
+            %th.status= t('status')
           - sitemap_head.actions_column_header do
-            %th.actions{:style=>"width: 18em"}= t('modify')
+            %th.actions= t('modify')
     %tbody
       - if @homepage
         = render_node @homepage
@@ -23,4 +23,4 @@
 - unless @homepage
   #actions
     %ul
-      %li= link_to image('plus') + " " + t("new_homepage"), new_admin_page_path
+      %li= link_to image('plus') + " " + t("new_homepage"), new_admin_page_path, :class => 'action_button'

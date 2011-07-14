@@ -2,7 +2,6 @@ require_dependency 'radiant'
 
 class ApplicationController < ActionController::Base
   include LoginSystem
-  include Radiant::LegacyRoutes
   
   filter_parameter_logging :password, :password_confirmation
   
@@ -63,7 +62,7 @@ class ApplicationController < ActionController::Base
   private
   
     def set_current_user
-      UserActionObserver.current_user = current_user
+      UserActionObserver.instance.current_user = current_user
     end  
         
     def set_user_locale      

@@ -19,7 +19,7 @@
     - form.edit_username do
       %p
         = f.label :login, t('username') 
-        = f.text_field "login", :class => "textbox", :size => 32, :maxlength => 40 
+        = f.text_field "login", :class => "textbox", :size => 32, :maxlength => 40, :autocomplete => 'off'
     
     - form.edit_password do
       = render "password_fields", :f => f
@@ -44,7 +44,7 @@
   
   - render_region :form_bottom, :locals => {:f => f} do |form_bottom|
     - form_bottom.edit_buttons do
-      %p.buttons
+      .buttons
         = save_model_button(@user)
         = save_model_and_continue_editing_button(@user)
         = t('or')   

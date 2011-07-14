@@ -11,6 +11,8 @@ describe Admin::PagesHelper do
     @page = mock_model(Page)
     @errors = mock("errors")
     @page.stub!(:errors).and_return(@errors)
+    helper.stub!(:image).and_return('')
+    helper.stub!(:admin?).and_return(true)
     helper.instance_variable_set(:@page, @page)
   end
 
@@ -60,4 +62,5 @@ describe Admin::PagesHelper do
   it "should render javascript for the page editing form" do
     helper.should respond_to(:page_edit_javascripts)
   end
+
 end

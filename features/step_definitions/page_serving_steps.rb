@@ -32,8 +32,24 @@ Given /^I have page caching (on|off)$/ do |status|
   set_page_cache status
 end
 
-Then /^The "([^\"]*)" header should be "([^\"]*)"$/ do |header_key, value|
+Then /^the "([^\"]*)" header should be "([^\"]*)"$/ do |header_key, value|
   response.headers.to_hash[header_key].should =~ Regexp.new(value)
+end
+
+Then /^the page should render$/ do |text|
+  if defined?(Spec::Rails::Matchers)
+    response.body.should include(text)
+  else
+    assert_contain text
+  end
+end
+
+Then /^the page should not render$/ do |text|
+  if defined?(Spec::Rails::Matchers)
+    response.body.should_not include(text)
+  else
+    assert_not_contain text
+  end
 end
 
 def set_page_cache(status)

@@ -43,7 +43,7 @@ module Radiant
 
     def add_extension_paths
       extension_load_paths.reverse_each do |path|
-        configuration.load_paths.unshift path
+        configuration.autoload_paths.unshift path
         $LOAD_PATH.unshift path
       end
     end
@@ -81,7 +81,7 @@ module Radiant
       @observer ||= DependenciesObserver.new(configuration).observe(::ActiveSupport::Dependencies)
       self.extensions = load_extension_roots.map do |root|
         begin
-          extension_file = "#{File.basename(root).gsub(/^radiant-|-extension-[\d.]+$/,'')}_extension"
+          extension_file = "#{File.basename(root).gsub(/^radiant-|-extension-([\d\.a-z]+|[a-z\d]+)$/,'')}_extension"
           extension = extension_file.camelize.constantize
           extension.unloadable
           extension.root = root
@@ -91,6 +91,10 @@ module Radiant
           nil
         end
       end.compact
+    end
+    
+    def load_extension_initalizers
+      extensions.each &:load_initializers
     end
 
     def deactivate_extensions
@@ -129,7 +133,7 @@ module Radiant
           []
         end
       end
-
+      
       def select_extension_roots
         all_roots = all_extension_roots.dup
         roots = configuration.extensions.uniq.map do |ext_name|
@@ -137,7 +141,7 @@ module Radiant
             :all
           else
             ext_path = all_roots.detect do |maybe_path|
-              File.basename(maybe_path).gsub(/^radiant-|-extension-[\d.]+$/, '') == ext_name.to_s
+              File.basename(maybe_path).gsub(/^radiant-|-extension-([\d\.a-z]+|[a-z\d]+)$/, '') == ext_name.to_s
             end
             raise LoadError, "Cannot find the extension '#{ext_name}'!" if ext_path.nil?
             all_roots.delete(ext_path)
@@ -146,6 +150,9 @@ module Radiant
         if placeholder = roots.index(:all)
           # replace the :all symbol with any remaining paths
           roots[placeholder, 1] = all_roots
+        end
+        configuration.ignored_extensions.each do |removed|
+          roots.delete_if{|root| root.split('/').last.to_s == removed.to_s }
         end
         roots
       end
@@ -157,7 +164,7 @@ module Radiant
           end
           configuration.gems.inject(roots) do |paths,gem|
             paths.tap { |p| p << gem.specification.full_gem_path if gem.specification and
-                            gem.specification.full_gem_path[/radiant-.*-extension-[\d\.]+$/] }
+                            gem.specification.full_gem_path[/radiant-.*-extension-([\d\.a-z]+|[a-z\d]+)$/] }
           end
           roots.flatten
         end

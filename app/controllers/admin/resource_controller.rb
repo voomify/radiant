@@ -1,8 +1,10 @@
+require 'will_paginate'
 class Admin::ResourceController < ApplicationController
   extend Radiant::ResourceResponses
   
   helper_method :model, :current_object, :models, :current_objects, :model_symbol, :plural_model_symbol, :model_class, :model_name, :plural_model_name
   before_filter :populate_format
+  before_filter :never_cache
   before_filter :load_models, :only => :index
   before_filter :load_model, :only => [:new, :create, :edit, :update, :remove, :destroy]
   after_filter :clear_model_cache, :only => [:create, :update, :destroy]
@@ -97,7 +99,7 @@ class Admin::ResourceController < ApplicationController
   # a convenience method that returns true if paginate_models has been called on this controller class
   # and can be used to make display decisions in controller and view
   def paginated?
-    self.class.paginated == true
+    self.class.paginated == true && params[:pp] != 'all'
   end
   helper_method :paginated?
 
@@ -190,7 +192,7 @@ class Admin::ResourceController < ApplicationController
     end
 
     def edit_model_path
-      method = "edit_admin_#{model_name.downcase}_path"
+      method = "edit_admin_#{model_name.underscore}_path"
       send method.to_sym, params[:id]
     end
 
@@ -221,6 +223,13 @@ class Admin::ResourceController < ApplicationController
 
     def format
       params[:format] || 'html'
+    end
+    
+    
+    # I would like to set this to expires_in(1.minute, :private => true) to allow for more fluid navigation
+    # but the annoyance for concurrent authors would be too great.
+    def never_cache
+      expires_now
     end
     
     # Assist with user agents that cause improper content-negotiation

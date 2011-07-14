@@ -20,7 +20,7 @@ module Radiant
       UserActionObserver.current_user = @admin
       load_default_configuration
       load_database_template(config[:database_template])
-      announce "Finished.\n\n"
+      announce "Finished."
     end
     
     def create_admin_user(name, username, password)
@@ -50,6 +50,7 @@ module Radiant
         step { Radiant::Config['defaults.page.parts' ] = 'body, extended' }
         step { Radiant::Config['defaults.page.status' ] = 'draft' }
         step { Radiant::Config['defaults.page.filter' ] = nil }
+        step { Radiant::Config['defaults.page.fields'] = 'Keywords, Description' }
         step { Radiant::Config['session_timeout'] = 2.weeks }
         step { Radiant::Config['default_locale'] = 'en' }
       end
@@ -68,7 +69,13 @@ module Radiant
       end
       unless filename
         templates = find_and_load_templates("#{RADIANT_ROOT}/db/templates/*.yml")
-        templates.concat find_and_load_templates("#{RAILS_ROOT}/db/templates/*.yml") if RADIANT_ROOT != RAILS_ROOT
+        templates.concat find_and_load_templates("#{RADIANT_ROOT}/vendor/extensions/**/db/templates/*.yml")
+        Radiant::Extension.descendants.each do |d|
+          templates.concat find_and_load_templates(d.root + '/db/templates/*.yml')
+        end
+        templates.concat find_and_load_templates("#{Rails.root}/vendor/extensions/**/db/templates/*.yml")
+        templates.concat find_and_load_templates("#{Rails.root}/db/templates/*.yml")
+        templates.uniq!
         choose do |menu|
           menu.header = "\nSelect a database template"
           menu.prompt = "[1-#{templates.size}]: "
@@ -113,15 +120,19 @@ module Radiant
       end
       
       def find_template_in_path(filename)
-        [
-          filename,
-          "#{RADIANT_ROOT}/#{filename}",
-          "#{RADIANT_ROOT}/db/templates/#{filename}",
-          "#{RAILS_ROOT}/#{filename}",
-          "#{RAILS_ROOT}/db/templates/#{filename}",
-          "#{Dir.pwd}/#{filename}",
-          "#{Dir.pwd}/db/templates/#{filename}",
-        ].find { |name| File.file?(name) }
+        (
+          [
+            filename,
+            "#{RADIANT_ROOT}/#{filename}",
+            "#{RADIANT_ROOT}/db/templates/#{filename}",
+            "#{Rails.root}/#{filename}",
+            "#{Rails.root}/db/templates/#{filename}",
+            "#{Dir.pwd}/#{filename}",
+            "#{Dir.pwd}/db/templates/#{filename}"
+          ] +
+          Dir.glob("#{RADIANT_ROOT}/vendor/extensions/**/db/templates/#{filename}") + 
+          Dir.glob("#{Rails.root}/vendor/extensions/**/db/templates/#{filename}")
+        ).find { |name| File.file?(name) }
       end
       
       def find_and_load_templates(glob)

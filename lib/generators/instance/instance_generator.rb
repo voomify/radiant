@@ -17,7 +17,7 @@ class InstanceGenerator < Rails::Generator::Base
     "/opt/local/var/run/mysql5/mysqld.sock"   # mac + darwinports + mysql5
   ]
     
-  default_options :db => "mysql", :shebang => DEFAULT_SHEBANG, :freeze => false
+  default_options :db => "sqlite3", :shebang => DEFAULT_SHEBANG, :freeze => false
 
   def initialize(runtime_args, runtime_options = {})
     super
@@ -42,11 +42,11 @@ class InstanceGenerator < Rails::Generator::Base
       base_dirs = %w(config config/environments config/initializers db log script public vendor/plugins vendor/extensions)
       text_files = %w(CHANGELOG CONTRIBUTORS LICENSE INSTALL README)
       environments = Dir["#{root}/config/environments/*.rb"]
-      initializers = Dir["#{root}/config/initializers/*.rb"]
+      # initializers are now run from RADIANT_ROOT before the instance, so those are no longer copied across
       scripts = Dir["#{root}/script/**/*"].reject { |f| f =~ /(destroy|generate|plugin)$/ }
       public_files = ["public/.htaccess"] + Dir["#{root}/public/**/*"]
       
-      files = base_dirs + text_files + environments + initializers + scripts + public_files
+      files = base_dirs + text_files + environments + scripts + public_files
       files.map! { |f| f = $1 if f =~ %r{^#{root}/(.+)$}; f }
       files.sort!
       
@@ -82,6 +82,7 @@ class InstanceGenerator < Rails::Generator::Base
         :app_name => File.basename(File.expand_path(@destination_root))
       }
       m.template "instance_boot.rb", "config/boot.rb"
+      m.file "instance_radiant_config.rb", "config/initializers/radiant_config.rb"
       
       # Install Readme
       m.readme radiant_root("INSTALL")
@@ -102,7 +103,7 @@ class InstanceGenerator < Rails::Generator::Base
              "Default: #{DEFAULT_SHEBANG}") { |v| options[:shebang] = v }
       opt.on("-d", "--database=name", String,
             "Preconfigure for selected database (options: #{DATABASES.join(", ")}).",
-            "Default: mysql") { |v| options[:db] = v }
+            "Default: sqlite3") { |v| options[:db] = v }
     end
     
     def mysql_socket_location
