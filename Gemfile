@@ -14,6 +14,9 @@ gem 'will_paginate', '~> 2.3.11'
 gem 'RedCloth', '>= 4.0.0'
 gem "uuidtools", "~> 2.1.2"
 
+gem "radiant-clipped-extension", "~> 1.0.0"
+gem "coffee-script", "~> 2.2.0"
+
 # gem "activeresource", "2.3.8"
 gem "pg"
 gem "aws-s3", "0.6.2"
