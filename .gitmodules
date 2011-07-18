@@ -37,6 +37,6 @@
 [submodule "vendor/extensions/paperclipped"]
 	path = vendor/extensions/paperclipped
 	url = git://github.com/voomify/paperclipped.git
-[submodule "vendor/extensions/redirect_page"]
-	path = vendor/extensions/redirect_page
+[submodule "vendor/extensions/redirect"]
+	path = vendor/extensions/redirect
 	url = git://github.com/squaretalent/radiant-redirect-extension.git
