@@ -18,3 +18,4 @@ db/development*structure.sql
 radiant-*.gem
 .rvmrc
 Gemfile.lock
+radiant_backup.last
