@@ -14,3 +14,4 @@ spec/datasets/tmp
 rerun.txt
 .bundle
 db/development*structure.sql
+radiant_backup.last
